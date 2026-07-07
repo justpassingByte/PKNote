@@ -67,10 +67,10 @@ This guide explains how to build and run the PoNotes application (both backend a
 
 ## Prerequisites
 
-1.  **Docker Desktop:** Ensure you have Docker Desktop installed and running on your machine.
+0.  \*\*Git 1.  **Docker Desktop:** Node.js:\*\* Ensure you have Git installed to clone the repo, and Node.js for local development if needed.\n1.  \*\*Docker Desktop:\*\* Ensure you have Docker Desktop installed and running on your machine.
 2.  **Environment Variables:** Create a `.env` file in the root directory. You can copy the provided `.env.example` file:
     ```bash
-    cp .env.example .env
+    git clone https://github.com/your-username/PoNotes.git\n    cd PoNotes\n    cp .env.example .env
     ```
     *Note: The `.env.example` is configured to work out-of-the-box for local Docker deployments. Fill in any external API keys (Groq, Resend, NowPayments, etc.) if you need those features.*
 
