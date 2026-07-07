@@ -1,0 +1,526 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - link "VILLAINVAULT" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img [ref=e10]
+          - generic [ref=e13]: VILLAINVAULT
+        - navigation [ref=e14]:
+          - generic [ref=e15]:
+            - button "Features" [ref=e16] [cursor=pointer]: Features
+            - button "HUD Profiles" [ref=e17] [cursor=pointer]: HUD Profiles
+            - button "Roadmap" [ref=e18] [cursor=pointer]: Roadmap
+            - button "Pricing" [ref=e19] [cursor=pointer]: Pricing
+            - button "Contact" [ref=e20] [cursor=pointer]: Contact
+          - link "Dashboard" [ref=e22] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e23]
+            - text: Dashboard
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Your First Poker Vault
+            - heading "Save Money. Make Money. No Tilt." [level=1] [ref=e33]:
+              - text: Save Money.
+              - text: Make Money.
+              - text: No Tilt.
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: Villiant Vault is an AI brain at the table — not a solver, but dynamic play styles, your game evolves every day.
+              - paragraph [ref=e36]: "\"Capitalize on weaknesses + build knowledge and guard your bankroll from sharks\""
+            - generic [ref=e37]:
+              - link "Enter Dashboard" [ref=e38] [cursor=pointer]:
+                - /url: /dashboard
+              - link "View Pricing" [ref=e39] [cursor=pointer]:
+                - /url: "#pricing"
+              - link "Download Desktop App" [ref=e40] [cursor=pointer]:
+                - /url: https://github.com/justpassingByte/PoNotesFE/releases/download/pokerhud/RobinHood_Setup_v1.1.3.exe
+                - img [ref=e41]
+                - text: Download Desktop App
+            - generic [ref=e44]:
+              - text: No extreme focus needed
+              - generic [ref=e45]: ·
+              - text: Improve rapidly
+          - generic [ref=e47]:
+            - generic [ref=e55]:
+              - generic [ref=e59]: AI
+              - generic [ref=e60]:
+                - generic [ref=e66]: GTO ALIGNED 100%
+                - generic [ref=e67]:
+                  - generic [ref=e68]: FOLD
+                  - generic [ref=e69]: DOMINATE CALL
+            - generic [ref=e70]: AI is guarding your money
+        - button "Scroll down" [ref=e72] [cursor=pointer]:
+          - generic [ref=e73]: Explore
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e91]: Why RobinHUD Exists
+          - heading "We have the Brain. But not the Eyes yet." [level=2] [ref=e92]:
+            - text: We have the Brain.
+            - text: But not the Eyes yet.
+          - paragraph [ref=e93]: The LLM is the brain — it reasons, analyzes, plans strategy. But without data, it's a genius wearing a blindfold. RobinHUD gives it eyes.
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e99]:
+                - img [ref=e101]
+                - heading "🧠 The Brain — LLM" [level=3] [ref=e109]
+                - paragraph [ref=e110]: Capable of GTO reasoning, range analysis, pattern reading, exploit planning. But without input data — it's only latent power.
+                - generic [ref=e111]:
+                  - generic [ref=e112]:
+                    - img [ref=e113]
+                    - generic [ref=e116]: Hand History analysis in < 2 seconds
+                  - generic [ref=e117]:
+                    - img [ref=e118]
+                    - generic [ref=e121]: Context-aware Exploit Strategy generation
+                  - generic [ref=e122]:
+                    - img [ref=e123]
+                    - generic [ref=e126]: Leak detection, dynamic range adjustments
+              - generic [ref=e129]: Active
+            - generic [ref=e130]:
+              - generic [ref=e132]:
+                - img [ref=e134]
+                - heading "👁 The Eyes — Your Data" [level=3] [ref=e137]
+                - paragraph [ref=e138]: Every hand you analyze, every note you write, every opponent you track — that's data. The more data, the clearer AI "sees" your opponent pool.
+                - generic [ref=e139]:
+                  - generic [ref=e140]:
+                    - img [ref=e141]
+                    - generic [ref=e144]: Hand history → repeating pattern recognition
+                  - generic [ref=e145]:
+                    - img [ref=e146]
+                    - generic [ref=e149]: Player notes → behavioral modeling
+                  - generic [ref=e150]:
+                    - img [ref=e151]
+                    - generic [ref=e154]: Table OCR → real-time context injection
+              - generic [ref=e157]: Need Your Help
+          - img [ref=e159]
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: How We Scale
+            - heading "Vector DB + Augmented LLM Workflow" [level=3] [ref=e165]
+            - paragraph [ref=e166]: Not a ChatGPT wrapper. This is a real pipeline — your data gets encoded into vectors, stored permanently, and augmented into every AI reasoning cycle.
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - img [ref=e170]
+              - generic [ref=e174]: Step 01
+              - heading "Data Ingestion" [level=4] [ref=e175]
+              - paragraph [ref=e176]: Hand history, notes, player behavior — everything you feed in gets encoded into vector embeddings and stored in a Vector DB.
+              - img [ref=e178]
+            - generic [ref=e180]:
+              - img [ref=e182]
+              - generic [ref=e186]: Step 02
+              - heading "Retrieval + Augment" [level=4] [ref=e187]
+              - paragraph [ref=e188]: When you query — the system finds the top-K most relevant data from Vector DB and injects it directly into the LLM prompt context.
+              - img [ref=e190]
+            - generic [ref=e192]:
+              - img [ref=e194]
+              - generic [ref=e196]: Step 03
+              - heading "Exploit Output" [level=4] [ref=e197]
+              - paragraph [ref=e198]: The LLM makes decisions based on YOUR private data, not generic responses. More data = more precise exploits.
+          - generic [ref=e200]:
+            - img [ref=e201]
+            - generic [ref=e205]: Feedback Loop — more data, sharper edge, self-improving system
+        - generic [ref=e211]:
+          - paragraph [ref=e212]: Mindset — Real Talk
+          - blockquote [ref=e213]:
+            - text: In a few years, the game will be exponentially harder.
+            - text: How long can you keep playing the old way?
+          - generic [ref=e214]:
+            - heading "Look at history" [level=4] [ref=e215]:
+              - img [ref=e216]
+              - text: Look at history
+            - paragraph [ref=e218]: Electricity was invented — people were scared of being electrocuted. Bitcoin appeared — called a scam. AI now — same skepticism. But looking back, they were all obvious — and early adopters won.
+            - paragraph [ref=e219]: Out there AI writes code, AI trades, AI automates everything. But Poker is still in the "hand fan" era — manual notes, relying on memory, staring at HUD stats and self-interpreting numbers. This is fertile ground that almost nobody is farming properly.
+          - generic [ref=e220]:
+            - heading "AI is wrong? Or you don't know how to use it?" [level=4] [ref=e221]:
+              - img [ref=e222]
+              - text: AI is wrong? Or you don't know how to use it?
+            - paragraph [ref=e230]: AI sometimes hallucinates, sometimes gets it wrong — true. But the problem isn't AI, it's how you use it. Using AI ≠ leveraging AI.
+            - paragraph [ref=e231]: Smart players don't ask AI "should I fold or call" and blindly follow. They build workflows, design systems, leverage data — using AI as a lever to scale reasoning speed, analysis depth, and decision quality. That's real leverage.
+          - generic [ref=e232]:
+            - heading "Why did I build this?" [level=4] [ref=e233]:
+              - img [ref=e234]
+              - text: Why did I build this?
+            - paragraph [ref=e237]: I understand exactly how detection systems (RTA) work. If I was scared of "use it and get banned", I wouldn't have built RobinHUD in the first place. What I need now is data, feedback, and early adopters — so the system can learn, improve, and scale.
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - paragraph [ref=e240]: ❌ Playing Old School
+              - list [ref=e241]:
+                - listitem [ref=e242]:
+                  - generic [ref=e243]: –
+                  - text: Manual notes → forgotten after 5 sessions
+                - listitem [ref=e244]:
+                  - generic [ref=e245]: –
+                  - text: HUD VPIP/PFR → self-interpreting raw numbers
+                - listitem [ref=e246]:
+                  - generic [ref=e247]: –
+                  - text: Gambling on feelings → consistent donations
+                - listitem [ref=e248]:
+                  - generic [ref=e249]: –
+                  - text: Game gets harder in years → no competitive edge left
+            - generic [ref=e250]:
+              - paragraph [ref=e251]: ✅ Playing With AI — RobinHUD
+              - list [ref=e252]:
+                - listitem [ref=e253]:
+                  - generic [ref=e254]: +
+                  - text: Vector DB remembers ALL your data FOREVER
+                - listitem [ref=e255]:
+                  - generic [ref=e256]: +
+                  - text: AI delivers exploit + leak → act immediately
+                - listitem [ref=e257]:
+                  - generic [ref=e258]: +
+                  - text: Data compounds → edge grows like compound interest 📈
+                - listitem [ref=e259]:
+                  - generic [ref=e260]: +
+                  - text: Game gets harder → system evolves with it
+          - generic [ref=e261]:
+            - paragraph [ref=e262]:
+              - text: The question isn't "should I use AI?".
+              - text: "The question is: will you be the one who uses it first, or wait until everyone does?"
+            - paragraph [ref=e263]: Electricity, internet, Bitcoin, smartphones — every revolution started with a small group willing to try before the masses caught on. Poker is no different. It's not about which tool, it's about which mindset.
+            - paragraph [ref=e264]: Those who shift their mindset first don't need permission. They create their own edge.
+      - generic [ref=e267]:
+        - generic [ref=e269]:
+          - paragraph [ref=e270]: Hand Analyzer — Review like a Pro
+          - heading "Upload hand. AI dissects every mistake." [level=3] [ref=e271]:
+            - text: Upload hand.
+            - text: AI dissects every mistake.
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - generic [ref=e274]: "01"
+              - paragraph [ref=e275]: Paste / upload hand history or table screenshot
+            - generic [ref=e276]:
+              - generic [ref=e277]: "02"
+              - paragraph [ref=e278]: AI analyzes every street — points out leaks & mistakes
+            - generic [ref=e279]:
+              - generic [ref=e280]: "03"
+              - paragraph [ref=e281]: Get specific exploit strategy for next time
+          - generic [ref=e282]:
+            - generic [ref=e283]: "AI ANALYSIS OUTPUT:"
+            - generic [ref=e284]: ⚠ TURN — BB check → fold to small bet
+            - generic [ref=e285]: Too passive, missed river value bet opportunity
+            - generic [ref=e286]: "Exploit Strategy:"
+            - generic [ref=e287]: "– BET river 75% pot | range: TT+, AQs+ | freq: 80%"
+            - generic [ref=e288]: "– FOLD turn vs 3x raise | range: weak pairs | freq: 100%"
+            - generic [ref=e289]: "Leak Detected:"
+            - generic [ref=e290]: "– Passive river play — trigger: check + fold to small bet"
+        - generic [ref=e295] [cursor=pointer]:
+          - img "Hand Analyzer Overview" [ref=e296]
+          - generic [ref=e298]: 🔍 Click to expand
+      - generic [ref=e300]:
+        - generic [ref=e301]:
+          - paragraph [ref=e302]: HUD — The "X-Ray" Panel
+          - heading "Not on the table. Dedicated panel, instant clarity." [level=2] [ref=e303]:
+            - text: Not on the table.
+            - text: Dedicated panel, instant clarity.
+          - paragraph [ref=e304]: Each opponent gets an active profile — AI analyzes Exploit Strategy, Positional Leaks, Range Adjustments, and auto-notes. You just glance and decide.
+        - generic [ref=e307] [cursor=pointer]:
+          - img "HUD Player Detail — Exploit Strategy, Leaks, AI Notes" [ref=e308]
+          - generic [ref=e310]: 🔍 Click to expand
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - heading "Exploit Strategy" [level=4] [ref=e314]
+            - paragraph [ref=e315]: AI automatically generates exploit strategies per street, position, and specific node. Complete with sizing, range, and frequency.
+          - generic [ref=e316]:
+            - heading "Positional Leaks" [level=4] [ref=e317]
+            - paragraph [ref=e318]: Detects leaks by node — passive river, loose turn call, overbet bluff... Each leak comes with a specific trigger.
+          - generic [ref=e319]:
+            - heading "AI Notes" [level=4] [ref=e320]
+            - paragraph [ref=e321]: Auto-notes generated from every analyzed hand. Includes board texture, pot type, action line, and severity.
+          - generic [ref=e322]:
+            - heading "Range Adjustments" [level=4] [ref=e323]
+            - paragraph [ref=e324]: Specific range adjustment suggestions for each opponent — tighten, widen, overbet, trap — nothing generic.
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - paragraph [ref=e328]: Target Management System
+          - heading "Assassin's Dashboard" [level=2] [ref=e329]
+          - paragraph [ref=e330]: No more guessing about your enemies. Centralized dashboard featuring Priority Targets and Elite Regs, so you know exactly which tables to play and who is trying to take your chips.
+        - generic [ref=e333] [cursor=pointer]:
+          - img "Villain Vault Dashboard Overview" [ref=e334]
+          - generic [ref=e336]: 🔍 Click to expand
+      - generic [ref=e338]:
+        - generic [ref=e339]:
+          - paragraph [ref=e340]: Knowledge Base
+          - heading "What is Villiant Vault?" [level=2] [ref=e341]
+          - paragraph [ref=e342]: Not a tool. Not a solver. Not a confusing VPIP/PFR HUD. It's 2026 — it's a vault + a brain + a tilt-free pro team.
+        - generic [ref=e344]:
+          - generic [ref=e345]:
+            - generic [ref=e346]: Step 1
+            - heading "① Same-Spot Memory Retrieval" [level=4] [ref=e347]
+            - paragraph [ref=e348]: When you face a spot — the system auto-retrieves every similar hand you've played, every note you've written, every opponent pattern in the same position. Nothing forgotten, nothing missed.
+            - generic [ref=e349]: →
+          - generic [ref=e350]:
+            - generic [ref=e351]: Step 2
+            - heading "② Cross-Reference GTO Theory" [level=4] [ref=e352]
+            - paragraph [ref=e353]: Retrieved data is fed into AI alongside GTO fundamentals — ranges, frequencies, sizing. The system compares the opponent's actual behavior against GTO baseline to find deviations.
+            - generic [ref=e354]: →
+          - generic [ref=e355]:
+            - generic [ref=e356]: Step 3
+            - heading "③ Exploit Decision Output" [level=4] [ref=e357]
+            - paragraph [ref=e358]: "AI synthesizes: your personal memory + GTO framework + opponent leaks → outputs specific exploit strategies. Not generic advice, but decisions based on YOUR data."
+        - generic [ref=e359]:
+          - generic [ref=e360]:
+            - generic [ref=e361]: "01"
+            - heading "\"X-Ray\" Opponent HUD" [level=3] [ref=e362]
+            - paragraph [ref=e363]: "Dedicated panel: Whale, Reg, or yourself. Get specific exploit suggestions."
+          - generic [ref=e364]:
+            - generic [ref=e365]: "02"
+            - heading "AI Tuning (New Feature)" [level=3] [ref=e366]
+            - paragraph [ref=e367]: Fully customize your AI. Force it to answer conservatively (GTO) or aggressively (Max Exploit) using powerful overriding prompts.
+          - generic [ref=e368]:
+            - generic [ref=e369]: "03"
+            - heading "Auto Leak Reduction" [level=3] [ref=e370]
+            - paragraph [ref=e371]: The system fixes your play every day — never toxic but won't go easy on you.
+          - generic [ref=e372]:
+            - generic [ref=e373]: "04"
+            - heading "Hybrid GTO+Exploit" [level=3] [ref=e374]
+            - paragraph [ref=e375]: GTO for the framework, exploit for the money, memory to protect the bankroll.
+      - generic [ref=e377]:
+        - generic [ref=e378]:
+          - paragraph [ref=e379]: Vision — The Roadmap
+          - heading "Poker Hybrid System." [level=2] [ref=e380]
+          - paragraph [ref=e381]: RobinHUD is not just a HUD. It's an ecosystem where decisions are driven by data, context, AI, and real-time scaling.
+        - generic [ref=e384]:
+          - generic [ref=e386]:
+            - generic [ref=e388]:
+              - generic [ref=e389]:
+                - 'heading "Phase 1 (Live Now): Villiant Vault + RobinHUD Desktop App V1" [level=3] [ref=e390]'
+                - generic [ref=e391]: Live Now
+              - paragraph [ref=e392]: Fast and accessible experience. A sharp tool for hand reviews and direct opponent exploitation.
+              - list [ref=e393]:
+                - listitem [ref=e394]:
+                  - generic [ref=e395]: •
+                  - text: "Web-based app: Upload hands for quick AI review, leak extraction & Exploit tips"
+                - listitem [ref=e396]:
+                  - generic [ref=e397]: •
+                  - text: "Desktop App V1: Smooth desktop experience, fully synced with the web platform"
+                - listitem [ref=e398]:
+                  - generic [ref=e399]: •
+                  - text: Building trust, community & data collection for scaling
+            - img [ref=e402]
+          - generic [ref=e406]:
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - heading "Phase 2 - Core Upgrade" [level=3] [ref=e410]
+                - generic [ref=e411]: Upcoming
+              - paragraph [ref=e412]: Memory + GTO Pipeline. We stop looking at isolated hands. Current hand + Opponent History + GTO Baseline = Strategy.
+              - list [ref=e413]:
+                - listitem [ref=e414]:
+                  - generic [ref=e415]: •
+                  - text: Hand → Exploit → Update Note
+                - listitem [ref=e416]:
+                  - generic [ref=e417]: •
+                  - text: Playing against specific people, context-aware
+                - listitem [ref=e418]:
+                  - generic [ref=e419]: •
+                  - text: Mapped tightly with GTO fundamentals
+            - img [ref=e422]
+          - generic [ref=e435]:
+            - generic [ref=e437]:
+              - generic [ref=e438]:
+                - 'heading "Phase 3: Desktop App V2 (Final/Auto-Scale)" [level=3] [ref=e439]'
+                - generic [ref=e440]: Future Vision
+              - paragraph [ref=e441]: The Final Version with auto-scale capabilities. More data exponentially increases your edge.
+              - list [ref=e442]:
+                - listitem [ref=e443]:
+                  - generic [ref=e444]: •
+                  - text: "Auto-Scanner: Automatically reads the table, takes notes, and updates the system"
+                - listitem [ref=e445]:
+                  - generic [ref=e446]: •
+                  - text: "Auto-scale: Automated scaling capabilities based on gathered player data"
+                - listitem [ref=e447]:
+                  - generic [ref=e448]: •
+                  - text: Optimized by actual player pools for Enterprise / Team scale
+            - img [ref=e451]
+          - generic [ref=e457]:
+            - generic [ref=e459]:
+              - generic [ref=e460]:
+                - heading "Phase 4 - Mobile App" [level=3] [ref=e461]
+                - generic [ref=e462]: Live Weapon
+              - paragraph [ref=e463]: Take it to live tournaments. Equipped with an offline/online pocket coach trained on massive data to crush the live scene.
+              - list [ref=e464]:
+                - listitem [ref=e465]:
+                  - generic [ref=e466]: •
+                  - text: iOS & Android Mobile App
+                - listitem [ref=e467]:
+                  - generic [ref=e468]: •
+                  - text: Pocket Coach Offline/Online
+                - listitem [ref=e469]:
+                  - generic [ref=e470]: •
+                  - text: Dominate live tournaments
+            - img [ref=e473]
+      - generic [ref=e477]:
+        - generic [ref=e478]:
+          - generic [ref=e479]:
+            - img [ref=e480]
+            - generic [ref=e483]: Safe by Design
+          - heading "Desktop App — Built for Safety From the Ground Up." [level=2] [ref=e484]
+          - paragraph [ref=e485]: "RobinHUD Desktop follows a zero-intrusion principle: no injection, no hooks, no automation. Every action is triggered by you, with natural human-like timing — just like taking notes by hand."
+          - paragraph [ref=e486]: Still worried? Use the Web version — full AI analysis, hand review, and player notes all work in your browser. No install, no risk.
+        - generic [ref=e487]:
+          - generic [ref=e488]:
+            - img [ref=e491]
+            - heading "Screen-Only — Zero RAM Access" [level=3] [ref=e494]
+            - paragraph [ref=e495]: RobinHUD only captures the pixels displayed on your screen, then uses AI to read player names. No DLL injection, no memory hooks, no process snooping — ever.
+          - generic [ref=e496]:
+            - img [ref=e499]
+            - heading "You're in Control — No Auto" [level=3] [ref=e505]
+            - paragraph [ref=e506]: Every scan is manually triggered by you — press a button or hit F5. No background timers, no continuous polling. Minimizes any automated software signatures.
+          - generic [ref=e507]:
+            - img [ref=e510]
+            - heading "Human-Like Timing" [level=3] [ref=e513]
+            - paragraph [ref=e514]: Every action (name scanning, data fetching, HUD display) has a randomized 200–800ms delay, simulating natural human reading speed rather than instant machine processing.
+          - generic [ref=e515]:
+            - img [ref=e518]
+            - heading "Standard Windows Overlay" [level=3] [ref=e523]
+            - paragraph [ref=e524]: The HUD uses WPF Overlay — the same standard transparent window technology used by Discord, OBS, and Zalo for floating notifications. No special techniques involved.
+        - generic [ref=e526]:
+          - img [ref=e528]
+          - heading "Open Source & Fully Transparent" [level=3] [ref=e531]
+          - paragraph [ref=e532]: Read every line of RobinHUD's code on GitHub. Our Desktop App is open source so anyone can verify — no keyloggers, no malware, no hidden data collection.
+          - link "Verify on GitHub" [ref=e533] [cursor=pointer]:
+            - /url: https://github.com/justpassingByte/RonbinHud
+            - img [ref=e534]
+            - generic [ref=e537]: Verify on GitHub
+      - generic [ref=e539]:
+        - generic [ref=e540]:
+          - paragraph [ref=e541]: Pricing — Clear, No Hidden Fees
+          - heading "Cheaper than one bad river call." [level=2] [ref=e542]
+          - paragraph [ref=e543]: Invest in an AI that pays for itself in a single session.
+        - generic [ref=e544]:
+          - generic [ref=e545]:
+            - generic [ref=e546]:
+              - heading "Grinder" [level=3] [ref=e547]
+              - paragraph [ref=e548]: For daily players building edge.
+              - generic [ref=e549]:
+                - generic [ref=e550]: $19.99
+                - generic [ref=e551]: /month
+            - list [ref=e552]:
+              - listitem [ref=e553]:
+                - img [ref=e554]
+                - generic [ref=e556]: Full Tactical AI Analysis
+              - listitem [ref=e557]:
+                - img [ref=e558]
+                - generic [ref=e560]: Basic HUD Profiling
+              - listitem [ref=e561]:
+                - img [ref=e562]
+                - generic [ref=e564]: 500 hands analysis
+              - listitem [ref=e565]:
+                - img [ref=e566]
+                - generic [ref=e568]: Player memory
+              - listitem [ref=e569]:
+                - img [ref=e570]
+                - generic [ref=e572]: 1 device
+              - listitem [ref=e573]:
+                - img [ref=e574]
+                - generic [ref=e576]: Desktop robinHUD API Access
+            - link "Start Grinder" [ref=e577] [cursor=pointer]:
+              - /url: /register
+          - generic [ref=e578]:
+            - generic [ref=e579]: Most Popular
+            - generic [ref=e580]:
+              - heading "Pro" [level=3] [ref=e581]
+              - paragraph [ref=e582]: Most Popular
+              - generic [ref=e583]:
+                - generic [ref=e584]: $49.99
+                - generic [ref=e585]: /month
+            - list [ref=e586]:
+              - listitem [ref=e587]:
+                - img [ref=e588]
+                - generic [ref=e590]: 2,000 hands analyzed
+              - listitem [ref=e591]:
+                - img [ref=e592]
+                - generic [ref=e594]: "Full strategy: frequency + sizing + plan"
+              - listitem [ref=e595]:
+                - img [ref=e596]
+                - generic [ref=e598]: Exploit HUD + leak detection
+              - listitem [ref=e599]:
+                - img [ref=e600]
+                - generic [ref=e602]: Player modeling
+              - listitem [ref=e603]:
+                - img [ref=e604]
+                - generic [ref=e606]: 2 devices
+              - listitem [ref=e607]:
+                - img [ref=e608]
+                - generic [ref=e610]: Priority support
+              - listitem [ref=e611]:
+                - img [ref=e612]
+                - generic [ref=e614]: Desktop robinHUD API access
+            - link "Open Vault Pro" [ref=e615] [cursor=pointer]:
+              - /url: /register
+          - generic [ref=e616]:
+            - generic [ref=e617]:
+              - heading "High Roller" [level=3] [ref=e618]
+              - paragraph [ref=e619]: For pros destroying limits.
+              - generic [ref=e620]:
+                - generic [ref=e621]: $99.99
+                - generic [ref=e622]: /month
+            - list [ref=e623]:
+              - listitem [ref=e624]:
+                - img [ref=e625]
+                - generic [ref=e627]: Everything in Grinder
+              - listitem [ref=e628]:
+                - img [ref=e629]
+                - generic [ref=e631]: Deep Exploit Engine
+              - listitem [ref=e632]:
+                - img [ref=e633]
+                - generic [ref=e635]: Max GTO/Exploit Tuning AI
+              - listitem [ref=e636]:
+                - img [ref=e637]
+                - generic [ref=e639]: GTO + Population reads
+              - listitem [ref=e640]:
+                - img [ref=e641]
+                - generic [ref=e643]: 5 devices
+              - listitem [ref=e644]:
+                - img [ref=e645]
+                - generic [ref=e647]: 1-on-1 Onboarding
+              - listitem [ref=e648]:
+                - img [ref=e649]
+                - generic [ref=e651]: Early access tính năng mới
+              - listitem [ref=e652]:
+                - img [ref=e653]
+                - generic [ref=e655]: Ultra Desktop robinHUD API access
+              - listitem [ref=e656]:
+                - img [ref=e657]
+                - generic [ref=e659]: Onboarding 1-1
+            - link "Start High Roller" [ref=e660] [cursor=pointer]:
+              - /url: /register
+        - generic [ref=e661]:
+          - generic [ref=e662]:
+            - paragraph [ref=e663]: Is it exhausting?
+            - paragraph [ref=e664]: No — let Vault think, you just click.
+          - generic [ref=e665]:
+            - paragraph [ref=e666]: Does it tilt?
+            - paragraph [ref=e667]: Vault doesn't know 'lost 3 hands in a row so I am mad'.
+          - generic [ref=e668]:
+            - paragraph [ref=e669]: Not good at poker?
+            - paragraph [ref=e670]: Know the rules? That's enough. Vault pulls you up.
+        - generic [ref=e671]:
+          - img [ref=e672]
+          - heading "Why Subscription?" [level=4] [ref=e675]
+          - paragraph [ref=e676]: It pays for powerful dedicated servers, prevents spam, and funds this exact roadmap. Your support builds an unfair advantage.
+      - generic [ref=e679]:
+        - blockquote [ref=e680]: Poker is still a gamble.
+        - paragraph [ref=e681]: But with Villiant Vault, you gamble with a PLAN.
+        - paragraph [ref=e682]: You are not a gambler — you are a BUSINESSMAN.
+        - generic [ref=e683]:
+          - link "Open Your Vault Now" [ref=e684] [cursor=pointer]:
+            - /url: /register
+          - button "View Pricing" [ref=e685]
+        - paragraph [ref=e686]: No credit card required to start. Cancel anytime.
+    - contentinfo [ref=e687]:
+      - generic [ref=e688]:
+        - generic [ref=e689]: VILLIANT VAULT © 2026
+        - generic [ref=e690]:
+          - link "Privacy Policy" [ref=e691] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e692] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e693] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e694]: The first AI vault for poker.
+  - button "Open Next.js Dev Tools" [ref=e700] [cursor=pointer]:
+    - img [ref=e701]

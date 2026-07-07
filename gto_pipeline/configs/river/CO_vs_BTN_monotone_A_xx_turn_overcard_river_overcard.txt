@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board As,7s,2s,Jc,Kc
+set_range_ip 64s,65s,86s,98s,99:0.124,A7s,A9s:0.002,AJo,AKo,AQs,AQo,ATs:0.307,AJs,AKs,JJ,J9s,JTs,KQo,K8s,K9s,KJs,KQs,KTs,Q9s:0.547,QTs:0.877,QJs,T8s,T9s,TT:0.746
+set_range_oop 33:0.863,44:0.94,54s:0.144,55:0.986,65s:0.064,66:0.588,88,99:0.94,A2s,A3s,A4s,A5s,A6s:0.197,A7s,A8s:0.273,A9s,AJo:0.997,AKo:0.94,AQo:0.004,ATs:0.755,ATo:0.612,AJs:0.997,AKs:0.992,AQs:0.006,KJs:0.484,KJo:0.742,KQo:0.001,KK:0.8,QJs:0.153,QQ,TT
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_monotone_A_xx_turn_overcard_river_overcard.json

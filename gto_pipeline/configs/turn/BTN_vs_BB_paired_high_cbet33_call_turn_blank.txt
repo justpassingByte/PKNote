@@ -1,0 +1,23 @@
+set_pot 9.5
+set_effective_stack 95.25
+set_board Ks,Kd,2c,6c
+set_range_ip 22:0.997,33:0.776,43s:0.912,44:0.762,53s:0.833,54s:0.765,55:0.707,64s:0.66,65s:0.755,66:0.634,75s:0.53,76s:0.601,77:0.631,85s:0.486,87s:0.724,86s:0.621,88:0.647,97s:0.771,98s:0.74,96s:0.616,99:0.753,A3s:0.773,A4s:0.676,A5s:0.63,A5o:0.818,A7s:0.196,A8s:0.155,A9s:0.184,A9o:0.611,AJs:0.539,AJo:0.737,AKs:0.936,AKo:0.979,AQs:0.477,AQo:0.851,ATs:0.28,ATo:0.659,A2s:0.995,A6s:0.332,AA:0.488,J7s:0.677,J8s:0.753,J9s:0.8,JTs:0.747,JJ:0.684,K3s:0.648,K4s:0.69,K5s:0.765,K7s:0.852,K8s:0.865,K9s:0.945,KJs,KQs:0.893,KQo:0.918,KTs:0.95,K2s,K6s:0.785,KK,Q7s:0.675,Q8s:0.769,Q9s:0.753,QJs:0.67,QTs:0.728,Q6s:0.632,QQ:0.471,T7s:0.637,T8s:0.759,T9s:0.801,TT:0.753
+set_range_oop 33:0.713,43s:0.041,44:0.787,53s:0.034,54s:0.074,55:0.861,66:0.857,77:0.812,88:0.903,98s:0.026,99:0.898,A2o:0.502,A3s:0.235,A4s:0.256,A5s:0.319,A7s:0.632,A8s:0.8,A9s:0.848,AJs:0.983,AJo:0.97,AQs:0.876,AQo:0.973,ATs:0.917,ATo:0.729,A2s:0.713,A6s:0.521,A9o:0.061,AA,AKo:0.017,AKs:0.273,J7s:0.238,J8s:0.463,J9s:0.411,JTs:0.329,JTo:0.127,JJ:0.951,K3s:0.461,K4s:0.51,K5s:0.443,K7s:0.41,K8s:0.361,K9s:0.479,K9o:0.529,KJs:0.663,KJo:0.687,KQs:0.527,KQo:0.507,KTs:0.525,KTo:0.612,K6s:0.354,Q7s:0.424,Q8s:0.581,Q9s:0.625,QJs:0.308,QJo:0.141,QTs:0.323,Q6s:0.473,QQ:0.994,T7s:0.009,T8s:0.059,T9s:0.607,TT:0.905
+set_bet_sizes oop,flop,bet,75
+set_bet_sizes oop,flop,raise,60
+set_bet_sizes ip,flop,bet,75
+set_bet_sizes ip,flop,raise,60
+set_bet_sizes oop,turn,bet,75
+set_bet_sizes oop,turn,raise,60
+set_bet_sizes ip,turn,bet,75
+set_bet_sizes ip,turn,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 2000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\turn\raw\BTN_vs_BB_paired_high_cbet33_call_turn_blank.json

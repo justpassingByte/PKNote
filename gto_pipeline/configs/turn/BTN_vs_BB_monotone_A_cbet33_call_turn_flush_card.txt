@@ -1,0 +1,23 @@
+set_pot 9.5
+set_effective_stack 95.25
+set_board As,7s,2s,9s
+set_range_ip 22:0.11,33:0.086,43s:0.328,44:0.061,53s:0.293,54s:0.165,55:0.056,64s:0.136,65s:0.142,66:0.012,75s:0.185,76s:0.109,77:0.054,85s:0.114,86s:0.086,87s:0.114,88:0.04,96s:0.064,97s:0.155,98s:0.173,99:0.003,A2s:0.194,A3s:0.123,A4s:0.119,A5s:0.091,A5o:0.124,A6s:0.091,A7s:0.128,A8s:0.022,A9s:0.046,A9o:0.066,AJs:0.168,AJo:0.136,AKs:0.046,AKo:0.134,AQs:0.087,AQo:0.125,ATs:0.082,ATo:0.068,AA:0.282,J7s:0.043,J8s:0.086,J9s:0.054,JTs:0.109,JJ:0.082,K2s:0.126,K3s:0.074,K4s:0.076,K5s:0.051,K6s:0.03,K7s:0.064,K8s:0.014,K9s:0.003,KJs:0.022,KQs:0.007,KQo:0.04,KTs:0.031,KK:0.02,Q6s:0.065,Q7s:0.06,Q8s:0.04,Q9s:0.022,QJs:0.117,QTs:0.091,QQ:0.068,T7s:0.121,T8s:0.113,T9s:0.111,TT:0.071
+set_range_oop 22:0.327,33:0.721,43s:0.397,44:0.758,53s:0.565,54s:0.505,55:0.821,65s:0.32,66:0.779,64s:0.978,75s:0.395,76s:0.397,77:0.141,86s:0.296,87s:0.684,88:0.915,96s:0.003,97s:0.609,98s:0.154,99:0.998,A2s:0.75,A2o:0.723,A3s:0.799,A3o:0.849,A4s:0.779,A4o:0.859,A5s:0.869,A5o:0.914,A6s:0.872,A7s:0.864,A8s:0.9,A9s:0.815,A9o:0.776,AJs:0.863,AJo:0.875,AKs:0.968,AKo:0.651,AQs:0.773,AQo:0.832,ATs:0.825,ATo:0.841,AA:0.629,J7s:0.587,J8s:0.144,J9s:0.002,JTs:0.258,JTo:0.182,JJ:0.956,K3s:0.016,K4s:0.006,K5s:0.004,K7s:0.86,K8s:0.038,K9s:0.002,K9o:0.003,KJs:0.16,KJo:0.107,KQs:0.188,KQo:0.054,KTs:0.106,KTo:0.151,KK:0.619,K2s:0.027,K6s:0.003,Q7s:0.666,QJs:0.113,QJo:0.125,QTs:0.099,QQ:0.95,Q8s:0.081,T7s:0.59,T8s:0.326,T9s:0.1,TT:0.951
+set_bet_sizes oop,flop,bet,75
+set_bet_sizes oop,flop,raise,60
+set_bet_sizes ip,flop,bet,75
+set_bet_sizes ip,flop,raise,60
+set_bet_sizes oop,turn,bet,75
+set_bet_sizes oop,turn,raise,60
+set_bet_sizes ip,turn,bet,75
+set_bet_sizes ip,turn,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 2000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\turn\raw\BTN_vs_BB_monotone_A_cbet33_call_turn_flush_card.json

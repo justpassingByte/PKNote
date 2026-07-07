@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board Ks,Kd,2c,Jh,7h
+set_range_ip 22,33:0.002,43s:0.102,53s:0.078,54s:0.111,64s:0.001,65s:0.001,75s:0.079,85s:0.082,86s:0.002,87s:0.027,96s:0.186,97s:0.454,98s:0.53,AJs,AJo,AKs,AKo,AQs:0.645,AQo:0.645,A2s:0.979,AA,A4s:0.022,A5o:0.003,A5s:0.022,J7s,J8s,J9s,JTs,JJ,K3s,K4s,K5s,K6s,K7s,K8s,K9s,KJs,KQs,KQo,KTs,K2s,KK,Q6s,Q7s,Q8s,Q9s,QJs,QTs,QQ,T7s:0.008,T8s:0.047,T9s:0.996,TT:0.008
+set_range_oop 33:0.015,44:0.199,55:0.245,66:0.174,77:0.408,88:0.543,99:0.743,A2o:0.482,AJs,AJo,AQs:0.951,AQo:0.943,ATs:0.046,ATo:0.046,A2s:0.412,AA,J7s:0.752,J8s:0.764,J9s:0.688,JTs:0.994,JTo:0.993,QJs:0.397,QJo:0.395,QQ:0.467,TT:0.299
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_paired_high_cbet33_call_turn_straight_card_river_blank.json

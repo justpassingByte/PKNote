@@ -1,0 +1,23 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Ks,Kd,2c,Jh
+set_range_ip 22:0.008,55:0.001,65s:0.002,87s:0.002,98s:0.001,A3s:0.002,A4s:0.002,A5s:0.001,A5o:0.003,A6s:0.001,AKs:0.001,AKo:0.002,JTs:0.002,K6s:0.001,QJs:0.002,T9s:0.001
+set_range_oop 33:0.818,44:0.88,55:0.946,66:0.908,77:0.845,88:0.856,99:0.864,A2o:0.459,A3s:0.057,A4s:0.093,A5s:0.171,A6s:0.062,A7s:0.22,A8s:0.517,A9s:0.798,AJs:0.936,AJo:0.676,AKs:0.052,AKo:0.022,AQs:0.688,AQo:0.919,ATs:0.845,ATo:0.3,A2s:0.688,AA,A9o:0.098,J9s:0.052,JTs:0.391,JJ:0.923,K3s:0.774,K4s:0.794,K5s:0.774,K6s:0.83,K7s:0.777,K8s:0.744,K9s:0.757,K9o:0.882,KJs:0.729,KJo:0.901,KQs:0.495,KQo:0.579,KTs:0.769,KTo:0.889,Q8s:0.123,Q9s:0.45,QJs:0.595,QJo:0.286,QTs:0.454,QQ:0.994,TT:0.897
+set_bet_sizes oop,flop,bet,75
+set_bet_sizes oop,flop,raise,60
+set_bet_sizes ip,flop,bet,75
+set_bet_sizes ip,flop,raise,60
+set_bet_sizes oop,turn,bet,75
+set_bet_sizes oop,turn,raise,60
+set_bet_sizes ip,turn,bet,75
+set_bet_sizes ip,turn,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 2000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\turn\raw\BTN_vs_BB_paired_high_cbet75_call_turn_straight_card.json

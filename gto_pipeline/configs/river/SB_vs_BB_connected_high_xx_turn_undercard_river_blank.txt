@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Ks,Qd,Jc,5c,7d
+set_range_ip 22,43s,55,64s,76s,86s:0.304,87s:0.245,96s:0.002,A2s,A3s,A4s:0.999,A6s:0.001,A9s:0.471,A9o:0.498,AKs,AKo:0.996,AQs,AQo:0.096,ATs,ATo,AA:0.865,JJ,K2s,K3s,K4s,K6s,K7s,K8s,K9s,KJo,KQs,KQo,KTs,KTo,K5s,KJs,KK,Q9s,QJo,QTs,QJs,QQ,T8s:0.542,T9s
+set_range_oop 99:0.077,AJo,AQo:0.965,A5s,AA:0.003,AJs,AQs,J8s:0.528,J9s,JTo,JTs,Q8s:0.837,Q9s,QJo:0.525,QJs:0.421,QTs:0.952,TT:0.234
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\SB_vs_BB_connected_high_xx_turn_undercard_river_blank.json

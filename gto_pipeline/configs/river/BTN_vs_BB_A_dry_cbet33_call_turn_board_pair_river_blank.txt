@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board As,7d,2c,7h,5c
+set_range_ip 22,33:0.002,43s,53s,54s,64s,65s:0.998,76s,75s,77,86s:0.005,87s,85s:0.817,96s:0.4,97s,98s:0.015,A7s,A9s,A9o,AJs,AJo,AKs,AKo,AQs,AQo,ATs,ATo,AA,J7s,K7s,Q7s,T7s
+set_range_oop A2o,A3s,A3o,A4s:0.885,A4o:0.892,A5o:0.921,A6s:0.991,A8s,A9s,A9o,AJs:0.988,AJo:0.993,AKs:0.677,AKo:0.68,AQs:0.743,AQo:0.837,ATs,ATo,A2s,A5s:0.73
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_A_dry_cbet33_call_turn_board_pair_river_blank.json

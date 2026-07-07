@@ -1,0 +1,4608 @@
+{
+  "position": "CO_vs_BTN",
+  "board_bucket": "paired_high",
+  "board": "Ks,Kd,2c",
+  "config": {
+    "pot": 5.5,
+    "stack": 100,
+    "bet_sizes_pct": [
+      33,
+      75
+    ],
+    "iterations": 3000,
+    "action_line": null,
+    "turn_type": null,
+    "river_type": null
+  },
+  "strategy": {
+    "oop": {
+      "check": 0.1174,
+      "bet_small": 0.7727,
+      "bet_big": 0.1098
+    },
+    "ip": {
+      "check": 0.5622,
+      "bet_small": 0.2312,
+      "bet_big": 0.2066
+    }
+  },
+  "oop_facing_cbet": {
+    "vs_bet_small": {
+      "raise": 0.3063,
+      "call": 0.5958,
+      "fold": 0.0979
+    },
+    "vs_bet_big": {
+      "raise": 0.1425,
+      "call": 0.5491,
+      "fold": 0.3084
+    }
+  },
+  "per_hand": {
+    "oop": {
+      "2h2d": {
+        "check": 0.1554,
+        "bet_small": 0.7847,
+        "bet_big": 0.0599
+      },
+      "2s2d": {
+        "check": 0.092,
+        "bet_small": 0.7611,
+        "bet_big": 0.1469
+      },
+      "2s2h": {
+        "check": 0.1785,
+        "bet_small": 0.7537,
+        "bet_big": 0.0678
+      },
+      "3d3c": {
+        "check": 0.0792,
+        "bet_small": 0.7803,
+        "bet_big": 0.1405
+      },
+      "3h3c": {
+        "check": 0.0,
+        "bet_small": 0.8771,
+        "bet_big": 0.1229
+      },
+      "3h3d": {
+        "check": 0.0,
+        "bet_small": 0.8763,
+        "bet_big": 0.1237
+      },
+      "3s3c": {
+        "check": 0.083,
+        "bet_small": 0.7892,
+        "bet_big": 0.1278
+      },
+      "3s3d": {
+        "check": 0.0839,
+        "bet_small": 0.788,
+        "bet_big": 0.1281
+      },
+      "3s3h": {
+        "check": 0.0,
+        "bet_small": 0.8871,
+        "bet_big": 0.1129
+      },
+      "4d4c": {
+        "check": 0.1144,
+        "bet_small": 0.7733,
+        "bet_big": 0.1123
+      },
+      "4h4c": {
+        "check": 0.072,
+        "bet_small": 0.8255,
+        "bet_big": 0.1025
+      },
+      "4h4d": {
+        "check": 0.073,
+        "bet_small": 0.8226,
+        "bet_big": 0.1044
+      },
+      "4s4c": {
+        "check": 0.1176,
+        "bet_small": 0.7766,
+        "bet_big": 0.1058
+      },
+      "4s4d": {
+        "check": 0.1109,
+        "bet_small": 0.8307,
+        "bet_big": 0.0584
+      },
+      "4s4h": {
+        "check": 0.0806,
+        "bet_small": 0.8236,
+        "bet_big": 0.0958
+      },
+      "5c4c": {
+        "check": 0.0,
+        "bet_small": 0.9174,
+        "bet_big": 0.0826
+      },
+      "5d4d": {
+        "check": 0.0,
+        "bet_small": 0.8895,
+        "bet_big": 0.1105
+      },
+      "5d5c": {
+        "check": 0.1287,
+        "bet_small": 0.7641,
+        "bet_big": 0.1072
+      },
+      "5h4h": {
+        "check": 0.4935,
+        "bet_small": 0.5065,
+        "bet_big": 0.0
+      },
+      "5h5c": {
+        "check": 0.1449,
+        "bet_small": 0.8551,
+        "bet_big": 0.0
+      },
+      "5h5d": {
+        "check": 0.12,
+        "bet_small": 0.8287,
+        "bet_big": 0.0513
+      },
+      "5s4s": {
+        "check": 0.0,
+        "bet_small": 0.8932,
+        "bet_big": 0.1068
+      },
+      "5s5c": {
+        "check": 0.1323,
+        "bet_small": 0.7611,
+        "bet_big": 0.1066
+      },
+      "5s5d": {
+        "check": 0.1157,
+        "bet_small": 0.8289,
+        "bet_big": 0.0554
+      },
+      "5s5h": {
+        "check": 0.1301,
+        "bet_small": 0.8196,
+        "bet_big": 0.0503
+      },
+      "6c5c": {
+        "check": 0.2856,
+        "bet_small": 0.6582,
+        "bet_big": 0.0562
+      },
+      "6d5d": {
+        "check": 0.1868,
+        "bet_small": 0.7507,
+        "bet_big": 0.0625
+      },
+      "6d6c": {
+        "check": 0.1405,
+        "bet_small": 0.7851,
+        "bet_big": 0.0744
+      },
+      "6h5h": {
+        "check": 0.7649,
+        "bet_small": 0.2351,
+        "bet_big": 0.0
+      },
+      "6h6c": {
+        "check": 0.1799,
+        "bet_small": 0.8201,
+        "bet_big": 0.0
+      },
+      "6h6d": {
+        "check": 0.1443,
+        "bet_small": 0.7996,
+        "bet_big": 0.0561
+      },
+      "6s5s": {
+        "check": 0.1819,
+        "bet_small": 0.7567,
+        "bet_big": 0.0614
+      },
+      "6s6c": {
+        "check": 0.1508,
+        "bet_small": 0.7805,
+        "bet_big": 0.0687
+      },
+      "6s6d": {
+        "check": 0.1379,
+        "bet_small": 0.8072,
+        "bet_big": 0.0549
+      },
+      "6s6h": {
+        "check": 0.164,
+        "bet_small": 0.836,
+        "bet_big": 0.0
+      },
+      "7c6c": {
+        "check": 0.544,
+        "bet_small": 0.456,
+        "bet_big": 0.0
+      },
+      "7d6d": {
+        "check": 0.4157,
+        "bet_small": 0.4919,
+        "bet_big": 0.0924
+      },
+      "7d7c": {
+        "check": 0.1246,
+        "bet_small": 0.7686,
+        "bet_big": 0.1068
+      },
+      "7h6h": {
+        "check": 0.7932,
+        "bet_small": 0.2068,
+        "bet_big": 0.0
+      },
+      "7h7c": {
+        "check": 0.1336,
+        "bet_small": 0.8029,
+        "bet_big": 0.0635
+      },
+      "7h7d": {
+        "check": 0.1364,
+        "bet_small": 0.794,
+        "bet_big": 0.0696
+      },
+      "7s6s": {
+        "check": 0.4109,
+        "bet_small": 0.5023,
+        "bet_big": 0.0868
+      },
+      "7s7c": {
+        "check": 0.1308,
+        "bet_small": 0.7735,
+        "bet_big": 0.0957
+      },
+      "7s7d": {
+        "check": 0.1268,
+        "bet_small": 0.7836,
+        "bet_big": 0.0896
+      },
+      "7s7h": {
+        "check": 0.1431,
+        "bet_small": 0.8002,
+        "bet_big": 0.0567
+      },
+      "8c6c": {
+        "check": 0.3992,
+        "bet_small": 0.6008,
+        "bet_big": 0.0
+      },
+      "8c7c": {
+        "check": 0.1978,
+        "bet_small": 0.7209,
+        "bet_big": 0.0813
+      },
+      "8d6d": {
+        "check": 0.4198,
+        "bet_small": 0.5802,
+        "bet_big": 0.0
+      },
+      "8d7d": {
+        "check": 0.1769,
+        "bet_small": 0.7302,
+        "bet_big": 0.0929
+      },
+      "8d8c": {
+        "check": 0.1127,
+        "bet_small": 0.8006,
+        "bet_big": 0.0867
+      },
+      "8h6h": {
+        "check": 0.6999,
+        "bet_small": 0.3001,
+        "bet_big": 0.0
+      },
+      "8h7h": {
+        "check": 0.428,
+        "bet_small": 0.461,
+        "bet_big": 0.111
+      },
+      "8h8c": {
+        "check": 0.123,
+        "bet_small": 0.8022,
+        "bet_big": 0.0748
+      },
+      "8h8d": {
+        "check": 0.138,
+        "bet_small": 0.7851,
+        "bet_big": 0.0769
+      },
+      "8s6s": {
+        "check": 0.4075,
+        "bet_small": 0.5925,
+        "bet_big": 0.0
+      },
+      "8s7s": {
+        "check": 0.1652,
+        "bet_small": 0.7421,
+        "bet_big": 0.0927
+      },
+      "8s8c": {
+        "check": 0.1151,
+        "bet_small": 0.8099,
+        "bet_big": 0.075
+      },
+      "8s8d": {
+        "check": 0.1185,
+        "bet_small": 0.8172,
+        "bet_big": 0.0643
+      },
+      "8s8h": {
+        "check": 0.136,
+        "bet_small": 0.7956,
+        "bet_big": 0.0684
+      },
+      "9c7c": {
+        "check": 0.0809,
+        "bet_small": 0.9191,
+        "bet_big": 0.0
+      },
+      "9c8c": {
+        "check": 0.0,
+        "bet_small": 0.9429,
+        "bet_big": 0.0571
+      },
+      "9d7d": {
+        "check": 0.1299,
+        "bet_small": 0.8701,
+        "bet_big": 0.0
+      },
+      "9d8d": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "9d9c": {
+        "check": 0.0927,
+        "bet_small": 0.8492,
+        "bet_big": 0.0581
+      },
+      "9h7h": {
+        "check": 0.5405,
+        "bet_small": 0.4595,
+        "bet_big": 0.0
+      },
+      "9h8h": {
+        "check": 0.2875,
+        "bet_small": 0.5281,
+        "bet_big": 0.1844
+      },
+      "9h9c": {
+        "check": 0.1024,
+        "bet_small": 0.7968,
+        "bet_big": 0.1008
+      },
+      "9h9d": {
+        "check": 0.1235,
+        "bet_small": 0.8164,
+        "bet_big": 0.0601
+      },
+      "9s7s": {
+        "check": 0.1217,
+        "bet_small": 0.8783,
+        "bet_big": 0.0
+      },
+      "9s8s": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "9s9c": {
+        "check": 0.0989,
+        "bet_small": 0.9011,
+        "bet_big": 0.0
+      },
+      "9s9d": {
+        "check": 0.0918,
+        "bet_small": 0.8485,
+        "bet_big": 0.0597
+      },
+      "9s9h": {
+        "check": 0.1258,
+        "bet_small": 0.8199,
+        "bet_big": 0.0543
+      },
+      "Ac3c": {
+        "check": 0.0,
+        "bet_small": 0.7193,
+        "bet_big": 0.2807
+      },
+      "Ac4c": {
+        "check": 0.0,
+        "bet_small": 0.7125,
+        "bet_big": 0.2875
+      },
+      "Ac5c": {
+        "check": 0.0,
+        "bet_small": 0.7223,
+        "bet_big": 0.2777
+      },
+      "Ac6c": {
+        "check": 0.0,
+        "bet_small": 0.6493,
+        "bet_big": 0.3507
+      },
+      "Ac7c": {
+        "check": 0.0,
+        "bet_small": 0.6079,
+        "bet_big": 0.3921
+      },
+      "Ac8c": {
+        "check": 0.1558,
+        "bet_small": 0.5503,
+        "bet_big": 0.2939
+      },
+      "Ac9c": {
+        "check": 0.1219,
+        "bet_small": 0.8781,
+        "bet_big": 0.0
+      },
+      "AcJc": {
+        "check": 0.0855,
+        "bet_small": 0.9145,
+        "bet_big": 0.0
+      },
+      "AcJd": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AcJh": {
+        "check": 0.0684,
+        "bet_small": 0.9316,
+        "bet_big": 0.0
+      },
+      "AcJs": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AcKc": {
+        "check": 0.0679,
+        "bet_small": 0.7049,
+        "bet_big": 0.2272
+      },
+      "AcKh": {
+        "check": 0.0,
+        "bet_small": 0.7233,
+        "bet_big": 0.2767
+      },
+      "AcQc": {
+        "check": 0.0771,
+        "bet_small": 0.9229,
+        "bet_big": 0.0
+      },
+      "AcQd": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AcQh": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AcQs": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AcTc": {
+        "check": 0.1107,
+        "bet_small": 0.8202,
+        "bet_big": 0.0691
+      },
+      "AcTd": {
+        "check": 0.0749,
+        "bet_small": 0.9251,
+        "bet_big": 0.0
+      },
+      "AcTh": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AcTs": {
+        "check": 0.0881,
+        "bet_small": 0.9119,
+        "bet_big": 0.0
+      },
+      "Ad2d": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "Ad3d": {
+        "check": 0.0,
+        "bet_small": 0.6503,
+        "bet_big": 0.3497
+      },
+      "Ad4d": {
+        "check": 0.0,
+        "bet_small": 0.7235,
+        "bet_big": 0.2765
+      },
+      "Ad5d": {
+        "check": 0.0,
+        "bet_small": 0.7621,
+        "bet_big": 0.2379
+      },
+      "Ad6d": {
+        "check": 0.0,
+        "bet_small": 0.6228,
+        "bet_big": 0.3772
+      },
+      "Ad7d": {
+        "check": 0.0,
+        "bet_small": 0.5913,
+        "bet_big": 0.4087
+      },
+      "Ad8d": {
+        "check": 0.129,
+        "bet_small": 0.5749,
+        "bet_big": 0.2961
+      },
+      "Ad9d": {
+        "check": 0.1243,
+        "bet_small": 0.8757,
+        "bet_big": 0.0
+      },
+      "AdAc": {
+        "check": 0.0771,
+        "bet_small": 0.8483,
+        "bet_big": 0.0746
+      },
+      "AdJc": {
+        "check": 0.0622,
+        "bet_small": 0.8806,
+        "bet_big": 0.0572
+      },
+      "AdJd": {
+        "check": 0.1092,
+        "bet_small": 0.8908,
+        "bet_big": 0.0
+      },
+      "AdJh": {
+        "check": 0.0,
+        "bet_small": 0.9066,
+        "bet_big": 0.0934
+      },
+      "AdJs": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AdKc": {
+        "check": 0.0,
+        "bet_small": 0.7182,
+        "bet_big": 0.2818
+      },
+      "AdKh": {
+        "check": 0.0536,
+        "bet_small": 0.7084,
+        "bet_big": 0.238
+      },
+      "AdQc": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AdQd": {
+        "check": 0.116,
+        "bet_small": 0.884,
+        "bet_big": 0.0
+      },
+      "AdQh": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AdQs": {
+        "check": 0.0,
+        "bet_small": 0.9322,
+        "bet_big": 0.0678
+      },
+      "AdTc": {
+        "check": 0.0596,
+        "bet_small": 0.8579,
+        "bet_big": 0.0825
+      },
+      "AdTd": {
+        "check": 0.1305,
+        "bet_small": 0.8695,
+        "bet_big": 0.0
+      },
+      "AdTh": {
+        "check": 0.0,
+        "bet_small": 0.8759,
+        "bet_big": 0.1241
+      },
+      "AdTs": {
+        "check": 0.0736,
+        "bet_small": 0.9264,
+        "bet_big": 0.0
+      },
+      "Ah2h": {
+        "check": 0.0712,
+        "bet_small": 0.9288,
+        "bet_big": 0.0
+      },
+      "Ah3h": {
+        "check": 0.1608,
+        "bet_small": 0.5705,
+        "bet_big": 0.2687
+      },
+      "Ah4h": {
+        "check": 0.4443,
+        "bet_small": 0.3721,
+        "bet_big": 0.1836
+      },
+      "Ah5h": {
+        "check": 0.5888,
+        "bet_small": 0.2407,
+        "bet_big": 0.1705
+      },
+      "Ah6h": {
+        "check": 0.9334,
+        "bet_small": 0.0,
+        "bet_big": 0.0666
+      },
+      "Ah7h": {
+        "check": 0.9032,
+        "bet_small": 0.0,
+        "bet_big": 0.0968
+      },
+      "Ah8h": {
+        "check": 0.612,
+        "bet_small": 0.2167,
+        "bet_big": 0.1713
+      },
+      "Ah9h": {
+        "check": 0.547,
+        "bet_small": 0.4003,
+        "bet_big": 0.0527
+      },
+      "AhAc": {
+        "check": 0.1645,
+        "bet_small": 0.8355,
+        "bet_big": 0.0
+      },
+      "AhAd": {
+        "check": 0.1639,
+        "bet_small": 0.8361,
+        "bet_big": 0.0
+      },
+      "AhJc": {
+        "check": 0.1204,
+        "bet_small": 0.8277,
+        "bet_big": 0.0519
+      },
+      "AhJd": {
+        "check": 0.0948,
+        "bet_small": 0.9052,
+        "bet_big": 0.0
+      },
+      "AhJh": {
+        "check": 0.1013,
+        "bet_small": 0.8987,
+        "bet_big": 0.0
+      },
+      "AhJs": {
+        "check": 0.1003,
+        "bet_small": 0.8997,
+        "bet_big": 0.0
+      },
+      "AhKc": {
+        "check": 0.061,
+        "bet_small": 0.7239,
+        "bet_big": 0.2151
+      },
+      "AhKh": {
+        "check": 0.056,
+        "bet_small": 0.7388,
+        "bet_big": 0.2052
+      },
+      "AhQc": {
+        "check": 0.094,
+        "bet_small": 0.8451,
+        "bet_big": 0.0609
+      },
+      "AhQd": {
+        "check": 0.077,
+        "bet_small": 0.8532,
+        "bet_big": 0.0698
+      },
+      "AhQh": {
+        "check": 0.0935,
+        "bet_small": 0.9065,
+        "bet_big": 0.0
+      },
+      "AhQs": {
+        "check": 0.0751,
+        "bet_small": 0.8527,
+        "bet_big": 0.0722
+      },
+      "AhTc": {
+        "check": 0.1429,
+        "bet_small": 0.7375,
+        "bet_big": 0.1196
+      },
+      "AhTd": {
+        "check": 0.1776,
+        "bet_small": 0.8224,
+        "bet_big": 0.0
+      },
+      "AhTh": {
+        "check": 0.206,
+        "bet_small": 0.7218,
+        "bet_big": 0.0722
+      },
+      "AhTs": {
+        "check": 0.1838,
+        "bet_small": 0.8162,
+        "bet_big": 0.0
+      },
+      "As2s": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "As3s": {
+        "check": 0.0,
+        "bet_small": 0.6526,
+        "bet_big": 0.3474
+      },
+      "As4s": {
+        "check": 0.0,
+        "bet_small": 0.7215,
+        "bet_big": 0.2785
+      },
+      "As5s": {
+        "check": 0.0,
+        "bet_small": 0.7562,
+        "bet_big": 0.2438
+      },
+      "As6s": {
+        "check": 0.0,
+        "bet_small": 0.6244,
+        "bet_big": 0.3756
+      },
+      "As7s": {
+        "check": 0.0,
+        "bet_small": 0.5921,
+        "bet_big": 0.4079
+      },
+      "As8s": {
+        "check": 0.1367,
+        "bet_small": 0.5711,
+        "bet_big": 0.2922
+      },
+      "As9s": {
+        "check": 0.1336,
+        "bet_small": 0.8664,
+        "bet_big": 0.0
+      },
+      "AsAc": {
+        "check": 0.1279,
+        "bet_small": 0.8721,
+        "bet_big": 0.0
+      },
+      "AsAd": {
+        "check": 0.1165,
+        "bet_small": 0.8835,
+        "bet_big": 0.0
+      },
+      "AsAh": {
+        "check": 0.16,
+        "bet_small": 0.84,
+        "bet_big": 0.0
+      },
+      "AsJc": {
+        "check": 0.063,
+        "bet_small": 0.8776,
+        "bet_big": 0.0594
+      },
+      "AsJd": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AsJh": {
+        "check": 0.0534,
+        "bet_small": 0.8575,
+        "bet_big": 0.0891
+      },
+      "AsJs": {
+        "check": 0.1083,
+        "bet_small": 0.8917,
+        "bet_big": 0.0
+      },
+      "AsKc": {
+        "check": 0.0,
+        "bet_small": 0.7148,
+        "bet_big": 0.2852
+      },
+      "AsKh": {
+        "check": 0.0539,
+        "bet_small": 0.707,
+        "bet_big": 0.2391
+      },
+      "AsQc": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AsQd": {
+        "check": 0.0,
+        "bet_small": 0.9367,
+        "bet_big": 0.0633
+      },
+      "AsQh": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "AsQs": {
+        "check": 0.1129,
+        "bet_small": 0.8871,
+        "bet_big": 0.0
+      },
+      "AsTc": {
+        "check": 0.0624,
+        "bet_small": 0.8542,
+        "bet_big": 0.0834
+      },
+      "AsTd": {
+        "check": 0.0792,
+        "bet_small": 0.9208,
+        "bet_big": 0.0
+      },
+      "AsTh": {
+        "check": 0.0,
+        "bet_small": 0.8675,
+        "bet_big": 0.1325
+      },
+      "AsTs": {
+        "check": 0.1382,
+        "bet_small": 0.8618,
+        "bet_big": 0.0
+      },
+      "Jc9c": {
+        "check": 0.0,
+        "bet_small": 0.7077,
+        "bet_big": 0.2923
+      },
+      "JcTc": {
+        "check": 0.0,
+        "bet_small": 0.7654,
+        "bet_big": 0.2346
+      },
+      "Jd9d": {
+        "check": 0.0509,
+        "bet_small": 0.6398,
+        "bet_big": 0.3093
+      },
+      "JdJc": {
+        "check": 0.0766,
+        "bet_small": 0.8355,
+        "bet_big": 0.0879
+      },
+      "JdTd": {
+        "check": 0.0,
+        "bet_small": 0.7569,
+        "bet_big": 0.2431
+      },
+      "Jh9h": {
+        "check": 0.0,
+        "bet_small": 0.7137,
+        "bet_big": 0.2863
+      },
+      "JhJc": {
+        "check": 0.0,
+        "bet_small": 0.87,
+        "bet_big": 0.13
+      },
+      "JhJd": {
+        "check": 0.0778,
+        "bet_small": 0.8449,
+        "bet_big": 0.0773
+      },
+      "JhTh": {
+        "check": 0.0575,
+        "bet_small": 0.7716,
+        "bet_big": 0.1709
+      },
+      "Js9s": {
+        "check": 0.0,
+        "bet_small": 0.6873,
+        "bet_big": 0.3127
+      },
+      "JsJc": {
+        "check": 0.0794,
+        "bet_small": 0.8267,
+        "bet_big": 0.0939
+      },
+      "JsJd": {
+        "check": 0.0663,
+        "bet_small": 0.819,
+        "bet_big": 0.1147
+      },
+      "JsJh": {
+        "check": 0.0796,
+        "bet_small": 0.8381,
+        "bet_big": 0.0823
+      },
+      "JsTs": {
+        "check": 0.0,
+        "bet_small": 0.7663,
+        "bet_big": 0.2337
+      },
+      "Kc9c": {
+        "check": 0.0,
+        "bet_small": 0.8358,
+        "bet_big": 0.1642
+      },
+      "KcJc": {
+        "check": 0.0908,
+        "bet_small": 0.7466,
+        "bet_big": 0.1626
+      },
+      "KcJd": {
+        "check": 0.0,
+        "bet_small": 0.8479,
+        "bet_big": 0.1521
+      },
+      "KcJh": {
+        "check": 0.0,
+        "bet_small": 0.7966,
+        "bet_big": 0.2034
+      },
+      "KcJs": {
+        "check": 0.0,
+        "bet_small": 0.8497,
+        "bet_big": 0.1503
+      },
+      "KcQc": {
+        "check": 0.1062,
+        "bet_small": 0.8176,
+        "bet_big": 0.0762
+      },
+      "KcQd": {
+        "check": 0.0,
+        "bet_small": 0.858,
+        "bet_big": 0.142
+      },
+      "KcQh": {
+        "check": 0.0,
+        "bet_small": 0.7828,
+        "bet_big": 0.2172
+      },
+      "KcQs": {
+        "check": 0.0506,
+        "bet_small": 0.806,
+        "bet_big": 0.1434
+      },
+      "KcTc": {
+        "check": 0.0566,
+        "bet_small": 0.8393,
+        "bet_big": 0.1041
+      },
+      "Kh9h": {
+        "check": 0.0,
+        "bet_small": 0.8524,
+        "bet_big": 0.1476
+      },
+      "KhJc": {
+        "check": 0.0,
+        "bet_small": 0.8702,
+        "bet_big": 0.1298
+      },
+      "KhJd": {
+        "check": 0.0722,
+        "bet_small": 0.8246,
+        "bet_big": 0.1032
+      },
+      "KhJh": {
+        "check": 0.0,
+        "bet_small": 0.8049,
+        "bet_big": 0.1951
+      },
+      "KhJs": {
+        "check": 0.0759,
+        "bet_small": 0.8239,
+        "bet_big": 0.1002
+      },
+      "KhKc": {
+        "check": 0.0,
+        "bet_small": 1.0,
+        "bet_big": 0.0
+      },
+      "KhQc": {
+        "check": 0.0,
+        "bet_small": 0.8215,
+        "bet_big": 0.1785
+      },
+      "KhQd": {
+        "check": 0.0725,
+        "bet_small": 0.8237,
+        "bet_big": 0.1038
+      },
+      "KhQh": {
+        "check": 0.0505,
+        "bet_small": 0.7705,
+        "bet_big": 0.179
+      },
+      "KhQs": {
+        "check": 0.073,
+        "bet_small": 0.827,
+        "bet_big": 0.1
+      },
+      "KhTh": {
+        "check": 0.0,
+        "bet_small": 0.8676,
+        "bet_big": 0.1324
+      },
+      "Qc9c": {
+        "check": 0.0,
+        "bet_small": 0.795,
+        "bet_big": 0.205
+      },
+      "QcJc": {
+        "check": 0.0509,
+        "bet_small": 0.7139,
+        "bet_big": 0.2352
+      },
+      "QcTc": {
+        "check": 0.0565,
+        "bet_small": 0.7572,
+        "bet_big": 0.1863
+      },
+      "Qd9d": {
+        "check": 0.0,
+        "bet_small": 0.792,
+        "bet_big": 0.208
+      },
+      "QdJd": {
+        "check": 0.0762,
+        "bet_small": 0.6482,
+        "bet_big": 0.2756
+      },
+      "QdQc": {
+        "check": 0.0852,
+        "bet_small": 0.8345,
+        "bet_big": 0.0803
+      },
+      "QdTd": {
+        "check": 0.0603,
+        "bet_small": 0.7422,
+        "bet_big": 0.1975
+      },
+      "Qh9h": {
+        "check": 0.0,
+        "bet_small": 0.7793,
+        "bet_big": 0.2207
+      },
+      "QhJh": {
+        "check": 0.0,
+        "bet_small": 0.7561,
+        "bet_big": 0.2439
+      },
+      "QhQc": {
+        "check": 0.0639,
+        "bet_small": 0.8529,
+        "bet_big": 0.0832
+      },
+      "QhQd": {
+        "check": 0.0706,
+        "bet_small": 0.8474,
+        "bet_big": 0.082
+      },
+      "QhTh": {
+        "check": 0.0,
+        "bet_small": 0.842,
+        "bet_big": 0.158
+      },
+      "Qs9s": {
+        "check": 0.0,
+        "bet_small": 0.8074,
+        "bet_big": 0.1926
+      },
+      "QsJs": {
+        "check": 0.0741,
+        "bet_small": 0.6582,
+        "bet_big": 0.2677
+      },
+      "QsQc": {
+        "check": 0.0872,
+        "bet_small": 0.8294,
+        "bet_big": 0.0834
+      },
+      "QsQd": {
+        "check": 0.0985,
+        "bet_small": 0.815,
+        "bet_big": 0.0865
+      },
+      "QsQh": {
+        "check": 0.0733,
+        "bet_small": 0.8403,
+        "bet_big": 0.0864
+      },
+      "QsTs": {
+        "check": 0.0612,
+        "bet_small": 0.7509,
+        "bet_big": 0.1879
+      },
+      "Tc8c": {
+        "check": 0.0,
+        "bet_small": 0.9365,
+        "bet_big": 0.0635
+      },
+      "Tc9c": {
+        "check": 0.0627,
+        "bet_small": 0.7419,
+        "bet_big": 0.1954
+      },
+      "Td8d": {
+        "check": 0.0,
+        "bet_small": 0.92,
+        "bet_big": 0.08
+      },
+      "Td9d": {
+        "check": 0.0617,
+        "bet_small": 0.7601,
+        "bet_big": 0.1782
+      },
+      "TdTc": {
+        "check": 0.0937,
+        "bet_small": 0.8226,
+        "bet_big": 0.0837
+      },
+      "Th8h": {
+        "check": 0.1241,
+        "bet_small": 0.8759,
+        "bet_big": 0.0
+      },
+      "Th9h": {
+        "check": 0.0988,
+        "bet_small": 0.7625,
+        "bet_big": 0.1387
+      },
+      "ThTc": {
+        "check": 0.0572,
+        "bet_small": 0.8729,
+        "bet_big": 0.0699
+      },
+      "ThTd": {
+        "check": 0.0852,
+        "bet_small": 0.9148,
+        "bet_big": 0.0
+      },
+      "Ts8s": {
+        "check": 0.0,
+        "bet_small": 0.9161,
+        "bet_big": 0.0839
+      },
+      "Ts9s": {
+        "check": 0.0656,
+        "bet_small": 0.7488,
+        "bet_big": 0.1856
+      },
+      "TsTc": {
+        "check": 0.0955,
+        "bet_small": 0.8266,
+        "bet_big": 0.0779
+      },
+      "TsTd": {
+        "check": 0.1099,
+        "bet_small": 0.8031,
+        "bet_big": 0.087
+      },
+      "TsTh": {
+        "check": 0.0855,
+        "bet_small": 0.9145,
+        "bet_big": 0.0
+      }
+    },
+    "ip": {
+      "2h2d": {
+        "check": 0.0,
+        "bet_small": 0.5738,
+        "bet_big": 0.4262
+      },
+      "2s2d": {
+        "check": 0.0,
+        "bet_small": 0.5598,
+        "bet_big": 0.4402
+      },
+      "2s2h": {
+        "check": 0.0,
+        "bet_small": 0.5684,
+        "bet_big": 0.4316
+      },
+      "3d3c": {
+        "check": 0.6287,
+        "bet_small": 0.2804,
+        "bet_big": 0.0909
+      },
+      "3h3c": {
+        "check": 0.6167,
+        "bet_small": 0.2749,
+        "bet_big": 0.1084
+      },
+      "3h3d": {
+        "check": 0.6308,
+        "bet_small": 0.266,
+        "bet_big": 0.1032
+      },
+      "3s3c": {
+        "check": 0.6348,
+        "bet_small": 0.2796,
+        "bet_big": 0.0856
+      },
+      "3s3d": {
+        "check": 0.6547,
+        "bet_small": 0.2681,
+        "bet_big": 0.0772
+      },
+      "3s3h": {
+        "check": 0.6368,
+        "bet_small": 0.2653,
+        "bet_big": 0.0979
+      },
+      "4d4c": {
+        "check": 0.579,
+        "bet_small": 0.2975,
+        "bet_big": 0.1235
+      },
+      "4h4c": {
+        "check": 0.6893,
+        "bet_small": 0.232,
+        "bet_big": 0.0787
+      },
+      "4h4d": {
+        "check": 0.6609,
+        "bet_small": 0.2398,
+        "bet_big": 0.0993
+      },
+      "4s4c": {
+        "check": 0.5863,
+        "bet_small": 0.2968,
+        "bet_big": 0.1169
+      },
+      "4s4d": {
+        "check": 0.5805,
+        "bet_small": 0.2992,
+        "bet_big": 0.1203
+      },
+      "4s4h": {
+        "check": 0.6709,
+        "bet_small": 0.2386,
+        "bet_big": 0.0905
+      },
+      "5c4c": {
+        "check": 0.3578,
+        "bet_small": 0.2462,
+        "bet_big": 0.396
+      },
+      "5d4d": {
+        "check": 0.2813,
+        "bet_small": 0.271,
+        "bet_big": 0.4478
+      },
+      "5d5c": {
+        "check": 0.5267,
+        "bet_small": 0.2624,
+        "bet_big": 0.2109
+      },
+      "5h4h": {
+        "check": 0.8026,
+        "bet_small": 0.1974,
+        "bet_big": 0.0
+      },
+      "5h5c": {
+        "check": 0.7629,
+        "bet_small": 0.1495,
+        "bet_big": 0.0876
+      },
+      "5h5d": {
+        "check": 0.7036,
+        "bet_small": 0.1563,
+        "bet_big": 0.1401
+      },
+      "5s4s": {
+        "check": 0.2899,
+        "bet_small": 0.2699,
+        "bet_big": 0.4403
+      },
+      "5s5c": {
+        "check": 0.5358,
+        "bet_small": 0.2618,
+        "bet_big": 0.2024
+      },
+      "5s5d": {
+        "check": 0.5212,
+        "bet_small": 0.2501,
+        "bet_big": 0.2287
+      },
+      "5s5h": {
+        "check": 0.7201,
+        "bet_small": 0.1528,
+        "bet_big": 0.1271
+      },
+      "6c4c": {
+        "check": 0.5665,
+        "bet_small": 0.2147,
+        "bet_big": 0.2188
+      },
+      "6c5c": {
+        "check": 0.4686,
+        "bet_small": 0.2661,
+        "bet_big": 0.2654
+      },
+      "6d4d": {
+        "check": 0.4537,
+        "bet_small": 0.2354,
+        "bet_big": 0.3109
+      },
+      "6d5d": {
+        "check": 0.4048,
+        "bet_small": 0.279,
+        "bet_big": 0.3162
+      },
+      "6d6c": {
+        "check": 0.7643,
+        "bet_small": 0.1406,
+        "bet_big": 0.0951
+      },
+      "6h4h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "6h5h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "6h6c": {
+        "check": 0.8294,
+        "bet_small": 0.1706,
+        "bet_big": 0.0
+      },
+      "6h6d": {
+        "check": 0.7635,
+        "bet_small": 0.1469,
+        "bet_big": 0.0896
+      },
+      "6s4s": {
+        "check": 0.4577,
+        "bet_small": 0.2359,
+        "bet_big": 0.3064
+      },
+      "6s5s": {
+        "check": 0.4061,
+        "bet_small": 0.2805,
+        "bet_big": 0.3134
+      },
+      "6s6c": {
+        "check": 0.7703,
+        "bet_small": 0.1417,
+        "bet_big": 0.088
+      },
+      "6s6d": {
+        "check": 0.7739,
+        "bet_small": 0.1208,
+        "bet_big": 0.1053
+      },
+      "6s6h": {
+        "check": 0.7708,
+        "bet_small": 0.1469,
+        "bet_big": 0.0823
+      },
+      "7c5c": {
+        "check": 0.7198,
+        "bet_small": 0.2802,
+        "bet_big": 0.0
+      },
+      "7c6c": {
+        "check": 0.7583,
+        "bet_small": 0.2417,
+        "bet_big": 0.0
+      },
+      "7d5d": {
+        "check": 0.6056,
+        "bet_small": 0.3005,
+        "bet_big": 0.0939
+      },
+      "7d6d": {
+        "check": 0.6437,
+        "bet_small": 0.2397,
+        "bet_big": 0.1166
+      },
+      "7d7c": {
+        "check": 0.7325,
+        "bet_small": 0.1523,
+        "bet_big": 0.1152
+      },
+      "7h5h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "7h6h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "7h7c": {
+        "check": 0.7612,
+        "bet_small": 0.1365,
+        "bet_big": 0.1023
+      },
+      "7h7d": {
+        "check": 0.7766,
+        "bet_small": 0.1236,
+        "bet_big": 0.0998
+      },
+      "7s5s": {
+        "check": 0.6076,
+        "bet_small": 0.2984,
+        "bet_big": 0.094
+      },
+      "7s6s": {
+        "check": 0.6446,
+        "bet_small": 0.2382,
+        "bet_big": 0.1172
+      },
+      "7s7c": {
+        "check": 0.7334,
+        "bet_small": 0.1535,
+        "bet_big": 0.1131
+      },
+      "7s7d": {
+        "check": 0.7569,
+        "bet_small": 0.1373,
+        "bet_big": 0.1058
+      },
+      "7s7h": {
+        "check": 0.7799,
+        "bet_small": 0.123,
+        "bet_big": 0.0971
+      },
+      "8c6c": {
+        "check": 0.859,
+        "bet_small": 0.141,
+        "bet_big": 0.0
+      },
+      "8c7c": {
+        "check": 0.6239,
+        "bet_small": 0.2619,
+        "bet_big": 0.1142
+      },
+      "8d6d": {
+        "check": 0.7447,
+        "bet_small": 0.1843,
+        "bet_big": 0.071
+      },
+      "8d7d": {
+        "check": 0.5929,
+        "bet_small": 0.2403,
+        "bet_big": 0.1668
+      },
+      "8d8c": {
+        "check": 0.7681,
+        "bet_small": 0.1429,
+        "bet_big": 0.089
+      },
+      "8h6h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "8h7h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "8h8c": {
+        "check": 0.763,
+        "bet_small": 0.163,
+        "bet_big": 0.074
+      },
+      "8h8d": {
+        "check": 0.7519,
+        "bet_small": 0.1402,
+        "bet_big": 0.1079
+      },
+      "8s6s": {
+        "check": 0.7416,
+        "bet_small": 0.1818,
+        "bet_big": 0.0766
+      },
+      "8s7s": {
+        "check": 0.5957,
+        "bet_small": 0.2383,
+        "bet_big": 0.166
+      },
+      "8s8c": {
+        "check": 0.7755,
+        "bet_small": 0.1403,
+        "bet_big": 0.0842
+      },
+      "8s8d": {
+        "check": 0.7781,
+        "bet_small": 0.1336,
+        "bet_big": 0.0883
+      },
+      "8s8h": {
+        "check": 0.7599,
+        "bet_small": 0.1379,
+        "bet_big": 0.1022
+      },
+      "9c7c": {
+        "check": 0.7403,
+        "bet_small": 0.1717,
+        "bet_big": 0.088
+      },
+      "9c8c": {
+        "check": 0.5605,
+        "bet_small": 0.2373,
+        "bet_big": 0.2022
+      },
+      "9d7d": {
+        "check": 0.7827,
+        "bet_small": 0.2173,
+        "bet_big": 0.0
+      },
+      "9d8d": {
+        "check": 0.5718,
+        "bet_small": 0.274,
+        "bet_big": 0.1542
+      },
+      "9d9c": {
+        "check": 0.7348,
+        "bet_small": 0.1842,
+        "bet_big": 0.081
+      },
+      "9h7h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "9h8h": {
+        "check": 0.9157,
+        "bet_small": 0.0843,
+        "bet_big": 0.0
+      },
+      "9h9c": {
+        "check": 0.7113,
+        "bet_small": 0.1923,
+        "bet_big": 0.0964
+      },
+      "9h9d": {
+        "check": 0.7096,
+        "bet_small": 0.1699,
+        "bet_big": 0.1205
+      },
+      "9s7s": {
+        "check": 0.7848,
+        "bet_small": 0.2152,
+        "bet_big": 0.0
+      },
+      "9s8s": {
+        "check": 0.5708,
+        "bet_small": 0.2712,
+        "bet_big": 0.158
+      },
+      "9s9c": {
+        "check": 0.7491,
+        "bet_small": 0.1795,
+        "bet_big": 0.0714
+      },
+      "9s9d": {
+        "check": 0.727,
+        "bet_small": 0.1753,
+        "bet_big": 0.0977
+      },
+      "9s9h": {
+        "check": 0.7217,
+        "bet_small": 0.1659,
+        "bet_big": 0.1124
+      },
+      "Ac3c": {
+        "check": 0.0701,
+        "bet_small": 0.2201,
+        "bet_big": 0.7098
+      },
+      "Ac4c": {
+        "check": 0.1756,
+        "bet_small": 0.2376,
+        "bet_big": 0.5868
+      },
+      "Ac5c": {
+        "check": 0.2428,
+        "bet_small": 0.2372,
+        "bet_big": 0.52
+      },
+      "Ac6c": {
+        "check": 0.8612,
+        "bet_small": 0.0,
+        "bet_big": 0.1388
+      },
+      "Ac7c": {
+        "check": 0.8997,
+        "bet_small": 0.0,
+        "bet_big": 0.1003
+      },
+      "Ac8c": {
+        "check": 0.8146,
+        "bet_small": 0.0643,
+        "bet_big": 0.1211
+      },
+      "Ac9c": {
+        "check": 0.7637,
+        "bet_small": 0.1627,
+        "bet_big": 0.0736
+      },
+      "AcJc": {
+        "check": 0.8333,
+        "bet_small": 0.1667,
+        "bet_big": 0.0
+      },
+      "AcJd": {
+        "check": 0.5956,
+        "bet_small": 0.2876,
+        "bet_big": 0.1168
+      },
+      "AcJh": {
+        "check": 0.5569,
+        "bet_small": 0.3113,
+        "bet_big": 0.1318
+      },
+      "AcJs": {
+        "check": 0.6013,
+        "bet_small": 0.2842,
+        "bet_big": 0.1145
+      },
+      "AcKc": {
+        "check": 0.0797,
+        "bet_small": 0.3511,
+        "bet_big": 0.5692
+      },
+      "AcKh": {
+        "check": 0.0,
+        "bet_small": 0.3536,
+        "bet_big": 0.6464
+      },
+      "AcQc": {
+        "check": 0.709,
+        "bet_small": 0.291,
+        "bet_big": 0.0
+      },
+      "AcQd": {
+        "check": 0.5948,
+        "bet_small": 0.3065,
+        "bet_big": 0.0987
+      },
+      "AcQh": {
+        "check": 0.5084,
+        "bet_small": 0.3465,
+        "bet_big": 0.1451
+      },
+      "AcQs": {
+        "check": 0.6066,
+        "bet_small": 0.3014,
+        "bet_big": 0.092
+      },
+      "AcTc": {
+        "check": 0.8793,
+        "bet_small": 0.1207,
+        "bet_big": 0.0
+      },
+      "Ad2d": {
+        "check": 0.083,
+        "bet_small": 0.5694,
+        "bet_big": 0.3476
+      },
+      "Ad3d": {
+        "check": 0.0,
+        "bet_small": 0.2049,
+        "bet_big": 0.7951
+      },
+      "Ad4d": {
+        "check": 0.1147,
+        "bet_small": 0.2264,
+        "bet_big": 0.6589
+      },
+      "Ad5d": {
+        "check": 0.0904,
+        "bet_small": 0.1888,
+        "bet_big": 0.7208
+      },
+      "Ad6d": {
+        "check": 0.7816,
+        "bet_small": 0.0,
+        "bet_big": 0.2184
+      },
+      "Ad7d": {
+        "check": 0.9292,
+        "bet_small": 0.0708,
+        "bet_big": 0.0
+      },
+      "Ad8d": {
+        "check": 0.8231,
+        "bet_small": 0.1065,
+        "bet_big": 0.0704
+      },
+      "Ad9d": {
+        "check": 0.862,
+        "bet_small": 0.138,
+        "bet_big": 0.0
+      },
+      "AdJc": {
+        "check": 0.4658,
+        "bet_small": 0.3083,
+        "bet_big": 0.2258
+      },
+      "AdJd": {
+        "check": 0.8782,
+        "bet_small": 0.1218,
+        "bet_big": 0.0
+      },
+      "AdJh": {
+        "check": 0.5049,
+        "bet_small": 0.3302,
+        "bet_big": 0.1649
+      },
+      "AdJs": {
+        "check": 0.5455,
+        "bet_small": 0.3065,
+        "bet_big": 0.148
+      },
+      "AdKc": {
+        "check": 0.1204,
+        "bet_small": 0.337,
+        "bet_big": 0.5426
+      },
+      "AdKh": {
+        "check": 0.0887,
+        "bet_small": 0.3491,
+        "bet_big": 0.5622
+      },
+      "AdQc": {
+        "check": 0.6173,
+        "bet_small": 0.3298,
+        "bet_big": 0.0529
+      },
+      "AdQd": {
+        "check": 0.7355,
+        "bet_small": 0.2645,
+        "bet_big": 0.0
+      },
+      "AdQh": {
+        "check": 0.5384,
+        "bet_small": 0.3797,
+        "bet_big": 0.0819
+      },
+      "AdQs": {
+        "check": 0.6031,
+        "bet_small": 0.3178,
+        "bet_big": 0.0791
+      },
+      "AdTd": {
+        "check": 0.9257,
+        "bet_small": 0.0743,
+        "bet_big": 0.0
+      },
+      "Ah2h": {
+        "check": 0.2352,
+        "bet_small": 0.4642,
+        "bet_big": 0.3006
+      },
+      "Ah3h": {
+        "check": 0.6352,
+        "bet_small": 0.1199,
+        "bet_big": 0.2449
+      },
+      "Ah4h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "Ah5h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "Ah6h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "Ah7h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "Ah8h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "Ah9h": {
+        "check": 1.0,
+        "bet_small": 0.0,
+        "bet_big": 0.0
+      },
+      "AhJc": {
+        "check": 0.5964,
+        "bet_small": 0.2471,
+        "bet_big": 0.1565
+      },
+      "AhJd": {
+        "check": 0.7292,
+        "bet_small": 0.2708,
+        "bet_big": 0.0
+      },
+      "AhJh": {
+        "check": 0.7076,
+        "bet_small": 0.2924,
+        "bet_big": 0.0
+      },
+      "AhJs": {
+        "check": 0.7347,
+        "bet_small": 0.2653,
+        "bet_big": 0.0
+      },
+      "AhKc": {
+        "check": 0.0,
+        "bet_small": 0.3041,
+        "bet_big": 0.6959
+      },
+      "AhKh": {
+        "check": 0.0,
+        "bet_small": 0.2962,
+        "bet_big": 0.7038
+      },
+      "AhQc": {
+        "check": 0.5946,
+        "bet_small": 0.2104,
+        "bet_big": 0.195
+      },
+      "AhQd": {
+        "check": 0.5455,
+        "bet_small": 0.2044,
+        "bet_big": 0.2501
+      },
+      "AhQh": {
+        "check": 0.5364,
+        "bet_small": 0.2736,
+        "bet_big": 0.19
+      },
+      "AhQs": {
+        "check": 0.5563,
+        "bet_small": 0.1978,
+        "bet_big": 0.2459
+      },
+      "AhTh": {
+        "check": 0.7815,
+        "bet_small": 0.2185,
+        "bet_big": 0.0
+      },
+      "As2s": {
+        "check": 0.0,
+        "bet_small": 0.5831,
+        "bet_big": 0.4169
+      },
+      "As3s": {
+        "check": 0.0,
+        "bet_small": 0.2085,
+        "bet_big": 0.7915
+      },
+      "As4s": {
+        "check": 0.1176,
+        "bet_small": 0.2289,
+        "bet_big": 0.6535
+      },
+      "As5s": {
+        "check": 0.0824,
+        "bet_small": 0.1905,
+        "bet_big": 0.7271
+      },
+      "As6s": {
+        "check": 0.7732,
+        "bet_small": 0.0,
+        "bet_big": 0.2268
+      },
+      "As7s": {
+        "check": 0.9154,
+        "bet_small": 0.0846,
+        "bet_big": 0.0
+      },
+      "As8s": {
+        "check": 0.8285,
+        "bet_small": 0.1153,
+        "bet_big": 0.0562
+      },
+      "As9s": {
+        "check": 0.8732,
+        "bet_small": 0.1268,
+        "bet_big": 0.0
+      },
+      "AsJc": {
+        "check": 0.4656,
+        "bet_small": 0.3087,
+        "bet_big": 0.2256
+      },
+      "AsJd": {
+        "check": 0.5411,
+        "bet_small": 0.3102,
+        "bet_big": 0.1487
+      },
+      "AsJh": {
+        "check": 0.5058,
+        "bet_small": 0.3314,
+        "bet_big": 0.1628
+      },
+      "AsJs": {
+        "check": 0.8807,
+        "bet_small": 0.1193,
+        "bet_big": 0.0
+      },
+      "AsKc": {
+        "check": 0.1398,
+        "bet_small": 0.3329,
+        "bet_big": 0.5273
+      },
+      "AsKh": {
+        "check": 0.0937,
+        "bet_small": 0.3485,
+        "bet_big": 0.5578
+      },
+      "AsQc": {
+        "check": 0.6206,
+        "bet_small": 0.3275,
+        "bet_big": 0.0519
+      },
+      "AsQd": {
+        "check": 0.5966,
+        "bet_small": 0.3212,
+        "bet_big": 0.0822
+      },
+      "AsQh": {
+        "check": 0.5429,
+        "bet_small": 0.3789,
+        "bet_big": 0.0782
+      },
+      "AsQs": {
+        "check": 0.7412,
+        "bet_small": 0.2588,
+        "bet_big": 0.0
+      },
+      "AsTs": {
+        "check": 0.9374,
+        "bet_small": 0.0626,
+        "bet_big": 0.0
+      },
+      "Jc9c": {
+        "check": 0.3098,
+        "bet_small": 0.288,
+        "bet_big": 0.4022
+      },
+      "JcTc": {
+        "check": 0.3676,
+        "bet_small": 0.2535,
+        "bet_big": 0.3789
+      },
+      "Jd9d": {
+        "check": 0.382,
+        "bet_small": 0.3044,
+        "bet_big": 0.3137
+      },
+      "JdJc": {
+        "check": 0.737,
+        "bet_small": 0.263,
+        "bet_big": 0.0
+      },
+      "JdTd": {
+        "check": 0.4103,
+        "bet_small": 0.2813,
+        "bet_big": 0.3084
+      },
+      "Jh9h": {
+        "check": 0.429,
+        "bet_small": 0.39,
+        "bet_big": 0.181
+      },
+      "JhJc": {
+        "check": 0.7794,
+        "bet_small": 0.2206,
+        "bet_big": 0.0
+      },
+      "JhJd": {
+        "check": 0.8033,
+        "bet_small": 0.1967,
+        "bet_big": 0.0
+      },
+      "JhTh": {
+        "check": 0.286,
+        "bet_small": 0.404,
+        "bet_big": 0.31
+      },
+      "Js9s": {
+        "check": 0.382,
+        "bet_small": 0.3016,
+        "bet_big": 0.3164
+      },
+      "JsJc": {
+        "check": 0.8091,
+        "bet_small": 0.1909,
+        "bet_big": 0.0
+      },
+      "JsJd": {
+        "check": 0.8158,
+        "bet_small": 0.1842,
+        "bet_big": 0.0
+      },
+      "JsJh": {
+        "check": 0.8044,
+        "bet_small": 0.1956,
+        "bet_big": 0.0
+      },
+      "JsTs": {
+        "check": 0.4155,
+        "bet_small": 0.2809,
+        "bet_big": 0.3036
+      },
+      "Kc8c": {
+        "check": 0.3414,
+        "bet_small": 0.3063,
+        "bet_big": 0.3523
+      },
+      "Kc9c": {
+        "check": 0.3475,
+        "bet_small": 0.2848,
+        "bet_big": 0.3677
+      },
+      "KcJc": {
+        "check": 0.2983,
+        "bet_small": 0.3038,
+        "bet_big": 0.3979
+      },
+      "KcQc": {
+        "check": 0.367,
+        "bet_small": 0.292,
+        "bet_big": 0.341
+      },
+      "KcQd": {
+        "check": 0.3363,
+        "bet_small": 0.3256,
+        "bet_big": 0.3381
+      },
+      "KcQh": {
+        "check": 0.2751,
+        "bet_small": 0.3288,
+        "bet_big": 0.3962
+      },
+      "KcQs": {
+        "check": 0.3402,
+        "bet_small": 0.3241,
+        "bet_big": 0.3357
+      },
+      "KcTc": {
+        "check": 0.37,
+        "bet_small": 0.2751,
+        "bet_big": 0.355
+      },
+      "Kh8h": {
+        "check": 0.2861,
+        "bet_small": 0.3133,
+        "bet_big": 0.4006
+      },
+      "Kh9h": {
+        "check": 0.2812,
+        "bet_small": 0.2736,
+        "bet_big": 0.4452
+      },
+      "KhJh": {
+        "check": 0.2149,
+        "bet_small": 0.3376,
+        "bet_big": 0.4475
+      },
+      "KhQc": {
+        "check": 0.2785,
+        "bet_small": 0.3374,
+        "bet_big": 0.3841
+      },
+      "KhQd": {
+        "check": 0.3067,
+        "bet_small": 0.3498,
+        "bet_big": 0.3434
+      },
+      "KhQh": {
+        "check": 0.2443,
+        "bet_small": 0.3484,
+        "bet_big": 0.4073
+      },
+      "KhQs": {
+        "check": 0.307,
+        "bet_small": 0.3499,
+        "bet_big": 0.3431
+      },
+      "KhTh": {
+        "check": 0.303,
+        "bet_small": 0.2844,
+        "bet_big": 0.4126
+      },
+      "Qc9c": {
+        "check": 0.178,
+        "bet_small": 0.2357,
+        "bet_big": 0.5863
+      },
+      "QcJc": {
+        "check": 0.2166,
+        "bet_small": 0.2482,
+        "bet_big": 0.5352
+      },
+      "QcTc": {
+        "check": 0.3059,
+        "bet_small": 0.2096,
+        "bet_big": 0.4845
+      },
+      "Qd9d": {
+        "check": 0.1898,
+        "bet_small": 0.245,
+        "bet_big": 0.5652
+      },
+      "QdJd": {
+        "check": 0.1773,
+        "bet_small": 0.2648,
+        "bet_big": 0.5579
+      },
+      "QdTd": {
+        "check": 0.3232,
+        "bet_small": 0.1837,
+        "bet_big": 0.4931
+      },
+      "Qh9h": {
+        "check": 0.2247,
+        "bet_small": 0.3405,
+        "bet_big": 0.4348
+      },
+      "QhJh": {
+        "check": 0.1068,
+        "bet_small": 0.3117,
+        "bet_big": 0.5815
+      },
+      "QhTh": {
+        "check": 0.2006,
+        "bet_small": 0.336,
+        "bet_big": 0.4634
+      },
+      "Qs9s": {
+        "check": 0.1921,
+        "bet_small": 0.2434,
+        "bet_big": 0.5645
+      },
+      "QsJs": {
+        "check": 0.1818,
+        "bet_small": 0.2657,
+        "bet_big": 0.5525
+      },
+      "QsTs": {
+        "check": 0.3318,
+        "bet_small": 0.181,
+        "bet_big": 0.4873
+      },
+      "Tc8c": {
+        "check": 0.5615,
+        "bet_small": 0.2919,
+        "bet_big": 0.1466
+      },
+      "Tc9c": {
+        "check": 0.405,
+        "bet_small": 0.3133,
+        "bet_big": 0.2817
+      },
+      "Td8d": {
+        "check": 0.6884,
+        "bet_small": 0.3116,
+        "bet_big": 0.0
+      },
+      "Td9d": {
+        "check": 0.4765,
+        "bet_small": 0.3724,
+        "bet_big": 0.1511
+      },
+      "TdTc": {
+        "check": 0.6597,
+        "bet_small": 0.2212,
+        "bet_big": 0.1191
+      },
+      "Th8h": {
+        "check": 0.683,
+        "bet_small": 0.2384,
+        "bet_big": 0.0786
+      },
+      "Th9h": {
+        "check": 0.5045,
+        "bet_small": 0.4158,
+        "bet_big": 0.0797
+      },
+      "ThTc": {
+        "check": 0.5859,
+        "bet_small": 0.254,
+        "bet_big": 0.1601
+      },
+      "ThTd": {
+        "check": 0.6364,
+        "bet_small": 0.2133,
+        "bet_big": 0.1503
+      },
+      "Ts8s": {
+        "check": 0.6898,
+        "bet_small": 0.3102,
+        "bet_big": 0.0
+      },
+      "Ts9s": {
+        "check": 0.4744,
+        "bet_small": 0.3699,
+        "bet_big": 0.1558
+      },
+      "TsTc": {
+        "check": 0.6661,
+        "bet_small": 0.22,
+        "bet_big": 0.1139
+      },
+      "TsTd": {
+        "check": 0.7031,
+        "bet_small": 0.1981,
+        "bet_big": 0.0988
+      },
+      "TsTh": {
+        "check": 0.6428,
+        "bet_small": 0.2118,
+        "bet_big": 0.1454
+      }
+    }
+  },
+  "per_hand_facing_cbet": {
+    "vs_bet_small": {
+      "2h2d": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "2s2d": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "2s2h": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "3d3c": {
+        "raise": 0.1432,
+        "call": 0.8568,
+        "fold": 0.0
+      },
+      "3h3c": {
+        "raise": 0.1633,
+        "call": 0.8367,
+        "fold": 0.0
+      },
+      "3h3d": {
+        "raise": 0.1897,
+        "call": 0.8103,
+        "fold": 0.0
+      },
+      "3s3c": {
+        "raise": 0.1347,
+        "call": 0.8653,
+        "fold": 0.0
+      },
+      "3s3d": {
+        "raise": 0.1468,
+        "call": 0.8532,
+        "fold": 0.0
+      },
+      "3s3h": {
+        "raise": 0.1814,
+        "call": 0.8186,
+        "fold": 0.0
+      },
+      "4d4c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4h4c": {
+        "raise": 0.0994,
+        "call": 0.9006,
+        "fold": 0.0
+      },
+      "4h4d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4s4c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4s4d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4s4h": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "5c4c": {
+        "raise": 0.3725,
+        "call": 0.2145,
+        "fold": 0.413
+      },
+      "5d4d": {
+        "raise": 0.6544,
+        "call": 0.1744,
+        "fold": 0.1712
+      },
+      "5d5c": {
+        "raise": 0.0576,
+        "call": 0.9424,
+        "fold": 0.0
+      },
+      "5h4h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "5h5c": {
+        "raise": 0.1299,
+        "call": 0.8701,
+        "fold": 0.0
+      },
+      "5h5d": {
+        "raise": 0.0958,
+        "call": 0.9042,
+        "fold": 0.0
+      },
+      "5s4s": {
+        "raise": 0.6358,
+        "call": 0.183,
+        "fold": 0.1812
+      },
+      "5s5c": {
+        "raise": 0.0559,
+        "call": 0.9441,
+        "fold": 0.0
+      },
+      "5s5d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "5s5h": {
+        "raise": 0.0943,
+        "call": 0.9057,
+        "fold": 0.0
+      },
+      "6c5c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "6d5d": {
+        "raise": 0.0643,
+        "call": 0.0,
+        "fold": 0.9357
+      },
+      "6d6c": {
+        "raise": 0.1069,
+        "call": 0.8931,
+        "fold": 0.0
+      },
+      "6h5h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "6h6c": {
+        "raise": 0.1984,
+        "call": 0.8016,
+        "fold": 0.0
+      },
+      "6h6d": {
+        "raise": 0.1838,
+        "call": 0.8162,
+        "fold": 0.0
+      },
+      "6s5s": {
+        "raise": 0.0542,
+        "call": 0.0,
+        "fold": 0.9458
+      },
+      "6s6c": {
+        "raise": 0.1049,
+        "call": 0.8951,
+        "fold": 0.0
+      },
+      "6s6d": {
+        "raise": 0.0907,
+        "call": 0.9093,
+        "fold": 0.0
+      },
+      "6s6h": {
+        "raise": 0.1816,
+        "call": 0.8184,
+        "fold": 0.0
+      },
+      "7c6c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7d6d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7d7c": {
+        "raise": 0.1713,
+        "call": 0.8287,
+        "fold": 0.0
+      },
+      "7h6h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7h7c": {
+        "raise": 0.2647,
+        "call": 0.7353,
+        "fold": 0.0
+      },
+      "7h7d": {
+        "raise": 0.265,
+        "call": 0.735,
+        "fold": 0.0
+      },
+      "7s6s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7s7c": {
+        "raise": 0.167,
+        "call": 0.833,
+        "fold": 0.0
+      },
+      "7s7d": {
+        "raise": 0.1621,
+        "call": 0.8379,
+        "fold": 0.0
+      },
+      "7s7h": {
+        "raise": 0.2612,
+        "call": 0.7388,
+        "fold": 0.0
+      },
+      "8c6c": {
+        "raise": 0.0,
+        "call": 0.2407,
+        "fold": 0.7593
+      },
+      "8c7c": {
+        "raise": 0.1083,
+        "call": 0.2997,
+        "fold": 0.592
+      },
+      "8d6d": {
+        "raise": 0.0,
+        "call": 0.1975,
+        "fold": 0.8025
+      },
+      "8d7d": {
+        "raise": 0.1082,
+        "call": 0.3012,
+        "fold": 0.5906
+      },
+      "8d8c": {
+        "raise": 0.1741,
+        "call": 0.8259,
+        "fold": 0.0
+      },
+      "8h6h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8h7h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8h8c": {
+        "raise": 0.2859,
+        "call": 0.7141,
+        "fold": 0.0
+      },
+      "8h8d": {
+        "raise": 0.2331,
+        "call": 0.7669,
+        "fold": 0.0
+      },
+      "8s6s": {
+        "raise": 0.0,
+        "call": 0.2092,
+        "fold": 0.7908
+      },
+      "8s7s": {
+        "raise": 0.0977,
+        "call": 0.3176,
+        "fold": 0.5847
+      },
+      "8s8c": {
+        "raise": 0.175,
+        "call": 0.825,
+        "fold": 0.0
+      },
+      "8s8d": {
+        "raise": 0.186,
+        "call": 0.814,
+        "fold": 0.0
+      },
+      "8s8h": {
+        "raise": 0.225,
+        "call": 0.775,
+        "fold": 0.0
+      },
+      "9c7c": {
+        "raise": 0.2143,
+        "call": 0.7857,
+        "fold": 0.0
+      },
+      "9c8c": {
+        "raise": 0.3045,
+        "call": 0.6955,
+        "fold": 0.0
+      },
+      "9d7d": {
+        "raise": 0.0,
+        "call": 0.6867,
+        "fold": 0.3133
+      },
+      "9d8d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "9d9c": {
+        "raise": 0.0985,
+        "call": 0.9015,
+        "fold": 0.0
+      },
+      "9h7h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9h8h": {
+        "raise": 0.1309,
+        "call": 0.3257,
+        "fold": 0.5434
+      },
+      "9h9c": {
+        "raise": 0.1364,
+        "call": 0.8636,
+        "fold": 0.0
+      },
+      "9h9d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "9s7s": {
+        "raise": 0.0,
+        "call": 0.7076,
+        "fold": 0.2924
+      },
+      "9s8s": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "9s9c": {
+        "raise": 0.0956,
+        "call": 0.9044,
+        "fold": 0.0
+      },
+      "9s9d": {
+        "raise": 0.1051,
+        "call": 0.8949,
+        "fold": 0.0
+      },
+      "9s9h": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "Ac3c": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ac4c": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ac5c": {
+        "raise": 0.6092,
+        "call": 0.3908,
+        "fold": 0.0
+      },
+      "Ac6c": {
+        "raise": 0.5066,
+        "call": 0.4934,
+        "fold": 0.0
+      },
+      "Ac7c": {
+        "raise": 0.4264,
+        "call": 0.5736,
+        "fold": 0.0
+      },
+      "Ac8c": {
+        "raise": 0.3149,
+        "call": 0.6851,
+        "fold": 0.0
+      },
+      "Ac9c": {
+        "raise": 0.1277,
+        "call": 0.8723,
+        "fold": 0.0
+      },
+      "AcJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcJd": {
+        "raise": 0.1205,
+        "call": 0.8795,
+        "fold": 0.0
+      },
+      "AcJh": {
+        "raise": 0.0851,
+        "call": 0.9149,
+        "fold": 0.0
+      },
+      "AcJs": {
+        "raise": 0.1166,
+        "call": 0.8834,
+        "fold": 0.0
+      },
+      "AcKc": {
+        "raise": 0.8684,
+        "call": 0.1316,
+        "fold": 0.0
+      },
+      "AcKh": {
+        "raise": 0.911,
+        "call": 0.089,
+        "fold": 0.0
+      },
+      "AcQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcQd": {
+        "raise": 0.1982,
+        "call": 0.8018,
+        "fold": 0.0
+      },
+      "AcQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcQs": {
+        "raise": 0.1977,
+        "call": 0.8023,
+        "fold": 0.0
+      },
+      "AcTc": {
+        "raise": 0.2622,
+        "call": 0.7378,
+        "fold": 0.0
+      },
+      "AcTd": {
+        "raise": 0.3549,
+        "call": 0.6451,
+        "fold": 0.0
+      },
+      "AcTh": {
+        "raise": 0.2039,
+        "call": 0.7961,
+        "fold": 0.0
+      },
+      "AcTs": {
+        "raise": 0.3554,
+        "call": 0.6446,
+        "fold": 0.0
+      },
+      "Ad2d": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ad3d": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ad4d": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ad5d": {
+        "raise": 0.5617,
+        "call": 0.4383,
+        "fold": 0.0
+      },
+      "Ad6d": {
+        "raise": 0.5455,
+        "call": 0.4545,
+        "fold": 0.0
+      },
+      "Ad7d": {
+        "raise": 0.4403,
+        "call": 0.5597,
+        "fold": 0.0
+      },
+      "Ad8d": {
+        "raise": 0.275,
+        "call": 0.725,
+        "fold": 0.0
+      },
+      "Ad9d": {
+        "raise": 0.0538,
+        "call": 0.9462,
+        "fold": 0.0
+      },
+      "AdAc": {
+        "raise": 0.1362,
+        "call": 0.8638,
+        "fold": 0.0
+      },
+      "AdJc": {
+        "raise": 0.4869,
+        "call": 0.5131,
+        "fold": 0.0
+      },
+      "AdJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdJh": {
+        "raise": 0.2643,
+        "call": 0.7357,
+        "fold": 0.0
+      },
+      "AdJs": {
+        "raise": 0.2668,
+        "call": 0.7332,
+        "fold": 0.0
+      },
+      "AdKc": {
+        "raise": 0.8513,
+        "call": 0.1487,
+        "fold": 0.0
+      },
+      "AdKh": {
+        "raise": 0.8048,
+        "call": 0.1952,
+        "fold": 0.0
+      },
+      "AdQc": {
+        "raise": 0.1008,
+        "call": 0.8992,
+        "fold": 0.0
+      },
+      "AdQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdQs": {
+        "raise": 0.2226,
+        "call": 0.7774,
+        "fold": 0.0
+      },
+      "AdTc": {
+        "raise": 0.6922,
+        "call": 0.3078,
+        "fold": 0.0
+      },
+      "AdTd": {
+        "raise": 0.2951,
+        "call": 0.7049,
+        "fold": 0.0
+      },
+      "AdTh": {
+        "raise": 0.472,
+        "call": 0.528,
+        "fold": 0.0
+      },
+      "AdTs": {
+        "raise": 0.5235,
+        "call": 0.4765,
+        "fold": 0.0
+      },
+      "Ah2h": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ah3h": {
+        "raise": 0.2036,
+        "call": 0.0,
+        "fold": 0.7964
+      },
+      "Ah4h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah5h": {
+        "raise": 0.1071,
+        "call": 0.0531,
+        "fold": 0.8398
+      },
+      "Ah6h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah7h": {
+        "raise": 0.0754,
+        "call": 0.1016,
+        "fold": 0.823
+      },
+      "Ah8h": {
+        "raise": 0.2851,
+        "call": 0.366,
+        "fold": 0.3489
+      },
+      "Ah9h": {
+        "raise": 0.0,
+        "call": 0.738,
+        "fold": 0.262
+      },
+      "AhAc": {
+        "raise": 0.107,
+        "call": 0.893,
+        "fold": 0.0
+      },
+      "AhAd": {
+        "raise": 0.1019,
+        "call": 0.8981,
+        "fold": 0.0
+      },
+      "AhJc": {
+        "raise": 0.2352,
+        "call": 0.7648,
+        "fold": 0.0
+      },
+      "AhJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhJh": {
+        "raise": 0.0852,
+        "call": 0.9148,
+        "fold": 0.0
+      },
+      "AhJs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhKc": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "AhKh": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "AhQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhQd": {
+        "raise": 0.0873,
+        "call": 0.9127,
+        "fold": 0.0
+      },
+      "AhQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhQs": {
+        "raise": 0.0947,
+        "call": 0.9053,
+        "fold": 0.0
+      },
+      "AhTc": {
+        "raise": 0.3175,
+        "call": 0.6825,
+        "fold": 0.0
+      },
+      "AhTd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhTh": {
+        "raise": 0.1057,
+        "call": 0.8943,
+        "fold": 0.0
+      },
+      "AhTs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "As2s": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "As3s": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "As4s": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "As5s": {
+        "raise": 0.5581,
+        "call": 0.4419,
+        "fold": 0.0
+      },
+      "As6s": {
+        "raise": 0.5392,
+        "call": 0.4608,
+        "fold": 0.0
+      },
+      "As7s": {
+        "raise": 0.4362,
+        "call": 0.5638,
+        "fold": 0.0
+      },
+      "As8s": {
+        "raise": 0.2686,
+        "call": 0.7314,
+        "fold": 0.0
+      },
+      "As9s": {
+        "raise": 0.0604,
+        "call": 0.9396,
+        "fold": 0.0
+      },
+      "AsAc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsAd": {
+        "raise": 0.0956,
+        "call": 0.9044,
+        "fold": 0.0
+      },
+      "AsAh": {
+        "raise": 0.1268,
+        "call": 0.8732,
+        "fold": 0.0
+      },
+      "AsJc": {
+        "raise": 0.4871,
+        "call": 0.5129,
+        "fold": 0.0
+      },
+      "AsJd": {
+        "raise": 0.2718,
+        "call": 0.7282,
+        "fold": 0.0
+      },
+      "AsJh": {
+        "raise": 0.2667,
+        "call": 0.7333,
+        "fold": 0.0
+      },
+      "AsJs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsKc": {
+        "raise": 0.8751,
+        "call": 0.1249,
+        "fold": 0.0
+      },
+      "AsKh": {
+        "raise": 0.813,
+        "call": 0.187,
+        "fold": 0.0
+      },
+      "AsQc": {
+        "raise": 0.1058,
+        "call": 0.8942,
+        "fold": 0.0
+      },
+      "AsQd": {
+        "raise": 0.2275,
+        "call": 0.7725,
+        "fold": 0.0
+      },
+      "AsQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsQs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsTc": {
+        "raise": 0.6926,
+        "call": 0.3074,
+        "fold": 0.0
+      },
+      "AsTd": {
+        "raise": 0.5242,
+        "call": 0.4758,
+        "fold": 0.0
+      },
+      "AsTh": {
+        "raise": 0.4721,
+        "call": 0.5279,
+        "fold": 0.0
+      },
+      "AsTs": {
+        "raise": 0.2908,
+        "call": 0.7092,
+        "fold": 0.0
+      },
+      "Jc9c": {
+        "raise": 0.6463,
+        "call": 0.3537,
+        "fold": 0.0
+      },
+      "JcTc": {
+        "raise": 0.6686,
+        "call": 0.3314,
+        "fold": 0.0
+      },
+      "Jd9d": {
+        "raise": 0.3304,
+        "call": 0.6696,
+        "fold": 0.0
+      },
+      "JdJc": {
+        "raise": 0.1701,
+        "call": 0.8299,
+        "fold": 0.0
+      },
+      "JdTd": {
+        "raise": 0.4261,
+        "call": 0.5739,
+        "fold": 0.0
+      },
+      "Jh9h": {
+        "raise": 0.481,
+        "call": 0.519,
+        "fold": 0.0
+      },
+      "JhJc": {
+        "raise": 0.3104,
+        "call": 0.6896,
+        "fold": 0.0
+      },
+      "JhJd": {
+        "raise": 0.1551,
+        "call": 0.8449,
+        "fold": 0.0
+      },
+      "JhTh": {
+        "raise": 0.3957,
+        "call": 0.6043,
+        "fold": 0.0
+      },
+      "Js9s": {
+        "raise": 0.3319,
+        "call": 0.6681,
+        "fold": 0.0
+      },
+      "JsJc": {
+        "raise": 0.171,
+        "call": 0.829,
+        "fold": 0.0
+      },
+      "JsJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "JsJh": {
+        "raise": 0.1526,
+        "call": 0.8474,
+        "fold": 0.0
+      },
+      "JsTs": {
+        "raise": 0.4223,
+        "call": 0.5777,
+        "fold": 0.0
+      },
+      "Kc9c": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "KcJc": {
+        "raise": 0.4146,
+        "call": 0.5854,
+        "fold": 0.0
+      },
+      "KcJd": {
+        "raise": 0.3728,
+        "call": 0.6272,
+        "fold": 0.0
+      },
+      "KcJh": {
+        "raise": 0.5553,
+        "call": 0.4447,
+        "fold": 0.0
+      },
+      "KcJs": {
+        "raise": 0.3828,
+        "call": 0.6172,
+        "fold": 0.0
+      },
+      "KcQc": {
+        "raise": 0.3843,
+        "call": 0.6157,
+        "fold": 0.0
+      },
+      "KcQd": {
+        "raise": 0.4076,
+        "call": 0.5924,
+        "fold": 0.0
+      },
+      "KcQh": {
+        "raise": 0.5036,
+        "call": 0.4964,
+        "fold": 0.0
+      },
+      "KcQs": {
+        "raise": 0.4114,
+        "call": 0.5886,
+        "fold": 0.0
+      },
+      "KcTc": {
+        "raise": 0.6505,
+        "call": 0.3495,
+        "fold": 0.0
+      },
+      "Kh9h": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "KhJc": {
+        "raise": 0.3165,
+        "call": 0.6835,
+        "fold": 0.0
+      },
+      "KhJd": {
+        "raise": 0.3208,
+        "call": 0.6792,
+        "fold": 0.0
+      },
+      "KhJh": {
+        "raise": 0.4932,
+        "call": 0.5068,
+        "fold": 0.0
+      },
+      "KhJs": {
+        "raise": 0.3252,
+        "call": 0.6748,
+        "fold": 0.0
+      },
+      "KhKc": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "KhQc": {
+        "raise": 0.319,
+        "call": 0.681,
+        "fold": 0.0
+      },
+      "KhQd": {
+        "raise": 0.3626,
+        "call": 0.6374,
+        "fold": 0.0
+      },
+      "KhQh": {
+        "raise": 0.4629,
+        "call": 0.5371,
+        "fold": 0.0
+      },
+      "KhQs": {
+        "raise": 0.3645,
+        "call": 0.6355,
+        "fold": 0.0
+      },
+      "KhTh": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Qc9c": {
+        "raise": 0.4966,
+        "call": 0.5034,
+        "fold": 0.0
+      },
+      "QcJc": {
+        "raise": 0.7677,
+        "call": 0.2323,
+        "fold": 0.0
+      },
+      "QcTc": {
+        "raise": 0.5801,
+        "call": 0.4199,
+        "fold": 0.0
+      },
+      "Qd9d": {
+        "raise": 0.4712,
+        "call": 0.5288,
+        "fold": 0.0
+      },
+      "QdJd": {
+        "raise": 0.7888,
+        "call": 0.2112,
+        "fold": 0.0
+      },
+      "QdQc": {
+        "raise": 0.1235,
+        "call": 0.8765,
+        "fold": 0.0
+      },
+      "QdTd": {
+        "raise": 0.5773,
+        "call": 0.4227,
+        "fold": 0.0
+      },
+      "Qh9h": {
+        "raise": 0.3791,
+        "call": 0.6209,
+        "fold": 0.0
+      },
+      "QhJh": {
+        "raise": 0.907,
+        "call": 0.093,
+        "fold": 0.0
+      },
+      "QhQc": {
+        "raise": 0.1521,
+        "call": 0.8479,
+        "fold": 0.0
+      },
+      "QhQd": {
+        "raise": 0.1511,
+        "call": 0.8489,
+        "fold": 0.0
+      },
+      "QhTh": {
+        "raise": 0.4343,
+        "call": 0.5657,
+        "fold": 0.0
+      },
+      "Qs9s": {
+        "raise": 0.4775,
+        "call": 0.5225,
+        "fold": 0.0
+      },
+      "QsJs": {
+        "raise": 0.7823,
+        "call": 0.2177,
+        "fold": 0.0
+      },
+      "QsQc": {
+        "raise": 0.1256,
+        "call": 0.8744,
+        "fold": 0.0
+      },
+      "QsQd": {
+        "raise": 0.1393,
+        "call": 0.8607,
+        "fold": 0.0
+      },
+      "QsQh": {
+        "raise": 0.1532,
+        "call": 0.8468,
+        "fold": 0.0
+      },
+      "QsTs": {
+        "raise": 0.577,
+        "call": 0.423,
+        "fold": 0.0
+      },
+      "Tc8c": {
+        "raise": 0.5056,
+        "call": 0.4944,
+        "fold": 0.0
+      },
+      "Tc9c": {
+        "raise": 0.611,
+        "call": 0.389,
+        "fold": 0.0
+      },
+      "Td8d": {
+        "raise": 0.3421,
+        "call": 0.6579,
+        "fold": 0.0
+      },
+      "Td9d": {
+        "raise": 0.2944,
+        "call": 0.7056,
+        "fold": 0.0
+      },
+      "TdTc": {
+        "raise": 0.1316,
+        "call": 0.8684,
+        "fold": 0.0
+      },
+      "Th8h": {
+        "raise": 0.3278,
+        "call": 0.6722,
+        "fold": 0.0
+      },
+      "Th9h": {
+        "raise": 0.209,
+        "call": 0.791,
+        "fold": 0.0
+      },
+      "ThTc": {
+        "raise": 0.1308,
+        "call": 0.8692,
+        "fold": 0.0
+      },
+      "ThTd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "Ts8s": {
+        "raise": 0.3311,
+        "call": 0.6689,
+        "fold": 0.0
+      },
+      "Ts9s": {
+        "raise": 0.2917,
+        "call": 0.7083,
+        "fold": 0.0
+      },
+      "TsTc": {
+        "raise": 0.1293,
+        "call": 0.8707,
+        "fold": 0.0
+      },
+      "TsTd": {
+        "raise": 0.0887,
+        "call": 0.9113,
+        "fold": 0.0
+      },
+      "TsTh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      }
+    },
+    "vs_bet_big": {
+      "2h2d": {
+        "raise": 0.7371,
+        "call": 0.2629,
+        "fold": 0.0
+      },
+      "2s2d": {
+        "raise": 0.9164,
+        "call": 0.0836,
+        "fold": 0.0
+      },
+      "2s2h": {
+        "raise": 0.7887,
+        "call": 0.2113,
+        "fold": 0.0
+      },
+      "3d3c": {
+        "raise": 0.2267,
+        "call": 0.7733,
+        "fold": 0.0
+      },
+      "3h3c": {
+        "raise": 0.3625,
+        "call": 0.6375,
+        "fold": 0.0
+      },
+      "3h3d": {
+        "raise": 0.3118,
+        "call": 0.6882,
+        "fold": 0.0
+      },
+      "3s3c": {
+        "raise": 0.2209,
+        "call": 0.7791,
+        "fold": 0.0
+      },
+      "3s3d": {
+        "raise": 0.1597,
+        "call": 0.8403,
+        "fold": 0.0
+      },
+      "3s3h": {
+        "raise": 0.3069,
+        "call": 0.6931,
+        "fold": 0.0
+      },
+      "4d4c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4h4c": {
+        "raise": 0.2826,
+        "call": 0.7174,
+        "fold": 0.0
+      },
+      "4h4d": {
+        "raise": 0.1103,
+        "call": 0.8897,
+        "fold": 0.0
+      },
+      "4s4c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4s4d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "4s4h": {
+        "raise": 0.1397,
+        "call": 0.8603,
+        "fold": 0.0
+      },
+      "5c4c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "5d4d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "5d5c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "5h4h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "5h5c": {
+        "raise": 0.118,
+        "call": 0.882,
+        "fold": 0.0
+      },
+      "5h5d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "5s4s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "5s5c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "5s5d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "5s5h": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "6c5c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "6d5d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "6d6c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "6h5h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "6h6c": {
+        "raise": 0.1619,
+        "call": 0.8381,
+        "fold": 0.0
+      },
+      "6h6d": {
+        "raise": 0.0843,
+        "call": 0.9157,
+        "fold": 0.0
+      },
+      "6s5s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "6s6c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "6s6d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "6s6h": {
+        "raise": 0.0879,
+        "call": 0.9121,
+        "fold": 0.0
+      },
+      "7c6c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7d6d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7d7c": {
+        "raise": 0.1092,
+        "call": 0.8908,
+        "fold": 0.0
+      },
+      "7h6h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7h7c": {
+        "raise": 0.1577,
+        "call": 0.8423,
+        "fold": 0.0
+      },
+      "7h7d": {
+        "raise": 0.1544,
+        "call": 0.8456,
+        "fold": 0.0
+      },
+      "7s6s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "7s7c": {
+        "raise": 0.101,
+        "call": 0.899,
+        "fold": 0.0
+      },
+      "7s7d": {
+        "raise": 0.1137,
+        "call": 0.8863,
+        "fold": 0.0
+      },
+      "7s7h": {
+        "raise": 0.1473,
+        "call": 0.8527,
+        "fold": 0.0
+      },
+      "8c6c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8c7c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8d6d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8d7d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8d8c": {
+        "raise": 0.1691,
+        "call": 0.8309,
+        "fold": 0.0
+      },
+      "8h6h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8h7h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8h8c": {
+        "raise": 0.2558,
+        "call": 0.7442,
+        "fold": 0.0
+      },
+      "8h8d": {
+        "raise": 0.259,
+        "call": 0.741,
+        "fold": 0.0
+      },
+      "8s6s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8s7s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "8s8c": {
+        "raise": 0.1466,
+        "call": 0.8534,
+        "fold": 0.0
+      },
+      "8s8d": {
+        "raise": 0.1788,
+        "call": 0.8212,
+        "fold": 0.0
+      },
+      "8s8h": {
+        "raise": 0.2401,
+        "call": 0.7599,
+        "fold": 0.0
+      },
+      "9c7c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9c8c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9d7d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9d8d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9d9c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "9h7h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9h8h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9h9c": {
+        "raise": 0.1976,
+        "call": 0.8024,
+        "fold": 0.0
+      },
+      "9h9d": {
+        "raise": 0.1274,
+        "call": 0.8726,
+        "fold": 0.0
+      },
+      "9s7s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9s8s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "9s9c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "9s9d": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "9s9h": {
+        "raise": 0.1092,
+        "call": 0.8908,
+        "fold": 0.0
+      },
+      "Ac3c": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ac4c": {
+        "raise": 0.6379,
+        "call": 0.0,
+        "fold": 0.3621
+      },
+      "Ac5c": {
+        "raise": 0.3929,
+        "call": 0.1251,
+        "fold": 0.482
+      },
+      "Ac6c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ac7c": {
+        "raise": 0.4407,
+        "call": 0.0,
+        "fold": 0.5593
+      },
+      "Ac8c": {
+        "raise": 0.5327,
+        "call": 0.3759,
+        "fold": 0.0914
+      },
+      "Ac9c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcJd": {
+        "raise": 0.0,
+        "call": 0.234,
+        "fold": 0.766
+      },
+      "AcJh": {
+        "raise": 0.0,
+        "call": 0.9434,
+        "fold": 0.0566
+      },
+      "AcJs": {
+        "raise": 0.0,
+        "call": 0.2455,
+        "fold": 0.7545
+      },
+      "AcKc": {
+        "raise": 0.4873,
+        "call": 0.5127,
+        "fold": 0.0
+      },
+      "AcKh": {
+        "raise": 0.7089,
+        "call": 0.2911,
+        "fold": 0.0
+      },
+      "AcQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcQs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AcTc": {
+        "raise": 0.0592,
+        "call": 0.9408,
+        "fold": 0.0
+      },
+      "AcTd": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "AcTh": {
+        "raise": 0.0,
+        "call": 0.5883,
+        "fold": 0.4117
+      },
+      "AcTs": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ad2d": {
+        "raise": 0.9496,
+        "call": 0.0504,
+        "fold": 0.0
+      },
+      "Ad3d": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "Ad4d": {
+        "raise": 0.3532,
+        "call": 0.0,
+        "fold": 0.6468
+      },
+      "Ad5d": {
+        "raise": 0.0749,
+        "call": 0.0,
+        "fold": 0.9251
+      },
+      "Ad6d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ad7d": {
+        "raise": 0.2977,
+        "call": 0.0,
+        "fold": 0.7023
+      },
+      "Ad8d": {
+        "raise": 0.459,
+        "call": 0.1835,
+        "fold": 0.3575
+      },
+      "Ad9d": {
+        "raise": 0.0845,
+        "call": 0.7386,
+        "fold": 0.1769
+      },
+      "AdAc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdJc": {
+        "raise": 0.0,
+        "call": 0.7282,
+        "fold": 0.2718
+      },
+      "AdJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdJh": {
+        "raise": 0.0,
+        "call": 0.8826,
+        "fold": 0.1174
+      },
+      "AdJs": {
+        "raise": 0.0,
+        "call": 0.0633,
+        "fold": 0.9367
+      },
+      "AdKc": {
+        "raise": 0.6346,
+        "call": 0.3654,
+        "fold": 0.0
+      },
+      "AdKh": {
+        "raise": 0.5029,
+        "call": 0.4971,
+        "fold": 0.0
+      },
+      "AdQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdQs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdTc": {
+        "raise": 0.0,
+        "call": 0.206,
+        "fold": 0.794
+      },
+      "AdTd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AdTh": {
+        "raise": 0.0923,
+        "call": 0.511,
+        "fold": 0.3967
+      },
+      "AdTs": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah2h": {
+        "raise": 0.8955,
+        "call": 0.1045,
+        "fold": 0.0
+      },
+      "Ah3h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah4h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah5h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah6h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah7h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ah8h": {
+        "raise": 0.1171,
+        "call": 0.0,
+        "fold": 0.8829
+      },
+      "Ah9h": {
+        "raise": 0.1529,
+        "call": 0.1927,
+        "fold": 0.6544
+      },
+      "AhAc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhAd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhJd": {
+        "raise": 0.0,
+        "call": 0.7518,
+        "fold": 0.2482
+      },
+      "AhJh": {
+        "raise": 0.1344,
+        "call": 0.8656,
+        "fold": 0.0
+      },
+      "AhJs": {
+        "raise": 0.0,
+        "call": 0.7633,
+        "fold": 0.2367
+      },
+      "AhKc": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "AhKh": {
+        "raise": 0.8373,
+        "call": 0.1627,
+        "fold": 0.0
+      },
+      "AhQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhQs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AhTc": {
+        "raise": 0.08,
+        "call": 0.5869,
+        "fold": 0.3331
+      },
+      "AhTd": {
+        "raise": 0.0,
+        "call": 0.1242,
+        "fold": 0.8758
+      },
+      "AhTh": {
+        "raise": 0.2619,
+        "call": 0.7381,
+        "fold": 0.0
+      },
+      "AhTs": {
+        "raise": 0.0,
+        "call": 0.1399,
+        "fold": 0.8601
+      },
+      "As2s": {
+        "raise": 0.9172,
+        "call": 0.0828,
+        "fold": 0.0
+      },
+      "As3s": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "As4s": {
+        "raise": 0.3593,
+        "call": 0.0,
+        "fold": 0.6407
+      },
+      "As5s": {
+        "raise": 0.1003,
+        "call": 0.0,
+        "fold": 0.8997
+      },
+      "As6s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "As7s": {
+        "raise": 0.2969,
+        "call": 0.0,
+        "fold": 0.7031
+      },
+      "As8s": {
+        "raise": 0.4557,
+        "call": 0.1803,
+        "fold": 0.364
+      },
+      "As9s": {
+        "raise": 0.0543,
+        "call": 0.758,
+        "fold": 0.1877
+      },
+      "AsAc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsAd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsAh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsJc": {
+        "raise": 0.0,
+        "call": 0.7176,
+        "fold": 0.2824
+      },
+      "AsJd": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "AsJh": {
+        "raise": 0.0,
+        "call": 0.8676,
+        "fold": 0.1324
+      },
+      "AsJs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsKc": {
+        "raise": 0.6292,
+        "call": 0.3708,
+        "fold": 0.0
+      },
+      "AsKh": {
+        "raise": 0.4927,
+        "call": 0.5073,
+        "fold": 0.0
+      },
+      "AsQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsQs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "AsTc": {
+        "raise": 0.0,
+        "call": 0.1895,
+        "fold": 0.8105
+      },
+      "AsTd": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "AsTh": {
+        "raise": 0.0841,
+        "call": 0.5079,
+        "fold": 0.408
+      },
+      "AsTs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "Jc9c": {
+        "raise": 0.4163,
+        "call": 0.0,
+        "fold": 0.5837
+      },
+      "JcTc": {
+        "raise": 0.487,
+        "call": 0.513,
+        "fold": 0.0
+      },
+      "Jd9d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "JdJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "JdTd": {
+        "raise": 0.3955,
+        "call": 0.3836,
+        "fold": 0.2209
+      },
+      "Jh9h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "JhJc": {
+        "raise": 0.1937,
+        "call": 0.8063,
+        "fold": 0.0
+      },
+      "JhJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "JhTh": {
+        "raise": 0.2384,
+        "call": 0.2321,
+        "fold": 0.5295
+      },
+      "Js9s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "JsJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "JsJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "JsJh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "JsTs": {
+        "raise": 0.3946,
+        "call": 0.4021,
+        "fold": 0.2033
+      },
+      "Kc9c": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KcJc": {
+        "raise": 0.0879,
+        "call": 0.9121,
+        "fold": 0.0
+      },
+      "KcJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KcJh": {
+        "raise": 0.2591,
+        "call": 0.7409,
+        "fold": 0.0
+      },
+      "KcJs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KcQc": {
+        "raise": 0.1147,
+        "call": 0.8853,
+        "fold": 0.0
+      },
+      "KcQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KcQh": {
+        "raise": 0.4031,
+        "call": 0.5969,
+        "fold": 0.0
+      },
+      "KcQs": {
+        "raise": 0.0679,
+        "call": 0.9321,
+        "fold": 0.0
+      },
+      "KcTc": {
+        "raise": 0.0842,
+        "call": 0.9158,
+        "fold": 0.0
+      },
+      "Kh9h": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KhJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KhJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KhJh": {
+        "raise": 0.1036,
+        "call": 0.8964,
+        "fold": 0.0
+      },
+      "KhJs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "KhKc": {
+        "raise": 1.0,
+        "call": 0.0,
+        "fold": 0.0
+      },
+      "KhQc": {
+        "raise": 0.0552,
+        "call": 0.9448,
+        "fold": 0.0
+      },
+      "KhQd": {
+        "raise": 0.063,
+        "call": 0.937,
+        "fold": 0.0
+      },
+      "KhQh": {
+        "raise": 0.3091,
+        "call": 0.6909,
+        "fold": 0.0
+      },
+      "KhQs": {
+        "raise": 0.0701,
+        "call": 0.9299,
+        "fold": 0.0
+      },
+      "KhTh": {
+        "raise": 0.1859,
+        "call": 0.8141,
+        "fold": 0.0
+      },
+      "Qc9c": {
+        "raise": 0.4287,
+        "call": 0.3735,
+        "fold": 0.1978
+      },
+      "QcJc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QcTc": {
+        "raise": 0.2415,
+        "call": 0.7585,
+        "fold": 0.0
+      },
+      "Qd9d": {
+        "raise": 0.7559,
+        "call": 0.1698,
+        "fold": 0.0743
+      },
+      "QdJd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QdQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QdTd": {
+        "raise": 0.3787,
+        "call": 0.6213,
+        "fold": 0.0
+      },
+      "Qh9h": {
+        "raise": 0.1579,
+        "call": 0.0,
+        "fold": 0.8421
+      },
+      "QhJh": {
+        "raise": 0.1215,
+        "call": 0.8785,
+        "fold": 0.0
+      },
+      "QhQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QhQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QhTh": {
+        "raise": 0.3104,
+        "call": 0.6896,
+        "fold": 0.0
+      },
+      "Qs9s": {
+        "raise": 0.809,
+        "call": 0.191,
+        "fold": 0.0
+      },
+      "QsJs": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QsQc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QsQd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QsQh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "QsTs": {
+        "raise": 0.3725,
+        "call": 0.6275,
+        "fold": 0.0
+      },
+      "Tc8c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Tc9c": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Td8d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Td9d": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "TdTc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "Th8h": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Th9h": {
+        "raise": 0.0819,
+        "call": 0.0,
+        "fold": 0.9181
+      },
+      "ThTc": {
+        "raise": 0.1614,
+        "call": 0.8386,
+        "fold": 0.0
+      },
+      "ThTd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "Ts8s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "Ts9s": {
+        "raise": 0.0,
+        "call": 0.0,
+        "fold": 1.0
+      },
+      "TsTc": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "TsTd": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      },
+      "TsTh": {
+        "raise": 0.0,
+        "call": 1.0,
+        "fold": 0.0
+      }
+    }
+  }
+}

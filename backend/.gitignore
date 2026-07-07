@@ -1,0 +1,17 @@
+node_modules
+dist
+
+# Keep environment variables out of version control
+.env
+.env.local
+.env.production
+
+/generated/prisma
+
+# Python
+__pycache__/
+*.py[cod]
+ocr-service/debug_crops/*.png
+ocr-service/templates_failed/raw/*.json
+ocr-service/templates_failed/raw/*.png
+ocr-service/ocr_result_backup.json

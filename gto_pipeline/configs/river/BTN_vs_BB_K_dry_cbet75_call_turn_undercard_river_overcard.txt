@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board Ks,8d,3c,2h,Jh
+set_range_ip 22,33,54s,88,A4s:0.987,A5s:0.777,A5o:0.785,AKs,AKo,AA,K7s:0.169,K8s,K9s,KJs,KQs,KQo,KTs,K3s,KK
+set_range_oop 43s:0.065,53s:0.012,86s:0.995,87s:0.964,98s,A3o:0.551,A8s,AKs,AKo,A3s:0.608,AA,J8s:0.995,JJ:0.004,K2s:0.557,K4s:0.899,K5s:0.544,K6s,K7s:0.997,K9s:0.943,K9o:0.938,KJs:0.998,KJo:0.884,KQs:0.881,KQo:0.846,KTs:0.976,KTo:0.954,Q8s:0.912,QQ:0.999,T8s
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_K_dry_cbet75_call_turn_undercard_river_overcard.json

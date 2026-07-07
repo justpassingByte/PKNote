@@ -1,0 +1,554 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - banner [ref=e6]:
+      - generic [ref=e7]:
+        - link "VILLAINVAULT" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img [ref=e10]
+          - generic [ref=e13]: VILLAINVAULT
+        - navigation [ref=e14]:
+          - generic [ref=e15]:
+            - button "Tính Năng" [ref=e730] [cursor=pointer]: Tính Năng
+            - button "Phân Tích HUD" [ref=e732] [cursor=pointer]: Phân Tích HUD
+            - button "Lộ Trình" [ref=e733] [cursor=pointer]: Lộ Trình
+            - button "Bảng Giá" [ref=e734] [cursor=pointer]: Bảng Giá
+            - button "Liên Hệ" [ref=e735] [cursor=pointer]: Liên Hệ
+          - button "Change Language" [ref=e738]:
+            - generic [ref=e739]: 🇻🇳
+          - link "Dashboard" [ref=e22] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e23]
+            - text: Dashboard
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Két Sắt Poker Đầu Tiên của Bạn
+            - heading "Save Money. Make Profit. No Tilt." [level=1] [ref=e740]:
+              - text: Save Money.
+              - text: Make Profit.
+              - text: No Tilt.
+            - generic [ref=e34]:
+              - paragraph [ref=e35]: Villiant Vault là bộ não AI tại bàn — không phải solver, lối chơi linh hoạt, bạn hôm sau ≠ bạn hôm nay.
+              - paragraph [ref=e36]: "\"Nắm giữ điểm yếu + kho kiến thức và bảo vệ chén cơm của bạn khỏi kẻ xấu\""
+            - generic [ref=e37]:
+              - link "Vào Dashboard" [ref=e741] [cursor=pointer]:
+                - /url: /dashboard
+              - link "Xem Giá" [ref=e742] [cursor=pointer]:
+                - /url: "#pricing"
+              - link "Tải Desktop App" [ref=e743] [cursor=pointer]:
+                - /url: https://github.com/justpassingByte/PoNotesFE/releases/download/pokerhud/RobinHood_Setup_v1.1.3.exe
+                - img [ref=e41]
+                - text: Tải Desktop App
+            - generic [ref=e44]:
+              - text: Không cần căng não
+              - generic [ref=e744]: ·
+              - text: Lên trình nhanh như HT2
+          - generic [ref=e47]:
+            - generic [ref=e55]:
+              - generic [ref=e59]: AI
+              - generic [ref=e60]:
+                - generic [ref=e66]: GTO ALIGNED 100%
+                - generic [ref=e67]:
+                  - generic [ref=e68]: FOLD
+                  - generic [ref=e69]: DOMINATE CALL
+            - generic [ref=e70]: AI đang canh gác tiền của bạn
+        - button "Scroll down" [ref=e72] [cursor=pointer]:
+          - generic [ref=e73]: Khám phá
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - img [ref=e83]
+            - generic [ref=e91]: Tại Sao RobinHUD Tồn Tại
+          - heading "Có Bộ Não rồi. Nhưng chưa có Mắt." [level=2] [ref=e745]:
+            - text: Có Bộ Não rồi.
+            - text: Nhưng chưa có Mắt.
+          - paragraph [ref=e93]: LLM là bộ não — biết suy luận, phân tích, lên chiến thuật. Nhưng không có data, nó như một thiên tài đang bịt mắt. RobinHUD cho nó đôi mắt.
+        - generic [ref=e95]:
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e99]:
+                - img [ref=e101]
+                - heading "🧠 Bộ Não — LLM" [level=3] [ref=e746]
+                - paragraph [ref=e110]: Biết suy luận GTO, phân tích range, đọc pattern, lên exploit plan. Nhưng nếu không có input data — nó chỉ là sức mạnh tiềm ẩn.
+                - generic [ref=e111]:
+                  - generic [ref=e112]:
+                    - img [ref=e113]
+                    - generic [ref=e116]: Phân tích Hand History trong < 2 giây
+                  - generic [ref=e117]:
+                    - img [ref=e118]
+                    - generic [ref=e121]: Sinh Exploit Strategy theo context riêng
+                  - generic [ref=e122]:
+                    - img [ref=e123]
+                    - generic [ref=e126]: Detect leak, gợi ý range adjustment linh hoạt
+              - generic [ref=e129]: Active
+            - generic [ref=e130]:
+              - generic [ref=e132]:
+                - img [ref=e134]
+                - heading "👁 Đôi Mắt — Data của Bạn" [level=3] [ref=e747]
+                - paragraph [ref=e138]: Mỗi hand bạn phân tích, mỗi note bạn ghi, mỗi đối thủ bạn track — đó là data. Càng nhiều data, AI càng "nhìn rõ" opponent pool của bạn.
+                - generic [ref=e139]:
+                  - generic [ref=e140]:
+                    - img [ref=e141]
+                    - generic [ref=e144]: Hand history → nhận diện pattern lặp lại
+                  - generic [ref=e145]:
+                    - img [ref=e146]
+                    - generic [ref=e149]: Player notes → mô hình hoá hành vi đối thủ
+                  - generic [ref=e150]:
+                    - img [ref=e151]
+                    - generic [ref=e154]: OCR bàn chơi → context thời gian thực
+              - generic [ref=e157]: Cần Anh Em
+          - img [ref=e159]
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - paragraph [ref=e164]: Cách Chúng Tôi Scale
+            - heading "Vector DB + Augmented LLM Workflow" [level=3] [ref=e165]
+            - paragraph [ref=e166]: Không phải ChatGPT wrapper. Đây là pipeline thật — data anh em feed vào được chuyển thành vector, lưu vĩnh viễn, và augment vào mỗi lần AI suy luận.
+          - generic [ref=e167]:
+            - generic [ref=e168]:
+              - img [ref=e170]
+              - generic [ref=e174]: Step 01
+              - heading "Data Ingestion" [level=4] [ref=e175]
+              - paragraph [ref=e176]: Hand history, notes, player behavior — mọi thứ anh em feed vào đều được encode thành vector embeddings và lưu vào Vector DB.
+              - img [ref=e178]
+            - generic [ref=e180]:
+              - img [ref=e182]
+              - generic [ref=e186]: Step 02
+              - heading "Retrieval + Augment" [level=4] [ref=e187]
+              - paragraph [ref=e188]: Khi bạn query — hệ thống tìm top-K data liên quan nhất từ Vector DB, inject thẳng vào prompt context cho LLM.
+              - img [ref=e190]
+            - generic [ref=e192]:
+              - img [ref=e194]
+              - generic [ref=e196]: Step 03
+              - heading "Exploit Output" [level=4] [ref=e197]
+              - paragraph [ref=e198]: LLM ra quyết định dựa trên data riêng của BẠN, không phải generic. Càng nhiều data, exploit càng chính xác.
+          - generic [ref=e200]:
+            - img [ref=e201]
+            - generic [ref=e205]: Feedback Loop — data càng dày, edge càng rõ, system tự improve
+        - generic [ref=e211]:
+          - paragraph [ref=e212]: Mindset — Nói Thẳng
+          - blockquote [ref=e213]:
+            - text: Vài năm nữa, game sẽ khó gấp bội.
+            - text: Liệu bạn vẫn chơi kiểu cũ được bao lâu?
+          - generic [ref=e214]:
+            - heading "Nhìn lại lịch sử" [level=4] [ref=e748]:
+              - img [ref=e216]
+              - text: Nhìn lại lịch sử
+            - paragraph [ref=e218]: Điện ra đời — người ta sợ giật chết. Bitcoin xuất hiện — bị gọi là lừa đảo. AI bây giờ — cũng đang bị nghi ngờ y chang. Nhưng nhìn lại, toàn là thứ hiển nhiên mà ai đi trước đều hưởng lợi.
+            - paragraph [ref=e219]: Ngoài kia AI viết code, AI trade, AI tự động hoá đủ thứ. Nhưng Poker vẫn đang ở thời kỳ "quạt tay" — note bằng tay, tự nhớ, nhìn HUD rồi tự dịch số. Đây là mảnh đất màu mỡ mà gần như chưa ai khai thác đúng cách.
+          - generic [ref=e220]:
+            - heading "AI sai? Hay bạn chưa biết cách dùng?" [level=4] [ref=e749]:
+              - img [ref=e222]
+              - text: AI sai? Hay bạn chưa biết cách dùng?
+            - paragraph [ref=e230]: AI đôi lúc bịa thông tin, đôi lúc sai — đúng. Nhưng vấn đề không nằm ở AI, mà nằm ở cách bạn dùng nó. Biết dùng AI ≠ tận dụng được AI.
+            - paragraph [ref=e231]: Người giỏi không hỏi AI "nên fold hay call" rồi nghe theo. Họ build workflow, xây system, tận dụng data — dùng AI làm đòn bẩy để scale tốc độ suy luận, phân tích và ra quyết định. Đó mới là leverage thật sự.
+          - generic [ref=e232]:
+            - heading "Tại sao mình build cái này?" [level=4] [ref=e750]:
+              - img [ref=e234]
+              - text: Tại sao mình build cái này?
+            - paragraph [ref=e237]: Mình hiểu rõ cách hệ thống phát hiện (RTA) hoạt động. Nếu mình cũng sợ kiểu "dùng là bị ban" thì mình đã không build RobinHUD từ đầu. Cái mình cần bây giờ là data, feedback, và anh em chịu đi trước — để system học, cải thiện, và scale.
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - paragraph [ref=e240]: ❌ Chơi Kiểu Cũ
+              - list [ref=e241]:
+                - listitem [ref=e242]:
+                  - generic [ref=e243]: –
+                  - text: Note tay → quên sau 5 session
+                - listitem [ref=e244]:
+                  - generic [ref=e245]: –
+                  - text: HUD VPIP/PFR → tự ngồi dịch số
+                - listitem [ref=e246]:
+                  - generic [ref=e247]: –
+                  - text: Gamble bằng cảm giác → donate đều
+                - listitem [ref=e248]:
+                  - generic [ref=e249]: –
+                  - text: Vài năm nữa game khó hơn → hết lợi thế
+            - generic [ref=e250]:
+              - paragraph [ref=e251]: ✅ Chơi Với AI — RobinHUD
+              - list [ref=e252]:
+                - listitem [ref=e253]:
+                  - generic [ref=e254]: +
+                  - text: Vector DB nhớ VĨNH VIỄN mọi data
+                - listitem [ref=e255]:
+                  - generic [ref=e256]: +
+                  - text: AI ném thẳng exploit + leak → act ngay
+                - listitem [ref=e257]:
+                  - generic [ref=e258]: +
+                  - text: Data dày → edge cộng dồn như lãi kép 📈
+                - listitem [ref=e259]:
+                  - generic [ref=e260]: +
+                  - text: Game khó hơn → system cũng tiến hoá theo
+          - generic [ref=e261]:
+            - paragraph [ref=e262]: Đừng FOMO vào mấy thứ vô nghĩa. Hãy FOMO vào công cụ giúp bạn tốt hơn mỗi ngày.
+            - paragraph [ref=e263]: "Giống như Bitcoin 2013, như điện thế kỷ 19 — người bật công tắc trước là người hưởng lợi trước. Bây giờ còn trẻ, còn khoẻ, đầu óc còn linh hoạt. Câu hỏi là: bạn chờ đến khi nào?"
+      - generic [ref=e266]:
+        - generic [ref=e268]:
+          - paragraph [ref=e269]: Hand Analyzer — Review như Pro
+          - heading "Upload hand. AI mổ xẻ từng sai lầm." [level=3] [ref=e751]:
+            - text: Upload hand.
+            - text: AI mổ xẻ từng sai lầm.
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - generic [ref=e273]: "01"
+              - paragraph [ref=e274]: Paste / upload hand history hoặc ảnh bàn chơi
+            - generic [ref=e275]:
+              - generic [ref=e276]: "02"
+              - paragraph [ref=e277]: AI phân tích từng street — chỉ ra leak & mistake
+            - generic [ref=e278]:
+              - generic [ref=e279]: "03"
+              - paragraph [ref=e280]: Nhận chiến thuật exploit cụ thể cho lần sau
+          - generic [ref=e281]:
+            - generic [ref=e282]: "AI ANALYSIS OUTPUT:"
+            - generic [ref=e283]: ⚠ TURN — BB check → fold to small bet
+            - generic [ref=e284]: Quá passive, bỏ lỡ cơ hội value bet river
+            - generic [ref=e285]: "Exploit Strategy:"
+            - generic [ref=e286]: "– BET river 75% pot | range: TT+, AQs+ | freq: 80%"
+            - generic [ref=e287]: "– FOLD turn vs 3x raise | range: weak pairs | freq: 100%"
+            - generic [ref=e288]: "Leak Detected:"
+            - generic [ref=e289]: "– Passive river play — trigger: check + fold to small bet"
+        - generic [ref=e294] [cursor=pointer]:
+          - img "Hand Analyzer Overview" [ref=e295]
+          - generic [ref=e297]: 🔍 Click to expand
+      - generic [ref=e299]:
+        - generic [ref=e300]:
+          - paragraph [ref=e301]: HUD — Bảng vàng "bóc bài"
+          - heading "Không nằm trên bàn. Panel riêng, nhìn cái hiểu luôn." [level=2] [ref=e752]:
+            - text: Không nằm trên bàn.
+            - text: Panel riêng, nhìn cái hiểu luôn.
+          - paragraph [ref=e303]: Mỗi đối thủ một hồ sơ riêng — AI phân tích Exploit Strategy, Positional Leaks, Range Adjustments và ghi chú tự động. Bạn chỉ cần nhìn và ra quyết định.
+        - generic [ref=e306] [cursor=pointer]:
+          - img "HUD Player Detail — Exploit Strategy, Leaks, AI Notes" [ref=e307]
+          - generic [ref=e309]: 🔍 Click to expand
+        - generic [ref=e311]:
+          - generic [ref=e312]:
+            - heading "Exploit Strategy" [level=4] [ref=e313]
+            - paragraph [ref=e314]: AI tự động sinh chiến thuật exploit theo từng street, position, và tình huống cụ thể. Có sizing, range, frequency.
+          - generic [ref=e315]:
+            - heading "Positional Leaks" [level=4] [ref=e316]
+            - paragraph [ref=e317]: Phát hiện leak theo node — passive river, loose turn call, overbet bluff... Mỗi leak kèm trigger cụ thể.
+          - generic [ref=e318]:
+            - heading "AI Notes" [level=4] [ref=e319]
+            - paragraph [ref=e320]: Ghi chú tự động từ mỗi ván đã phân tích. Kèm board texture, pot type, action line và mức độ nghiêm trọng.
+          - generic [ref=e321]:
+            - heading "Range Adjustments" [level=4] [ref=e322]
+            - paragraph [ref=e323]: Gợi ý thay đổi range cụ thể theo từng đối thủ — tighten, widen, overbet, trap — không chung chung.
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - paragraph [ref=e327]: Hệ Thống Quản Lý Mục Tiêu
+          - heading "Dashboard Điều Khiển Sát Thủ" [level=2] [ref=e753]
+          - paragraph [ref=e329]: Không còn mù mờ về kẻ thù. Bảng điều khiển tập trung Priority Targets và Elite Regs, giúp bạn biết rõ bàn nào đáng đánh và ai đang tìm cách rút tiền của bạn.
+        - generic [ref=e332] [cursor=pointer]:
+          - img "Villain Vault Dashboard Overview" [ref=e333]
+          - generic [ref=e335]: 🔍 Click to expand
+      - generic [ref=e337]:
+        - generic [ref=e338]:
+          - paragraph [ref=e339]: Kho Kiến Thức
+          - heading "Villiant Vault là gì?" [level=2] [ref=e754]
+          - paragraph [ref=e341]: Không phải tool. Không phải solver. Không phải HUD VPIP/PFR rối não. 2026 rồi — là két sắt + bộ não + team toàn pro không biết tilt.
+        - generic [ref=e342]:
+          - generic [ref=e343]:
+            - generic [ref=e344]: "01"
+            - heading "Quyết Định < 100ms" [level=3] [ref=e755]
+            - paragraph [ref=e346]: Crop ảnh bàn chơi → paste → nhận Call/Fold + range + plan chi tiết. Không cần căng não.
+          - generic [ref=e347]:
+            - generic [ref=e348]: "02"
+            - heading "HUD \"Bóc Bài\"" [level=3] [ref=e756]
+            - paragraph [ref=e350]: "Panel riêng: Whale, Reg, hay bạn tự troll mình. Gợi ý exploit cụ thể."
+          - generic [ref=e351]:
+            - generic [ref=e352]: "03"
+            - heading "AI Tuning (Tính Năng Mới)" [level=3] [ref=e757]
+            - paragraph [ref=e354]: Tùy biến AI hoàn toàn. Ép AI trả lời kiểu bảo thủ (GTO) hay điên cuồng (Max Exploit) theo ý bạn bằng các prompt cực mạnh.
+          - generic [ref=e355]:
+            - generic [ref=e356]: "04"
+            - heading "Team AI Đa Nhân Cách" [level=3] [ref=e758]
+            - paragraph [ref=e358]: Là một team pro mỗi thằng một tính cách — không biết tilt, không biết mệt.
+          - generic [ref=e359]:
+            - generic [ref=e360]: "05"
+            - heading "Giảm Leak Auto" [level=3] [ref=e759]
+            - paragraph [ref=e362]: System sửa bạn mỗi ngày — không toxic nhưng cũng không nương tay.
+          - generic [ref=e363]:
+            - generic [ref=e364]: "06"
+            - heading "Hybrid GTO+Exploit" [level=3] [ref=e365]
+            - paragraph [ref=e366]: GTO cho khung, exploit để hốt tiền, memory bảo vệ bankroll.
+      - generic [ref=e368]:
+        - generic [ref=e369]:
+          - paragraph [ref=e370]: Tầm Nhìn — Đường Dài
+          - heading "Poker Hybrid System." [level=2] [ref=e371]
+          - paragraph [ref=e372]: RobinHUD không chỉ là HUD. Nó là một hệ sinh thái nơi decision dựa vào data + context + AI + exploit thực chiến.
+        - generic [ref=e375]:
+          - generic [ref=e377]:
+            - generic [ref=e379]:
+              - generic [ref=e380]:
+                - 'heading "Phase 1 (Đang Live): Villiant Vault + RobinHUD Desktop App V1" [level=3] [ref=e760]'
+                - generic [ref=e382]: Đang chạy
+              - paragraph [ref=e383]: Trải nghiệm nhanh, dễ tiếp cận. Công cụ sắc bén để review hand và exploit đối thủ trực tiếp.
+              - list [ref=e384]:
+                - listitem [ref=e385]:
+                  - generic [ref=e386]: •
+                  - text: "Web-based app: Tải hand lên review nhanh, AI tự bóc tách leak và gợi ý Exploit"
+                - listitem [ref=e387]:
+                  - generic [ref=e388]: •
+                  - text: "Desktop App V1: Trải nghiệm mượt mà trên máy tính, đồng bộ hoàn toàn với web"
+                - listitem [ref=e389]:
+                  - generic [ref=e390]: •
+                  - text: Build trust, cộng đồng & thu thập data để scale
+            - img [ref=e393]
+          - generic [ref=e397]:
+            - generic [ref=e399]:
+              - generic [ref=e400]:
+                - heading "Phase 2 - Core Upgrade" [level=3] [ref=e401]
+                - generic [ref=e402]: Sắp tới
+              - paragraph [ref=e403]: Memory + GTO Pipeline. Không xử lý hand độc lập. Hand hiện tại + Lịch sử + GTO baseline = Optimize strategy.
+              - list [ref=e404]:
+                - listitem [ref=e405]:
+                  - generic [ref=e406]: •
+                  - text: Hand → Exploit → Update Note
+                - listitem [ref=e407]:
+                  - generic [ref=e408]: •
+                  - text: Đánh với đúng người, có lịch sử
+                - listitem [ref=e409]:
+                  - generic [ref=e410]: •
+                  - text: Map chặt chẽ với GTO baseline
+            - img [ref=e413]
+          - generic [ref=e426]:
+            - generic [ref=e428]:
+              - generic [ref=e429]:
+                - 'heading "Phase 3: Desktop App V2 (Final/Auto-Scale)" [level=3] [ref=e430]'
+                - generic [ref=e431]: Tầm nhìn xa
+              - paragraph [ref=e432]: Phiên bản hoàn thiện (Final Version) với tính năng auto để scale. Data càng dày thì edge càng lớn.
+              - list [ref=e433]:
+                - listitem [ref=e434]:
+                  - generic [ref=e435]: •
+                  - text: "Mắt đọc auto: Tự động đọc bàn, ghi chú, và cập nhật hệ thống liên tục"
+                - listitem [ref=e436]:
+                  - generic [ref=e437]: •
+                  - text: "Auto-scale: Khả năng mở rộng tự động dựa trên lượng data thu thập"
+                - listitem [ref=e438]:
+                  - generic [ref=e439]: •
+                  - text: Tối ưu theo player pool thực tế ở quy mô Enterprise / Team
+            - img [ref=e442]
+          - generic [ref=e448]:
+            - generic [ref=e450]:
+              - generic [ref=e451]:
+                - heading "Phase 4 - Mobile App" [level=3] [ref=e452]
+                - generic [ref=e453]: Vũ Khí Live
+              - paragraph [ref=e454]: Mobile app mang đi đánh tour, mang cả pocket coach đã được huấn luyện với hàng tá data để càn quét mọi live tournament.
+              - list [ref=e455]:
+                - listitem [ref=e456]:
+                  - generic [ref=e457]: •
+                  - text: iOS & Android Mobile App
+                - listitem [ref=e458]:
+                  - generic [ref=e459]: •
+                  - text: Pocket Coach Offline/Online
+                - listitem [ref=e460]:
+                  - generic [ref=e461]: •
+                  - text: Càn quét mọi live tournament
+            - img [ref=e464]
+        - generic [ref=e467]:
+          - img [ref=e468]
+          - heading "Tại sao lại Subscription?" [level=4] [ref=e761]
+          - paragraph [ref=e472]: Duy trì server siêu mạnh, chống spam và có nguồn lực build tiếp roadmap này. Sự ủng hộ của anh em là viên gạch xây nên hệ thống trị riêng.
+      - generic [ref=e475]:
+        - generic [ref=e476]:
+          - generic [ref=e477]:
+            - img [ref=e478]
+            - generic [ref=e481]: An Toàn Theo Thiết Kế
+          - heading "Thiết Kế An Toàn Từ Nền Tảng." [level=2] [ref=e762]
+          - paragraph [ref=e483]: "RobinHUD được xây dựng với nguyên tắc zero-intrusion: không inject, không hook, không tự động. Mọi thao tác đều do bạn chủ động kích hoạt, với timing tự nhiên như khi bạn tự ghi chép bằng tay."
+        - generic [ref=e484]:
+          - generic [ref=e485]:
+            - img [ref=e488]
+            - heading "Chỉ Đọc Màn Hình — Không Chạm RAM" [level=3] [ref=e763]
+            - paragraph [ref=e492]: RobinHUD chỉ chụp ảnh các pixel hiển thị trên màn hình của bạn, sau đó dùng AI đọc tên người chơi. Hoàn toàn không inject DLL, không hook vào bộ nhớ game, không đọc lén tiến trình nào.
+          - generic [ref=e493]:
+            - img [ref=e496]
+            - heading "Bạn Chủ Động — Không Auto" [level=3] [ref=e764]
+            - paragraph [ref=e503]: Mọi lần quét bàn đều do bạn chủ động bấm nút hoặc nhấn phím tắt (F5). Không có timer chạy ngầm, không polling liên tục. Giảm thiểu tối đa signal phần mềm tự động.
+          - generic [ref=e504]:
+            - img [ref=e507]
+            - heading "Timing Giống Người Thật" [level=3] [ref=e765]
+            - paragraph [ref=e511]: Mỗi hành động (quét tên, lấy dữ liệu, hiển thị HUD) đều có độ trễ ngẫu nhiên 200–800ms, mô phỏng tốc độ đọc và phản ứng của con người thay vì xử lý tức thì kiểu máy.
+          - generic [ref=e512]:
+            - img [ref=e515]
+            - heading "Overlay Tiêu Chuẩn Windows" [level=3] [ref=e766]
+            - paragraph [ref=e521]: HUD sử dụng WPF Overlay — công nghệ cửa sổ trong suốt tiêu chuẩn của Windows, giống hệt cách Discord, OBS, hay Zalo hiển thị thông báo nổi. Không dùng kỹ thuật đặc biệt nào.
+        - generic [ref=e523]:
+          - img [ref=e525]
+          - heading "Mã Nguồn Mở & Minh Bạch" [level=3] [ref=e767]
+          - paragraph [ref=e529]: Bạn có thể đọc từng dòng code của RobinHUD trên GitHub. Desktop App được mã nguồn mở để ai cũng có thể tự kiểm chứng — không keylogger, không virus, không gửi data lén.
+          - link "Kiểm Chứng Tại GitHub" [ref=e768] [cursor=pointer]:
+            - /url: https://github.com/justpassingByte/RonbinHud
+            - img [ref=e531]
+            - generic [ref=e534]: Kiểm Chứng Tại GitHub
+      - generic [ref=e536]:
+        - generic [ref=e537]:
+          - paragraph [ref=e538]: Giá — Rõ, Không Úp Mở
+          - heading "Rẻ hơn một cú call ngoo ở river." [level=2] [ref=e769]
+          - paragraph [ref=e540]: Đầu tư vào thứ sẽ tự trả tiền cho chính nó ngay trong session đầu tiên.
+        - generic [ref=e541]:
+          - generic [ref=e542]:
+            - generic [ref=e543]:
+              - heading "Grinder" [level=3] [ref=e544]
+              - paragraph [ref=e545]: Dành cho người chơi mài edge.
+              - generic [ref=e546]:
+                - generic [ref=e547]: $19.99
+                - generic [ref=e548]: /tháng
+            - list [ref=e549]:
+              - listitem [ref=e550]:
+                - img [ref=e551]
+                - generic [ref=e553]: Cố vấn AI chiến thuật
+              - listitem [ref=e554]:
+                - img [ref=e555]
+                - generic [ref=e557]: Phân tích HUD cơ bản
+              - listitem [ref=e558]:
+                - img [ref=e559]
+                - generic [ref=e561]: 500 hand phân tích
+              - listitem [ref=e562]:
+                - img [ref=e563]
+                - generic [ref=e565]: Player memory
+              - listitem [ref=e566]:
+                - img [ref=e567]
+                - generic [ref=e569]: 1 thiết bị
+              - listitem [ref=e570]:
+                - img [ref=e571]
+                - generic [ref=e573]: Desktop robinHUD API Access
+            - link "Bắt đầu Grinder" [ref=e770] [cursor=pointer]:
+              - /url: /register
+          - generic [ref=e575]:
+            - generic [ref=e576]: Được Chọn Nhiều Nhất
+            - generic [ref=e577]:
+              - heading "Pro" [level=3] [ref=e578]
+              - paragraph [ref=e579]: Được chọn nhiều nhất
+              - generic [ref=e580]:
+                - generic [ref=e581]: $49.99
+                - generic [ref=e582]: /tháng
+            - list [ref=e583]:
+              - listitem [ref=e584]:
+                - img [ref=e585]
+                - generic [ref=e587]: 2.000 hand phân tích
+              - listitem [ref=e588]:
+                - img [ref=e589]
+                - generic [ref=e591]: "Strategy full: frequency + sizing + plan"
+              - listitem [ref=e592]:
+                - img [ref=e593]
+                - generic [ref=e595]: HUD exploit + leak detect
+              - listitem [ref=e596]:
+                - img [ref=e597]
+                - generic [ref=e599]: Player modeling
+              - listitem [ref=e600]:
+                - img [ref=e601]
+                - generic [ref=e603]: 2 thiết bị
+              - listitem [ref=e604]:
+                - img [ref=e605]
+                - generic [ref=e607]: Priority support
+              - listitem [ref=e608]:
+                - img [ref=e609]
+                - generic [ref=e611]: Desktop robinHUD API access
+            - link "Mở Vault Pro" [ref=e771] [cursor=pointer]:
+              - /url: /register
+          - generic [ref=e613]:
+            - generic [ref=e614]:
+              - heading "High Roller" [level=3] [ref=e615]
+              - paragraph [ref=e616]: Dành cho việc nghiền nát limit.
+              - generic [ref=e617]:
+                - generic [ref=e618]: $99.99
+                - generic [ref=e619]: /tháng
+            - list [ref=e620]:
+              - listitem [ref=e621]:
+                - img [ref=e622]
+                - generic [ref=e624]: Mọi thứ của Grinder
+              - listitem [ref=e625]:
+                - img [ref=e626]
+                - generic [ref=e628]: Engine Exploit Sâu
+              - listitem [ref=e629]:
+                - img [ref=e630]
+                - generic [ref=e632]: Max GTO/Exploit Tuning AI
+              - listitem [ref=e633]:
+                - img [ref=e634]
+                - generic [ref=e636]: GTO + Population reads
+              - listitem [ref=e637]:
+                - img [ref=e638]
+                - generic [ref=e640]: 3 thiết bị
+              - listitem [ref=e641]:
+                - img [ref=e642]
+                - generic [ref=e644]: Onboarding 1-on-1
+              - listitem [ref=e645]:
+                - img [ref=e646]
+                - generic [ref=e648]: Early access tính năng mới
+              - listitem [ref=e649]:
+                - img [ref=e650]
+                - generic [ref=e652]: Ultra Desktop robinHUD API access
+              - listitem [ref=e653]:
+                - img [ref=e654]
+                - generic [ref=e656]: Onboarding 1-1
+            - link "Bắt đầu High Roller" [ref=e772] [cursor=pointer]:
+              - /url: /register
+        - generic [ref=e658]:
+          - generic [ref=e659]:
+            - paragraph [ref=e660]: Có mệt không?
+            - paragraph [ref=e661]: Không — để VV nghĩ hộ, bạn bấm theo.
+          - generic [ref=e662]:
+            - paragraph [ref=e663]: Có tilt không?
+            - paragraph [ref=e664]: VV không biết "thua 3 hand liền là cay".
+          - generic [ref=e665]:
+            - paragraph [ref=e666]: Không rành poker?
+            - paragraph [ref=e667]: Biết luật là đủ. VV kéo bạn lên dần.
+      - generic [ref=e669]:
+        - generic [ref=e670]:
+          - generic [ref=e671]:
+            - paragraph [ref=e672]: Chốt — hơi ngông nhưng đúng
+            - heading "Bạn có 2 đường." [level=2] [ref=e773]
+          - generic [ref=e674]:
+            - generic [ref=e675]:
+              - heading "✕ Đường 1 — Tự Troll Mình" [level=3] [ref=e774]
+              - list [ref=e677]:
+                - listitem [ref=e678]:
+                  - generic [ref=e679]: —
+                  - generic [ref=e680]: Chơi bằng cảm giác
+                - listitem [ref=e681]:
+                  - generic [ref=e682]: —
+                  - generic [ref=e683]: Donate cho reg mỗi ngày
+                - listitem [ref=e684]:
+                  - generic [ref=e685]: —
+                  - generic [ref=e686]: Tự hỏi "sao mình xui"
+                - listitem [ref=e687]:
+                  - generic [ref=e688]: —
+                  - generic [ref=e689]: Học GTO xong quên
+            - generic [ref=e690]:
+              - heading "✓ Đường 2 — Đưa Tiền Cho Vault" [level=3] [ref=e775]
+              - list [ref=e692]:
+                - listitem [ref=e693]:
+                  - generic [ref=e694]: ✓
+                  - generic [ref=e695]: Quyết định theo tần suất
+                - listitem [ref=e696]:
+                  - generic [ref=e697]: ✓
+                  - generic [ref=e698]: Exploit whale, né reg
+                - listitem [ref=e699]:
+                  - generic [ref=e700]: ✓
+                  - generic [ref=e701]: Thoải mái tư tưởng
+                - listitem [ref=e702]:
+                  - generic [ref=e703]: ✓
+                  - generic [ref=e704]: Vault nhắc bạn mỗi ngày
+        - generic [ref=e705]:
+          - blockquote [ref=e706]: Poker vẫn là gamble.
+          - paragraph [ref=e707]: Nhưng với Villiant Vault, bạn gamble có KẾ HOẠCH.
+          - paragraph [ref=e708]: Bạn không phải con bạc — bạn là DOANH NHÂN.
+          - generic [ref=e709]:
+            - link "Mở Két Sắt Ngay" [ref=e776] [cursor=pointer]:
+              - /url: /register
+            - button "Xem Giá" [ref=e777]
+          - paragraph [ref=e712]: Không cần credit card để bắt đầu. Hủy bất kỳ lúc nào.
+    - contentinfo [ref=e713]:
+      - generic [ref=e714]:
+        - generic [ref=e715]: VILLIANT VAULT © 2026
+        - generic [ref=e716]:
+          - link "Chính Sách Bảo Mật" [ref=e778] [cursor=pointer]:
+            - /url: "#"
+          - link "Điều Khoản" [ref=e779] [cursor=pointer]:
+            - /url: "#"
+          - link "Cookies" [ref=e719] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e720]: Két sắt AI đầu tiên cho poker Việt Nam.
+  - button "Open Next.js Dev Tools" [ref=e726] [cursor=pointer]:
+    - img [ref=e727]
+  - alert [ref=e780]

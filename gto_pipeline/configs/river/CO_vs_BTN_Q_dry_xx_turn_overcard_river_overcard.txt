@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Qs,7d,2c,Jc,Ad
+set_range_ip 33:0.007,54s:0.449,64s:0.966,65s:0.543,75s:0.597,76s:0.535,77,86s:0.788,87s:0.927,88:0.001,97s:0.997,98s,99:0.527,A3s,A4s:0.442,A5s:0.001,A7s,A8s:0.3,AJo,AKs:0.52,AKo:0.466,AQs,AQo,ATs:0.911,A2s:0.997,AJs,J9s,JTs,JJ,K8s,K9s:0.996,KQs,KQo,KTs:0.934,KJs,Q9s,QTs,QJs,T8s:0.993,T9s:0.254,TT:0.89
+set_range_oop 44:0.002,55:0.045,66:0.34,76s:0.709,87s:0.997,88,97s:0.733,99:0.47,A4s:0.147,A5s:0.728,A6s:0.744,A7s:0.488,A8s:0.996,A9s,AKo:0.777,ATo:0.611,AJo:0.002,AKs:0.496,ATs:0.591,AJs:0.002,J9s:0.823,JTs:0.116,KJo:0.176,KJs:0.188
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_Q_dry_xx_turn_overcard_river_overcard.json

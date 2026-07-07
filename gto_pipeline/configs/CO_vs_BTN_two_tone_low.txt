@@ -1,0 +1,27 @@
+set_pot 5.5
+set_effective_stack 97.25
+set_board 8s,4s,2c
+set_range_ip JJ:0.5,TT,99,88,77,66,55,44:0.5,33:0.5,22:0.5,AKs:0.25,AKo:0.5,AQs:0.5,AQo:0.5,AJs,AJo:0.5,ATs,A9s,A8s,A7s:0.5,A6s:0.5,A5s,A4s:0.5,A3s:0.5,A2s:0.5,KQs:0.5,KQo:0.5,KJs,KTs,K9s,K8s:0.5,QJs,QTs,Q9s:0.5,JTs,J9s,T9s,T8s:0.5,98s,97s:0.5,87s,86s:0.5,76s,75s:0.5,65s,64s:0.5,54s
+set_range_oop AA,KK,QQ,JJ,TT,99,88,77,66:0.75,55:0.75,44:0.5,33:0.5,22:0.5,AKs,AKo,AQs,AQo,AJs,AJo:0.75,ATs,ATo:0.5,A9s,A8s:0.5,A7s:0.5,A6s:0.5,A5s,A4s:0.5,A3s:0.5,A2s:0.5,KQs,KQo,KJs,KJo:0.5,KTs,K9s:0.5,QJs,QTs,Q9s:0.5,JTs,J9s:0.5,T9s,T8s:0.5,98s,97s:0.5,87s,86s:0.5,76s,65s,54s
+set_bet_sizes oop,flop,bet,33,75
+set_bet_sizes oop,flop,raise,60
+set_bet_sizes ip,flop,bet,33,75
+set_bet_sizes ip,flop,raise,60
+set_bet_sizes oop,turn,bet,75
+set_bet_sizes oop,turn,raise,60
+set_bet_sizes ip,turn,bet,75
+set_bet_sizes ip,turn,raise,60
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 4
+set_accuracy 0.5
+set_max_iteration 3000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\raw\CO_vs_BTN_two_tone_low.json

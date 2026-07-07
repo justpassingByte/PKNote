@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board 8s,4s,2c,Ts,9s
+set_range_ip 22,44,53s:0.998,65s:0.844,75s:0.339,76s:0.573,88,96s:0.317,97s:0.716,ATo:0.992,AA,A2s,A3s,A5s,A6s,A7s,A9o,AJo,AJs,AKo:0.005,AQo:0.521,AQs,J7s:0.652,J9s,JTs:0.599,JTo:0.733,JJ,KJo,KQo,KTs:0.575,KTo:0.717,KK,K2s,K3s,K5s,K6s,K7s,KJs,Q6s:0.318,Q7s:0.281,Q9s:0.982,QJs:0.987,QJo:0.977,QTs:0.98,QQ,T7s:0.38,T8s,T9s:0.322,TT
+set_range_oop 33,55,66,77,86s,87s,98s,A2o:0.782,A4s,A8s,AJo,AKs:0.003,AKo:0.292,AQo:0.58,ATs:0.773,ATo:0.772,A2s:0.625,AA,J8s:0.867,JJ:0.557,K8s,KJo:0.002,KQo:0.609,KTo:0.014,KK:0.507,Q8s:0.98,QQ:0.791,T8s:0.987
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\SB_vs_BB_two_tone_low_cbet75_call_turn_flush_card_river_flush_card.json

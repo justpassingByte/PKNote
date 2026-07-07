@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board As,9s,8c,9d,7s
+set_range_ip 43s,53s,54s,64s,65s,75s,76s:0.987,88,96s,97s,98s,A2s:0.599,A3s:0.596,A4s:0.592,A5s:0.582,A5o:0.648,A6s:0.613,A7s:0.567,A9s,A9o,AJs,AJo,AKs,AKo,AQs,AQo,ATs,ATo,A8s:0.913,J7s,J9s,JTs,K9s,KK:0.003,K2s:0.965,K3s:0.341,K4s:0.059,K5s:0.005,K6s:0.008,KTs:0.002,Q6s,Q7s,Q9s,QJs,QTs,T7s,T9s
+set_range_oop 77:0.032,86s:0.963,87s:0.998,A2s:0.994,A2o:0.994,A3s:0.312,A3o:0.275,A4s:0.005,A4o:0.005,A5s:0.183,A5o:0.194,A6s:0.162,A7s:0.493,AJo:0.001,ATs:0.014,ATo:0.033,A8s:0.998,J8s,JJ,K8s:0.986,KK:0.928,K3s:0.011,K4s:0.067,K5s:0.397,K6s:0.835,KJs:0.72,KQs:0.3,KTs:0.092,Q8s:0.967,QQ,T8s,TT
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_ace_wet_xx_turn_board_pair_river_flush_card.json

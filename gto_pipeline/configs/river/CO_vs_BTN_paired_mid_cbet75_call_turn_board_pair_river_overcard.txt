@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board 9s,9d,3c,3s,Qd
+set_range_ip 22:0.358,33,54s:0.824,64s,65s,76s:0.255,77,75s,87s:0.283,88,86s:0.501,97s,98s,99,A9s,A3s,A2s,A4s,A5s,A6s,A7s,A8s,AJs,AKs,AQs,ATs,J9s,JTs:0.549,JJ,K9s,K8s,KJs,KQs,KTs,Q9s,QJs:0.875,QTs:0.573,T8s:0.359,T9s,TT
+set_range_oop 44:0.999,55:0.501,66:0.673,77:0.662,88:0.894,A8s:0.376,AJs:0.725,AJo:0.52,AKs:0.752,AKo:0.88,AQs:0.767,AQo:0.268,ATs:0.404,ATo:0.558,A3s:0.325,AA,A5s,A7s,JJ:0.878,KK,KJs:0.007,KQs:0.025,QQ:0.877,TT:0.909
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_paired_mid_cbet75_call_turn_board_pair_river_overcard.json

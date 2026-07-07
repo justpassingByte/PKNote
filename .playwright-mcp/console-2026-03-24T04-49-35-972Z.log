@@ -1,0 +1,16 @@
+[  147449ms] [ERROR] ./src/components/analyzer/HandAnalyzer.tsx:180:101
+Parsing ecmascript source code failed
+  178 |     return (
+  179 |         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0f1115]ick={onCancel}>
+> 180 |             <div className="bg-gray-900 border border-gray-700 rounded p-4 max-w-xs w-full font-mono" onClick={e => e.stopPropagation()}>
+      |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  181 |         < div className = "flex justify-between mb-2" >
+  182 |                     <span className="text-xs text-gray-500 uppercase">Pick card</span>
+  183 |                     <button onClick={onCancel} className="text-gray-600 hover:text-white text-xs">✕</button>
+
+Unterminated string constant
+
+Import trace:
+  Server Component:
+    ./src/components/analyzer/HandAnalyzer.tsx
+    ./src/app/(main)/analyzer/page.tsx @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127

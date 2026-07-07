@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Ks,8s,3c,9s,5d
+set_range_ip 54s,64s,65s,75s,76s,88,98s,99,AKs,AKo,A2s,A3s,A4s,A5s,A6s,A7s,AJo,AJs,AQo:0.525,AQs,ATs,JTs,JJ:0.825,K9s,KJs,KQs,KQo,KTs,QJs,QTs,TT
+set_range_oop 22,44,55,66,77,97s:0.992,98s,A8s,A9s,AJo:0.472,AKs,AKo,AQo,AA,J9s,JJ,K9s:0.469,KJs:0.802,KJo:0.792,KQs:0.001,KQo:0.001,KTs,Q9s,QQ:0.002,T8s:0.618,T9s,TT:0.002
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_two_tone_K_xx_turn_flush_card_river_blank.json

@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board As,9s,8c,Tc,Qh
+set_range_ip 54s,64s:0.699,65s:0.157,75s,76s,88,97s:0.005,98s:0.997,99,A2s:0.53,A3s:0.529,A4s:0.492,A5s:0.359,A6s:0.514,A7s,A9s,AJs,AJo,AKs:0.685,AKo:0.521,AQs,AQo,A8s,ATs,J9s:0.597,JTs,KJs,KQs:0.396,KQo:0.443,QJs,QTs,T8s,T9s,TT
+set_range_oop 77,86s:0.337,87s,97s,A2s:0.398,A3s:0.379,A5s:0.2,A6s,A7s,AJo:0.239,AJs:0.361,AKs:0.215,AKo:0.177,J9s:0.687,JJ:0.984,JTs,K9s,KQs:0.193,KTs,Q9s,QQ:0.888,QTs:0.533
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_ace_wet_xx_turn_straight_card_river_overcard.json

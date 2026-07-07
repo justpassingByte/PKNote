@@ -1,0 +1,23 @@
+set_pot 9.5
+set_effective_stack 95.25
+set_board 8s,4s,2c,6d
+set_range_ip 22:0.556,33:0.387,43s:0.407,44:0.578,53s:0.637,54s:0.283,55:0.363,64s:0.4,65s:0.513,66:0.392,75s:0.259,76s:0.515,77:0.241,85s:0.464,86s:0.486,87s:0.464,88:0.589,96s:0.296,97s:0.301,98s:0.138,99:0.454,A3s:0.458,A4s:0.637,A5s:0.575,A5o:0.389,A6s:0.462,A7s:0.439,A8s:0.547,A9o:0.431,AJo:0.251,AKs:0.126,AKo:0.397,AQo:0.263,ATo:0.344,A2s:0.301,A9s:0.433,AA:0.446,AQs:0.304,ATs:0.249,AJs:0.493,J7s:0.523,J8s:0.453,J9s:0.398,JTs:0.362,JJ:0.358,K3s:0.476,K4s:0.377,K5s:0.401,K6s:0.408,K7s:0.288,K8s:0.461,K9s:0.243,KJs:0.303,KQo:0.368,KTs:0.358,K2s:0.256,KK:0.387,KQs:0.21,Q6s:0.399,Q7s:0.334,Q8s:0.486,Q9s:0.439,QJs:0.326,QTs:0.397,QQ:0.399,T7s:0.204,T8s:0.348,T9s:0.322,TT:0.336
+set_range_oop 22:0.029,33:0.992,43s:0.637,44:0.02,53s:0.231,54s:0.664,55:0.891,64s:0.613,65s:0.228,66:0.932,75s:0.429,76s:0.475,77:0.939,86s:0.654,87s:0.739,98s:0.899,99:0.87,96s:0.976,97s:0.932,A2o:0.673,A3s:0.725,A3o:0.7,A4s:0.95,A4o:0.863,A5s:0.564,A5o:0.584,A6s:0.323,A7s:0.401,A8s:0.662,A9s:0.818,A9o:0.305,AJs:0.532,AJo:0.448,AKs,AKo,AQs,AQo:0.997,ATs:0.994,ATo:0.731,A2s:0.795,AA:0.767,J8s:0.849,J9s:0.545,JTs:0.526,JTo:0.611,JJ:0.808,J7s:0.689,K4s:0.969,K5s:0.15,K8s:0.826,K9o:0.643,KJs:0.765,KJo:0.62,KQs:0.983,KQo:0.753,KTs:0.407,KTo:0.648,K2s:0.748,KK:0.802,K3s:0.172,K6s:0.395,K7s:0.567,K9s:0.469,Q8s:0.894,QJs:0.392,QJo:0.575,QTs:0.255,QQ:0.879,Q6s:0.324,Q7s:0.534,Q9s:0.559,T8s:0.898,T9s:0.669,TT:0.837,T7s:0.901
+set_bet_sizes oop,flop,bet,75
+set_bet_sizes oop,flop,raise,60
+set_bet_sizes ip,flop,bet,75
+set_bet_sizes ip,flop,raise,60
+set_bet_sizes oop,turn,bet,75
+set_bet_sizes oop,turn,raise,60
+set_bet_sizes ip,turn,bet,75
+set_bet_sizes ip,turn,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 2000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\turn\raw\BTN_vs_BB_two_tone_low_cbet33_call_turn_straight_card.json

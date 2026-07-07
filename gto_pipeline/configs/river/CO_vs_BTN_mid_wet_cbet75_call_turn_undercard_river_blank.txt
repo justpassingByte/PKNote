@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board Js,9s,7c,3d,5d
+set_range_ip 33,54s,64s,65s,77,86s,87s,97s,99,AJs,AJo,A2s:0.995,A4s:0.98,A5s:0.704,A6s:0.896,A8s,AQs:0.992,ATs,J9s,JTs,JJ,KJs,KQo:0.087,KTs:0.999,K8s,KQs,QJs,QTs:0.864,T8s
+set_range_oop 76s,87s,88:0.897,98s,A9s:0.615,AJs,AJo:0.95,ATs:0.294,ATo:0.293,AA,A2s,A3s,A4s,A5s,A6s:0.64,A7s,A8s:0.783,AKs,AQs,K9s:0.293,KJs,KJo:0.859,KK,Q9s:0.42,QJs,QQ,T9s,TT:0.608
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_mid_wet_cbet75_call_turn_undercard_river_blank.json

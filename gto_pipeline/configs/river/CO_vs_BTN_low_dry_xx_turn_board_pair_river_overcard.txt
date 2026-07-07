@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board 8s,4d,2c,4h,Th
+set_range_ip 22,33,44,54s,55,65s,75s,76s:0.99,77,86s,87s,88,97s:0.861,98s,99,A8s,AKs:0.829,AKo:0.827,A2s,J9s:0.995,JTs,JJ,K8s,Q9s:0.005,T8s,T9s:0.864,TT
+set_range_oop A3s,A5s:0.649,A9s:0.049,AJs:0.797,AJo:0.796,AKs:0.006,AKo:0.007,AQs:0.998,AQo:0.998,ATs:0.852,ATo:0.847
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_low_dry_xx_turn_board_pair_river_overcard.json

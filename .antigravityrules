@@ -1,0 +1,20 @@
+# Windows PowerShell Command Constraints
+The host system runs Windows and uses PowerShell as the default terminal. You MUST adhere to the following strict terminal rules to prevent execution errors:
+
+1. **COMMAND CHAINING**: ALWAYS use a semicolon `;` instead of an ampersand `&&`. PowerShell historically rejects `&&` depending on the version.
+   - ❌ DO NOT USE: `cd backend && npm run build`
+   - ✅ USE INSTEAD: `cd backend ; npm run build`
+
+2. **DELETING FILES/FOLDERS**: DO NOT use Linux flags like `rm -rf`. Use PowerShell native commands.
+   - ❌ DO NOT USE: `rm -rf folder_name`
+   - ✅ USE INSTEAD: `Remove-Item -Recurse -Force folder_name`
+
+3. **SETTING ENVIRONMENT VARIABLES**: DO NOT use Linux `export`. Use PowerShell `$env:` syntax.
+   - ❌ DO NOT USE: `export NODE_ENV=production`
+   - ✅ USE INSTEAD: `\$env:NODE_ENV="production"`
+
+4. **NPM SCRIPT EXECUTION**: If passing string arguments or flags containing spaces, quote them carefully. PowerShell parses quotes differently than Bash.
+
+5. **PATH SEPARATORS**: Windows uses backslashes `\`. While Node/Scripts tolerate forward slashes `/`, native PowerShell executables might throw path errors. Always prefer relative paths (`.\folder\file`) over global path hacks if unsure.
+
+6. **NO UNIX UTILS**: Utilities like `sed`, `awk`, `chmod`, `chown` do not exist natively out-of-the-box. Use built-in IDE tools (`replace_file_content`, `view_file`, etc.) instead of attempting to parse or edit files via terminal streams.

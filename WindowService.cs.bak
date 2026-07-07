@@ -1,0 +1,104 @@
+using RobinHUD.Helpers;
+
+namespace RobinHUD.Services;
+
+/// <summary>
+/// Discovers and tracks poker client windows via EnumWindows.
+/// Returns HWND + accurate visual rect (via DwmGetWindowAttribute).
+/// </summary>
+public class WindowService
+{
+    /// <summary>
+    /// Represents a discovered poker window.
+    /// </summary>
+    public record TrackedWindow(IntPtr Hwnd, string Title, Win32.RECT Rect);
+
+    private readonly List<string> _titleKeywords;
+    private readonly SettingsManager? _settingsManager;
+
+    public WindowService(SettingsManager? settingsManager = null, IEnumerable<string>? titleKeywords = null)
+    {
+        _settingsManager = settingsManager;
+        // Default keywords to match common poker clients
+        _titleKeywords = titleKeywords?.ToList() ?? new List<string>
+        {
+            "PokerStars",
+            "GGPoker",
+            "888poker",
+            "partypoker",
+            "WPT Global",
+            "Natural8",
+            "Hold'em",
+            "Holdem",
+            "No Limit",
+            "Table"
+        };
+    }
+
+    /// <summary>
+    /// Enumerates all visible windows and returns those matching poker client keywords.
+    /// </summary>
+    public List<TrackedWindow> FindPokerWindows()
+    {
+        var windows = new List<TrackedWindow>();
+
+        Win32.EnumWindows((hWnd, _) =>
+        {
+            if (!Win32.IsWindowVisible(hWnd))
+                return true; // continue
+
+            int length = Win32.GetWindowTextLength(hWnd);
+            if (length == 0)
+                return true;
+
+            var buffer = new char[length + 1];
+            Win32.GetWindowText(hWnd, buffer, buffer.Length);
+            string title = new string(buffer, 0, length);
+
+            if (IsPokerWindow(title))
+            {
+                var rect = Win32.GetAccurateWindowRect(hWnd);
+                if (rect.Width > 100 && rect.Height > 100) // skip minimized
+                {
+                    windows.Add(new TrackedWindow(hWnd, title, rect));
+                }
+            }
+
+            return true; // continue enumeration
+        }, IntPtr.Zero);
+
+        return windows;
+    }
+
+    /// <summary>
+    /// Gets the current accurate rect of a known HWND (for resize tracking).
+    /// </summary>
+    public Win32.RECT? GetWindowRect(IntPtr hwnd)
+    {
+        if (!Win32.IsWindowVisible(hwnd))
+            return null;
+
+        return Win32.GetAccurateWindowRect(hwnd);
+    }
+
+    /// <summary>
+    /// Checks if the given window is currently the foreground window.
+    /// </summary>
+    public bool IsForeground(IntPtr hwnd)
+        => Win32.GetForegroundWindow() == hwnd;
+
+    private bool IsPokerWindow(string title)
+    {
+        // If the user has the Admin VIP key, allow them to test on ANY window
+        // like Notepad, Paint, or Discord to make mock testing easier.
+        if (_settingsManager != null && _settingsManager.ApiKey == "ROBINHUD-ADMIN-KEY-9999")
+        {
+            var adminTestKeywords = new[] { "Notepad", "Paint", "Chrome", "Discord", "áº¢nh" };
+            if (adminTestKeywords.Any(kw => title.Contains(kw, StringComparison.OrdinalIgnoreCase)))
+                return true;
+        }
+
+        return _titleKeywords.Any(kw =>
+            title.Contains(kw, StringComparison.OrdinalIgnoreCase));
+    }
+}

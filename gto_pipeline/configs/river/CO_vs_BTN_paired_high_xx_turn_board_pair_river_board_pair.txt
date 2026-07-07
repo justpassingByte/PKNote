@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Ks,Kd,2c,2s,Kc
+set_range_ip 33:0.558,44:0.764,54s,55:0.881,64s:0.98,65s:0.968,66:0.451,75s:0.914,77:0.85,76s,88:0.999,86s,87s,99,97s,98s:0.998,AKo,A2s,AJo:0.499,AQo:0.041,AKs,A3s:0.528,A4s:0.551,A5s:0.36,A6s:0.04,A7s:0.209,A8s:0.245,A9s:0.422,AJs,AQs,ATs:0.491,JJ,K8s,K9s,KJs,KQo,KQs,KTs,TT,T9s:0.002
+set_range_oop 33:0.599,44:0.381,55:0.187,66:0.317,77:0.312,88:0.663,99:0.246,A8s:0.743,A9s:0.995,AJs:0.397,AJo:0.313,AQs:0.772,AQo:0.857,ATs:0.979,ATo:0.769,A3s,A4s,A5s,A6s,A7s,J9s:0.679,Q9s:0.998,T8s:0.193,T9s:0.013
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_paired_high_xx_turn_board_pair_river_board_pair.json

@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board Ks,8d,3c,6c,9c
+set_range_ip 33,54s:0.985,66,75s:0.764,86s,88,97s,A2s,A4s,A5s,A7s,A8s:0.004,AJs,AKs,AKo,AQs:0.995,ATs,JTs,J9s:0.443,JJ,K8s,KJs,KQs,KQo,KTs,K9s,QJs:0.502,QTs:0.988,Q9s:0.684,T8s:0.998,T9s
+set_range_oop 76s,77:0.244,87s:0.608,98s,99:0.638,A5s:0.994,A7s,AJs,AKo:0.422,AQs:0.74,ATs,A3s,A6s,AJo:0.001,AKs:0.671,AQo:0.764,A8s:0.98,JJ:0.59,KJo:0.995,KQo:0.993,K9s:0.888,KJs,KQs:0.989,KTs,QJs:0.126,QQ,TT:0.986,T8s
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_K_dry_cbet33_call_turn_blank_river_flush_card.json

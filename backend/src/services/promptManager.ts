@@ -1,0 +1,501 @@
+import { PremiumTier } from '@prisma/client';
+
+/**
+ * Vietnamese keyword mapping for OCR output normalization.
+ * Maps platform-specific Vietnamese terms to standard poker actions.
+ */
+const KEYWORD_MAP: Record<string, string> = {
+  'bÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â i': 'fold',
+  'bo bai': 'fold',
+  'theo': 'call',
+  'tÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“': 'raise',
+  'to': 'raise',
+  'cÃƒÆ’Ã¢â‚¬Â Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â£c': 'bet',
+  'cuoc': 'bet',
+  'check': 'check',
+  'kiÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€ Ã¢â‚¬â„¢m tra': 'check',
+  'kiem tra': 'check',
+  'all-in': 'all-in',
+  'allin': 'all-in',
+  'winner': 'winner'
+};
+
+/**
+ * Select the AI model based on user tier.
+ */
+export function getModelForTier(tier: PremiumTier): { model: string; provider: 'openai' | 'anthropic' } {
+  switch (tier) {
+    case 'ENTERPRISE':
+      return { model: 'claude-3-5-sonnet-20241022', provider: 'anthropic' };
+    case 'PRO_PLUS':
+      return { model: 'gpt-4o', provider: 'openai' };
+    case 'PRO':
+    case 'FREE':
+    default:
+      return { model: 'gpt-4o-mini', provider: 'openai' };
+  }
+}
+
+/**
+ * Build the system prompt for hand analysis.
+ * VERSION 3.1: Robust & Grounded Engine.
+ * Implements Confidence-Weighted Exploitation and Hard Override Logic.
+ */
+export function buildHandAnalysisPrompt(
+  customPrompt?: string,
+  settings?: {
+    hand_style?: string;
+    hand_aggression_bias?: number;
+    hand_insight_depth?: string;
+    hand_behavior_toggles?: any;
+    language?: string;
+  },
+  playerContext?: string,
+  gtoContext?: string
+): string {
+  const style = settings?.hand_style || 'Exploit';
+  const aggression = settings?.hand_aggression_bias ?? 85;
+  const depth = settings?.hand_insight_depth || 'Deep';
+  const toggles = settings?.hand_behavior_toggles || {};
+
+  let aggressionRules = "";
+  if (aggression < 35) {
+    aggressionRules = `
+[TACTICAL_STANCE]: POT-CONTROL. Check-back marginal value.`;
+  } else if (aggression > 65) {
+    aggressionRules = `
+[TACTICAL_STANCE]: POLARIZED PRESSURE. High C-bet % (>70%). Frequent Overbets (125%+).`;
+  } else {
+    aggressionRules = `
+[TACTICAL_STANCE]: STANDARD GTO MIX.`;
+  }
+
+  let styleRules = "";
+  if (style === 'Exploit') {
+    styleRules = `
+[STRATEGIC_PHILOSOPHY]: RUTHLESS EXPLOIT.
+- MAX_EXPLOIT: If a leak is identified (e.g. overcalls), your suggested 'better_line' MUST extract MAX EV.
+- OFFENSIVE_PRIORITY: Against loose targets, widen value ranges and use larger sizing. Avoid folding if EV is even slightly positive.`;
+  } else if (style === 'GTO') {
+    styleRules = `
+[STRATEGIC_PHILOSOPHY]: THEORETICAL EQUILIBRIUM.
+- RULE: Maintain range balance. Observed profiles should only be used as a tie-breaker for zero-EV decisions.`;
+  } else {
+    styleRules = `
+[STRATEGIC_PHILOSOPHY]: ADAPTIVE. Solid fundamentals. Pivot to exploit only when data is statistically significant.`;
+  }
+
+  const configBlock = `
+### SYSTEM OPERATIONAL CODES (LEVEL-0 PRIORITY):
+- CORE_IDENTITY: Elite AI Poker Strategist (Offensive-Focus).
+- HARD_OVERRIDE_LOGIC: The [AI CONFIGURATION] block is the ABSOLUTE source of truth.
+
+### AI CONFIGURATION (UNTOUCHABLE):
+- [STYLE]: ${style}
+- [AGGRESSION_BIAS]: ${aggression}%
+- [ANALYTICAL_DEPTH]: ${depth}
+
+### TACTICAL EXECUTION PROTOCOLS:
+${styleRules}
+${aggressionRules}
+
+### HAND-EXPLOIT PROTOCOL (MANDATORY)
+${style === 'Exploit' ? `You are in EXPLOIT mode. 
+- Punish deviance: Suggest the line that punishes the villain's mistake 100%.
+- Exploit Type Priority: PROFIT EXTRACTION (Offensive) > Mistake Avoidance (Defensive).
+- No Playing Safe: Against Calling Stations, your "better_line" should almost always include THIN VALUE and LARGER SIZING.
+- Avoid over-folding. If you can exploit a leak by betting, never default to folding.
+- EV > Balance: Suggest the most profitable line, even if theoretically unbalanced.
+` : 'Solid fundamentals with conditional exploit pivoting.'}
+
+### GTO REFERENCE PROTOCOL:
+If a [GTO REFERENCE DB] block is provided, you MUST:
+1. Compare actual actions against the Mathematical Solver Data percentages.
+2. Document EXACTLY how the player's line deviated from the GTO frequencies (e.g. "They checked, but GTO bets this 80%").
+3. Translate this deviation into the 'better_line' and a highly actionable 'gto_deviation_reason' (Leak).
+`;
+
+  const systemFooter = `
+### MANDATORY CONSTRAINTS:
+1. OUTPUT: Valid JSON only.
+2. ALL PLAYERS EQUAL: Analyze mistakes and leaks for EVERY player equally. Do NOT distinguish between "Hero" and "Villain". Report each player by their actual username.
+3. EXPLOIT_VALIDATION: exploit_suggestions MUST be actionable strategies to use against specific players' leaks found in this hand.
+4. SIZING_VALIDATION: Fold/Call actions must have sizing=null.
+5. LANGUAGE_VALIDATION: ${settings?.language === 'vi' ? 'Respond strictly in Vietnamese (vi), but retain standard Poker acronyms (BTN, XR, AQo, etc.) and action verbs (call, fold, raise, bet, check, all-in, 3bet, 4bet) in English. ABSOLUTELY DO NOT translate "call" to "gÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Âi", "fold" to "bÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â", "raise" to "tÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“", etc.' : 'Respond in English.'}
+`;
+
+  const customBase = customPrompt ? `### USER-DEFINED INSTRUCTIONS:\n${customPrompt}\n` : "";
+  const profileContext = playerContext ? `### OBSERVED PLAYER PROFILES (CRITICAL CONTEXT):\n${playerContext}\n` : "";
+  const ragContext = gtoContext ? `${gtoContext}\n` : "";
+
+  return `${configBlock}
+
+${profileContext}
+${ragContext}
+${customBase}
+${systemFooter}
+
+### DETAILED ANALYSIS REQUIREMENT:
+You MUST act as an elite Poker Coach. Do NOT output generic filler text (like "PhÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢n tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­ch hÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â nh ÃƒÆ’Ã¢â‚¬Å¾ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ng cÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â§a ngÃƒÆ’Ã¢â‚¬Â Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Âi chÃƒÆ’Ã¢â‚¬Â Ãƒâ€šÃ‚Â¡i"). 
+Your "summary", "reasoning_trace", and "mistakes" descriptions MUST be deep, specific, and reference exact hand combinations, sizing, and board textures. 
+The output notes will be stored to explicitly exploit opponents in the future. The quality must be incredibly high.
+
+### CRITICAL VOCABULARY RULE:
+You MUST use English words for ALL poker actions (call, fold, raise, bet, check, all-in). DO NOT translate them to Vietnamese (e.g., ALWAYS use "call" instead of "gÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Âi" or "theo", ALWAYS use "fold" instead of "bÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â", ALWAYS use "raise" instead of "tÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“").
+
+### OUTPUT SCHEMA (STRICT JSON):
+{
+  "summary": "Detailed technical overview of the hand. Describe the preflop dynamics, flop texture, and the overarching theme of the hand in at least 2-3 sentences.",
+  "reasoning_trace": [
+    "Step-by-step logic of the key decision points.",
+    "Detailed evaluation of sizing, ranges, and board texture."
+  ],
+  "mistakes": [{ 
+    "street": "preflop|flop|turn|river", 
+    "player": "Exact player name", 
+    "position": "string (Target table position like BTN/SB/BB)",
+    "hole_cards": "Exact cards the player was holding if known (e.g., AhKd), else null",
+    "description": "Specific error made. Focus on the core LEAK being exhibited (e.g., Calling too wide, missing thin value, sized improperly).", 
+    "actual_action": "The exact action they TOOK (e.g., 'CALL 33% pot')",
+    "gto_action": "The mathematically correct GTO action or frequencies (e.g., '100% FOLD' or 'BET 75% pot with 80% frequency')",
+    "better_line": "The exact theoretically optimal or maximally exploitative line they should have taken.",
+    "gto_deviation_reason": "Explain EXACTLY how this differs from GTO. (e.g., 'GTO bets here 80% because of range advantage. Checking loses value').",
+    "exploit_strategy": "Translate this leak into a direct counter-strategy. How can WE exploit this player in the future?",
+    "severity": "minor|moderate|critical"
+  }],
+  "exploit_suggestions": [
+    "Actionable, highly specific EXPLOIT strategies based on the identified LEAKS to be used in future hands."
+  ],
+  "final_verdict": {
+    "grade": "A|B|C|D|F",
+    "confidence_score": 0.0-1.0,
+    "suggestion_type": "GTO | Exploit | Balanced"
+  }
+}
+
+Return ONLY valid JSON.`;
+}
+
+/*
+export function buildHandOcrPrompt(): string {
+  return `You are a poker hand history parser. Extract ALL information from the poker table screenshot and return a JSON object with this EXACT structure:
+
+{
+  "hand_id": "string or null",
+  "game_type": "NLHE",
+  "board": ["card1", "card2", ...],
+  "players": [
+    { "name": "string", "position": "SB|BB|UTG|MP|HJ|CO|BTN", "hole_cards": ["card1", "card2"] }
+  ],
+  "actions": {
+    "preflop": [{ "player": "name", "position": "string", "action": "fold|call|raise|bet|check|all-in", "amount": number_in_BB or $ }],
+    "flop": [...],
+    "turn": [...],
+    "river": [...]
+  },
+  "pot": number_in_BB,
+  "winner": "player_name"
+}
+
+IMPORTANT Vietnamese keyword mapping:
+-"KiÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€ Ã¢â‚¬â„¢m tra" = check
+- "BÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â i" = fold
+- "Theo" = call  
+- "TÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“" = raise
+- "CÃƒÆ’Ã¢â‚¬Â Ãƒâ€šÃ‚Â°ÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â£c" = bet
+- "WINNER" = winner marker
+
+Card format: use lowercase rank + suit letter: "9d" (9 of diamonds), "Kc" (King of clubs), "Ah" (Ace of hearts), "Ts" (Ten of spades).
+
+Return ONLY valid JSON, no markdown or extra text.`;
+}
+*/
+
+export function buildProfilePrompt(
+  customPrompt?: string,
+  settings?: {
+    ai_style?: string;
+    aggression_bias?: number;
+    insight_depth?: string;
+    behavior_toggles?: any;
+    language?: string;
+  }
+): string {
+  const style = settings?.ai_style || 'Exploit';
+  const aggression = settings?.aggression_bias ?? 85;
+  const depth = settings?.insight_depth || 'Deep';
+  const isVietnamese = settings?.language === 'vi';
+
+  let aggressionRules = "";
+  if (aggression > 70) {
+    aggressionRules = `
+[TACTICAL_STANCE]: POLARIZED PRESSURE / MAX EXPLOIT.
+- Prioritize OFFENSIVE VALUE EXTRACTION.
+- Target leaks with 80-100% frequency.`;
+  } else {
+    aggressionRules = `[TACTICAL_STANCE]: BALANCED / STANDARD.`;
+  }
+
+  const languageRule = isVietnamese
+    ? `### 8. LANGUAGE VALIDATION (MANDATORY)
+You MUST write all natural-language profile content in Vietnamese.
+
+Fields that MUST be Vietnamese:
+- leaks[]
+- range_adjustments[]
+- strategy[].node when it contains explanatory or exploit text
+- any free-text reasoning or exploit descriptions
+
+Fields that MUST remain in standard English poker notation:
+- archetype labels: keep canonical English poker labels or enums; do NOT translate archetype
+- strategy[].action: BET, RAISE, CALL, FOLD, CHECK, 3BET, 4BET
+- poker positions/acronyms: BTN, SB, BB, CO, HJ, UTG, IP, OOP, XR, CBET
+- poker ranges: TT+, AQs+, AKo, KQo, A5s-A2s
+- sizing/frequency: 75% pot, 125% pot, 80%, 100%
+- structure enum: linear or polar
+
+Never translate poker actions into Vietnamese.
+Inside Vietnamese sentences, still use the English poker action words: call, fold, raise, bet, check, all-in, 3bet, 4bet.
+Do NOT use Vietnamese action words such as "goi", "bo", "to", or "theo" for poker actions.`
+    : `### 8. LANGUAGE VALIDATION (MANDATORY)
+Respond in English.`;
+
+  const configBlock = `
+# POKER EXPLOIT ENGINE - COMPACT PRO VERSION (OPTIMIZED)
+
+### AI CONFIGURATION:
+- [STYLE]: ${style}
+- [AGGRESSION_BIAS]: ${aggression}%
+- [ANALYTICAL_DEPTH]: ${depth}
+
+### TACTICAL EXECUTION PROTOCOLS:
+${aggressionRules}
+- [MODIFIER]: ${style === 'Exploit' ? 'FORCE_EXPLOIT_ENABLED' : 'STANDARD_MIX'}
+
+---
+
+## SYSTEM ROLE
+You are a Tier-1 Poker Data Scientist and Exploitative Pro.
+Convert notes and tendencies into precise, executable offensive exploit strategies.
+
+## CORE PRINCIPLES
+* Always target specific leaks to extract profit.
+* If a strategy avoids profit instead of extracting it -> REWRITE.
+* Exploit means punishing opponent mistakes for profit, not playing safe.
+
+## ANALYST RULES (MANDATORY)
+
+### 1. ACTION-TYPE VALIDATION (STRICT)
+- Fold -> sizing MUST be strictly null (Do NOT invent "0" or "0x")
+- Call -> sizing MUST be strictly null (Do NOT invent "0" or "0x")
+- Raise/Bet/3bet/4bet -> must include sizing as PERCENTAGE OF POT (e.g. "33% pot", "75% pot", "125% pot")
+- FORBIDDEN sizing formats: "2.5x", "3x", "big", "small". Always use "XX% pot".
+
+### 2. EXPLOIT TYPE PRIORITY (MANDATORY)
+When an opponent has a clear leak:
+- Prioritize profit extraction (value) over mistake avoidance (defense).
+- Use offensive exploits by default:
+  - Wider value betting ranges (thinner value)
+  - Larger bet sizing (attacking their willingness to call)
+  - Reduced bluff frequency vs Calling Stations (punishment by omission)
+- Do NOT resort to over-folding vs loose players unless their range is polar and strength is shown.
+
+### 3. MAX EXPLOIT PROTOCOL (MANDATORY)
+- Push the edges: Use extreme frequencies (100% or 0%).
+- Punish, do not avoid: Against aggressive villains, trap and call wider.
+- Offensive domination: Against Calling Stations, use massive sizing and the widest possible value range.
+- Exploit means punish. Do not output defensive safe strategies.
+
+### 4. RANGE FORMAT STRICT (MANDATORY)
+All ranges MUST use valid poker notation:
+- Allowed examples: A5s-A2s, KQo, TT+, 89s
+- FORBIDDEN: "weak hands", "strong hands", "unpaired boards", "bluffs"
+- If invalid range format is generated -> REWRITE.
+
+### 5. EXPLOIT DIRECTION vs AGGRO (MANDATORY)
+Against over-aggressive opponents (high XR, cold 4bet, etc.):
+- Increase calling and trapping frequency.
+- PREFLOP: Do not pure 4bet linear hands like KQs or AQo. KQs is typically a call, and AQo is a mix/bluff.
+- Do NOT overfold. Do NOT avoid confrontation.
+- If strategy reduces interaction or defensively folds -> REWRITE.
+
+### 6. EXPLOIT DIRECTION vs FISH / PASSIVE (MANDATORY)
+Against Calling Stations, Passive players, or Fish (high VPIP, low PFR/AF):
+- NEVER slowplay. NEVER bluff catch or run elaborate bluffs.
+- Over-fold to their aggression: If a passive player raises or check-raises, they have the nuts. FOLD linear hands.
+- Expand thin value: Bet massive sizings (overbets, pot-size) with your strong hands. They will call.
+- PREFLOP: Over-ISO (isolate) raise and squeeze them mercilessly.
+
+### 7. JSON VALIDITY (CRITICAL)
+The final output MUST be perfectly valid JSON.
+Requirements:
+- NO duplicate keys.
+- Proper commas and brackets.
+- NO repeated fields (e.g. do not output "frequency" twice in the same object).
+- NO partial objects or trailing commas.
+- If JSON is invalid -> REWRITE entire response.
+
+${languageRule}
+`;
+
+  const schemaBlock = isVietnamese
+    ? [
+        '## OUTPUT FORMAT (JSON ONLY)',
+        '```json',
+        '{',
+        '  "archetype": "LAG",',
+        '  "confidence": 0.82,',
+        '  "aggression_score": 78,',
+        '  "looseness_score": 66,',
+        '  "leaks": [',
+        '    "Fold qua nhieu truoc 2-barrel turn sau khi call flop voi range cap trung binh",',
+        '    "XR flop qua hiem tren board wet nen de bi value bet mong"',
+        '  ],',
+        '  "range_adjustments": [',
+        '    "BTN vs BB: mo rong range value bet turn gom TPTK va overpair; giam bluff air",',
+        '    "BB vs BTN open: 3bet them A5s-A2s, KQs; call nhieu hon voi AQo khi doi thu 4bet qua cao"',
+        '  ],',
+        '  "strategy": [',
+        '    {',
+        '      "node": "FLOP | BTN | vs CBET cao tren board A-high",',
+        '      "action": "CALL",',
+        '      "range": "AQs, AJs, KQs, 99-TT",',
+        '      "structure": "linear",',
+        '      "sizing": null,',
+        '      "frequency": "80%"',
+        '    },',
+        '    {',
+        '      "node": "TURN | IP | sau khi doi thu check lai va lo range cap trung binh",',
+        '      "action": "BET",',
+        '      "range": "TT+, AQs+, KQs",',
+        '      "structure": "polar",',
+        '      "sizing": "125% pot",',
+        '      "frequency": "100%"',
+        '    }',
+        '  ]',
+        '}',
+        '```',
+        '',
+        'Requirements:',
+        '- Return JSON only.',
+        '- Keep all JSON keys exactly as shown.',
+        '- Keep poker notation and enum fields in English.',
+        '- Write only the natural-language text values in Vietnamese.'
+      ].join('\n')
+    : [
+        '## OUTPUT FORMAT (JSON ONLY)',
+        '```json',
+        '{',
+        '  "archetype": "string",',
+        '  "confidence": 0.0,',
+        '  "aggression_score": 0,',
+        '  "looseness_score": 0,',
+        '  "leaks": [',
+        '    "Node-specific leak | trigger: <data>"',
+        '  ],',
+        '  "range_adjustments": [',
+        '    "Exact range change with node context"',
+        '  ],',
+        '  "strategy": [',
+        '    {',
+        '      "node": "STREET | POSITION | CONTEXT (e.g. FLOP | BTN | vs CBET high frequency)",',
+        '      "action": "BET|RAISE|CALL|FOLD|CHECK|3BET|4BET",',
+        '      "range": "Exact poker notation (e.g. TT+, AQs+, AKo)",',
+        '      "structure": "linear|polar",',
+        '      "sizing": "XX% pot (e.g. 75% pot, 125% pot) | null for FOLD/CALL",',
+        '      "frequency": "XX% (e.g. 80%, 100%)"',
+        '    }',
+        '  ]',
+        '}',
+        '```',
+        '',
+        'Requirements:',
+        '- Return JSON only.',
+        '- Keep all JSON keys exactly as shown.'
+      ].join('\n');
+
+  const customBase = customPrompt ? `\n### USER-DEFINED OVERRIDE (CRITICAL):\n${customPrompt}\n` : "";
+
+  return `${configBlock}
+${customBase}
+${schemaBlock}`;
+}
+
+export { KEYWORD_MAP };
+
+/**
+ * Build the system prompt for GTO Oracle ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â natural language poker query parser.
+ * Parses Vietnamese or English poker questions into structured JSON for GTO database lookup.
+ */
+export function buildGtoOraclePrompt(language?: string): string {
+  const languageRule = language === 'vi'
+    ? 'Respond the "situation_summary" field strictly in Vietnamese (vi), but retain standard Poker acronyms (BTN, XR, AQo, etc.) and action verbs (call, fold, raise, bet, check, all-in, 3bet, 4bet) in English. ABSOLUTELY DO NOT translate "call" to "gÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Âi", "fold" to "bÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Â", "raise" to "tÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“", etc.'
+    : 'Respond the "situation_summary" field in English.';
+
+  return `You are a poker hand parser for a GTO solver database. Parse Vietnamese or English poker questions into a structured JSON query.
+
+### LANGUAGE VALIDATION (MANDATORY)
+${languageRule}
+
+=== DATABASE SCHEMA ===
+
+POSITIONS (3 matchups available):
+- BTN_vs_BB (Button vs Big Blind) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â DEFAULT if not specified
+- SB_vs_BB (Small Blind vs Big Blind)
+- CO_vs_BTN (Cutoff vs Button)
+
+HERO POSITION PARSING (critical):
+Vietnamese: "tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i IP", "tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i ngÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œi BTN", "tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i lÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â  BTN" -> "ip". "tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i OOP", "tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i ngÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œi BB", "tÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i ÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€¦Ã‚Â¸ BB" -> "oop".
+Quick rules: Hero is BTN or CO -> "ip". Hero is BB or SB -> "oop".
+
+STREETS: flop, turn, river
+
+BOARD_CARDS (CRITICAL): EXTRACT ALL 3-5 CARDS.
+- Use EXACT cards if mentioned (e.g. "Ks 8s 3c" -> "Ks,8s,3c").
+- Bilingual Synonyms mapping (English/Vietnamese):
+  - "A dry", "Ace-high dry", "A cao khÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´", "board rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡c A" -> "As,7d,2c"
+  - "K dry", "K-high dry", "K cao khÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´", "K-dry" -> "Ks,8d,3c"
+  - "Q dry", "Q-high dry", "Q cao khÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´", "Q-dry" -> "Qs,7d,2c"
+  - "Low dry", "Rag board", "Board thÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚ÂºÃƒâ€šÃ‚Â¥p", "mÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚ÂºÃƒâ€šÃ‚Â·t rÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¡c" -> "8d,4c,2s"
+  - "Paired board", "Board ÃƒÆ’Ã¢â‚¬Å¾ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i", "ÃƒÆ’Ã¢â‚¬Å¾ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â´i board", "paired" -> "Ks,Kd,2c"
+  - "Two-tone", "Flush draw", "cÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â³ thÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¹ng", "2 bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­ch", "2 cÃƒÆ’Ã¢â‚¬Â Ãƒâ€šÃ‚Â¡" -> Assign 2 cards with same suit (e.g. "Ks,8s,3c")
+  - "Monotone", "3-flush", "3 bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­ch", "ÃƒÆ’Ã¢â‚¬Å¾ÃƒÂ¢Ã¢â€šÂ¬Ã‹Å“ÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚Â»Ãƒâ€šÃ‚Âu bÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â­ch" -> Assign 3 cards with same suit (e.g. "As,7s,2s")
+- Output board_cards as comma-separated values.
+
+BOARD BUCKET: ALWAYS set this to "auto".
+
+ACTION LINES:
+- Flop root (OOP first action): action_line = null
+- Flop facing IP c-bet: action_line = "facing_cbet33" or "facing_cbet75"
+- Turn (after flop): action_line = "cbet33_call", "cbet75_call", or "xx" (xx = both checked)
+- River: same as turn (action_line reflects flop+turn line)
+
+=== OUTPUT FORMAT ===
+Return ONLY valid JSON:
+{
+  "position": "BTN_vs_BB",
+  "board_bucket": "auto",
+  "street": "flop",
+  "action_line": "facing_cbet33",
+  "turn_type": null,
+  "river_type": null,
+  "hero_hand": "AcKd",
+  "hero_hand_class": "top_pair",
+  "hero_position": "oop",
+  "board_cards": "As,7d,2c",
+  "situation_summary": "BB facing cbet 33% trÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Âªn flop A-dry, cÃƒÆ’Ã‚Â¡Ãƒâ€šÃ‚ÂºÃƒâ€šÃ‚Â§m top pair top kicker"
+}
+
+=== CRITICAL RULES ===
+1. POSITION DEFAULTS: If not specified, use "BTN_vs_BB".
+2. STREET: 3 community cards = flop, 4 = turn, 5 = river.
+3. FLOP root (OOP first action, no bet yet): action_line=null, turn_type=null, river_type=null.
+4. FLOP facing IP c-bet: action_line="facing_cbet33" (small) or "facing_cbet75" (big), turn_type=null, river_type=null.
+5. hero_hand: MUST use EXACT 4-character valid poker format (e.g., "AcKd"). 
+   - Suits MUST be EXACTLY one of: c, d, h, s. NEVER output 'o' (offsuit). 
+   - Use "T" for 10. "Ts9s", "TcTd".
+6. hero_hand_class: Classify into ONE: straight_flush, quads, full_house, flush, straight, set, trips, two_pair, overpair, top_pair, second_pair, low_pair, underpair, flush_draw, straight_draw, overcards, ace_high, air.
+7. situation_summary: Follow language validation. Do NOT translate poker actions.
+8. Return ONLY valid JSON. No markdown, no fences.`;
+
+}

@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board Qs,7d,2c,7h,7s
+set_range_ip 22,33:0.032,44:0.01,54s,64s,65s:0.999,75s,76s,86s:0.78,87s,97s,98s,99:0.04,A7s,AKo:0.002,AQs,AQo,A2s:0.404,J9s:0.729,JJ:0.818,K9s:0.151,KQs,KQo,Q9s:0.999,QJs,QTs,T9s:0.188,T8s:0.003,TT:0.492
+set_range_oop 88:0.568,99:0.79,AJs:0.918,AJo:0.822,AKs:0.851,AKo:0.832,AQs:0.838,AQo:0.761,ATs:0.025,ATo:0.042,AA:0.581,JJ,KJs:0.172,KJo:0.117,KQs:0.36,KQo:0.373,KK:0.55,Q9s:0.034,QJs:0.972,QTs:0.407
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_Q_dry_cbet75_call_turn_board_pair_river_board_pair.json

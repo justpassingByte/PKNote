@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Ts,7s,2s,7d,Qc
+set_range_ip 43s,53s,54s,64s,65s,66:0.185,75s,76s,77,85s,86s,87s,88:0.971,96s,97s,98s,99,A7s,ATs,ATo,AA,A3s,A4s,A5o:0.924,A5s,A6s,A8s,A9o:0.412,A9s,AJs,AKs,AQs,J7s,J8s,J9s,JTs:0.662,JJ,K3s:0.796,K4s:0.366,K5s:0.428,K6s:0.678,K7s,K8s,K9s:0.362,KQo,KTs:0.998,KK,KJs,KQs,Q6s,Q8s,Q9s,QJs,QTs:0.995,Q7s,QQ,T7s,T8s:0.003,T9s:0.127
+set_range_oop 33,44,55,66:0.968,88,99:0.856,A2s,A2o,A3o:0.508,A4o:0.75,A5o:0.512,A9o:0.504,AJs:0.538,AJo:0.604,AKs:0.637,AKo:0.745,AQo:0.868,ATs,ATo,AA,AQs:0.208,JTs:0.988,JTo:0.988,K2s:0.935,KTs:0.672,KTo:0.786,KK:0.495,QTs:0.139,T8s:0.737,T9s:0.248
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_monotone_low_xx_turn_board_pair_river_overcard.json

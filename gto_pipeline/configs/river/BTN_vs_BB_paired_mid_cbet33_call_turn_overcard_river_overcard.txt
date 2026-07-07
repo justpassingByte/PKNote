@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board 9s,9d,3c,Ah,Qc
+set_range_ip 33,54s,64s:0.903,65s:0.658,75s:0.139,76s:0.027,85s:0.002,96s,97s,98s,99,A6s:0.37,A7s,A8s,A9s,A9o,AJs,AJo,AKs,AKo,AQo,ATs,ATo,A3s:0.598,AA,AQs,J7s:0.912,J8s:0.478,J9s,JTs,K9s,Q6s:0.376,QJs,QTs,Q9s,T7s:0.857,T8s:0.383,T9s
+set_range_oop 88:0.032,A2s,A3o,A4s,A5s,A6s,A7s,A8s,AJs:0.484,AJo:0.52,AKs:0.944,AKo:0.998,AQo:0.821,ATs:0.976,ATo:0.998,A3s,AQs:0.953,JJ:0.985,K3s:0.421,KK,QQ,TT:0.962
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_paired_mid_cbet33_call_turn_overcard_river_overcard.json

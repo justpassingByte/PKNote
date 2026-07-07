@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board 8s,4d,2c,6h,5c
+set_range_ip 22,33,44,54s,55,65s,76s,75s,77,86s,87s,88,97s,98s,99,A4s,A6s,A8s,AKs:0.702,AKo:0.703,A2s,A5s:0.365,J9s,JTs,JJ,K8s,K9s,KTs:0.329,Q9s,QJs,QTs,T8s,T9s,TT
+set_range_oop 99:0.004,A3s,A4s:0.091,A6s:0.818,A7s:0.952,A8s:0.854,AJs:0.768,AJo:0.767,AKs,AKo,AQs:0.717,AQo:0.717,ATs:0.004,ATo:0.003,A2s:0.281,A5s
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_low_dry_xx_turn_straight_card_river_blank.json

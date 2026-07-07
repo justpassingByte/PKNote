@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board As,7d,2c,Jc,8c
+set_range_ip 22,43s:0.592,53s:0.675,54s:0.545,64s:0.982,65s:0.953,77,96s:0.537,A7s,A9s,AJo,AKs,AKo,AQs,AQo,ATs:0.722,ATo:0.791,A2s,AA,AJs,J7s,JJ,K3s:0.524,K4s:0.537,K5s:0.463,K6s:0.198,K9s:0.021,KTs:0.577,K2s,Q9s:0.479,QTs,T9s
+set_range_oop 75s:0.429,76s:0.504,87s:0.572,97s:0.704,A2o:0.07,A3s:0.875,A4s:0.805,A5s:0.964,A6s:0.796,A9s,AJo:0.117,AKs:0.63,AKo:0.847,AQs:0.667,AQo:0.92,ATs:0.906,ATo:0.986,A2s:0.106,A8s,AJs:0.094,A7s:0.015,JTs:0.993,K7s:0.893,K9s,KQs:0.491,KTs:0.447,KJs:0.909,KK:0.339,QJs:0.998,QQ:0.246
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\SB_vs_BB_A_dry_cbet75_call_turn_overcard_river_flush_card.json

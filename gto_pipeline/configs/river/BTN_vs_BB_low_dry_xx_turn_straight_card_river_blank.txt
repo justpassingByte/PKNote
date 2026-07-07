@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board 8s,4d,2c,6h,5c
+set_range_ip 22,33,43s,54s,55,64s,65s,66,76s,75s,77,86s,87s,85s,96s,97s,98s,99,A4s,A5o:0.097,A6s,AKs:0.568,AKo:0.569,A2s,A5s:0.002,AA,J7s,J8s,J9s,JTs,JJ,K4s,K6s,K7s:0.065,K8s,K2s,K5s:0.004,KK,Q6s,Q7s,Q8s,Q9s,QJs:0.806,QTs,QQ,T7s,T8s,T9s,TT
+set_range_oop A2o:0.67,A3s,A3o,A4s:0.475,A4o:0.495,A5o:0.618,A7s,AJs:0.642,AJo:0.642,AKs,AKo,AQs,AQo,ATs:0.085,ATo:0.066,A2s:0.679,A5s:0.6,A6s:0.008,A9o:0.001,A9s:0.001,K3s:0.998,K7s:0.849,KJs:0.017,KJo:0.017,KQs:0.297,KQo:0.298
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_low_dry_xx_turn_straight_card_river_blank.json

@@ -1,0 +1,19 @@
+set_pot 33.5
+set_effective_stack 83.25
+set_board 7s,6d,5c,6h,Jh
+set_range_ip 43s,55,64s,65s,66,76s,77,87s,88,97s,98s,99,A6s,A7s:0.666,A8s:0.999,A9s:0.259,A9o:0.254,J8s,JJ,K4s,K6s,K8s,Q8s,QQ,T8s,TT
+set_range_oop 54s:0.204,A4s,A7s:0.503,A8s,A9s,A5s:0.998,AA,JJ:0.98,K5o:0.94,K7s,K8s:0.057,K5s:0.899,KK,QQ:0.893,TT:0.74
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\SB_vs_BB_connected_low_cbet75_call_turn_board_pair_river_overcard.json

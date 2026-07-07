@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-space-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  /* Casino Specific */
+  --color-felt-light: var(--felt-light);
+  --color-felt-default: var(--felt-default);
+  --color-felt-dark: var(--felt-dark);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+}
+
+@layer base {
+  :root {
+    /* Tesla Sleek Deep Blacks */
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+
+    --card: #121814;
+    /* Very subtle green tint to the black card */
+    --card-foreground: #fafafa;
+
+    --border: #242424;
+    --ring: #ffc400;
+
+    /* Casino Neon Elegance */
+    --felt-light: #00994d;
+    --felt-default: #006633;
+    --felt-dark: #00331a;
+
+    --gold: #ffc400;
+    --gold-dim: #997500;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* stagger children */
+.stagger > * { transition-delay: calc(var(--i, 0) * 80ms); }
+
+@layer base {
+  /* Fix native <select> option elements on dark backgrounds */
+  select option {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

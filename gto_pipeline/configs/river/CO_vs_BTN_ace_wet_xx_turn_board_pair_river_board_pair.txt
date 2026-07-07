@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board As,9s,8c,9d,9h
+set_range_ip 54s,64s:0.996,65s,75s:0.991,76s:0.906,88,97s,A2s:0.043,A3s:0.043,A6s:0.047,A7s:0.117,A9s,AJs,AJo,AKs,AKo,AQs,AQo,ATs,A4s:0.079,A5s:0.075,A8s:0.403,J9s,JTs,K9s,KJs:0.343,KTs:0.957,Q9s,QJs:0.949,QTs,T9s
+set_range_oop 86s:0.028,87s:0.02,A2s,A3s,A4s,A5s,A6s,A7s,AJs:0.155,AJo:0.054,ATs:0.778,ATo:0.795,A8s,JJ,KK:0.993,KQs:0.907,QQ,T8s:0.404,TT:0.982
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_ace_wet_xx_turn_board_pair_river_board_pair.json

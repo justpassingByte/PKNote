@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board Ks,Qs,Jc,7s,6s
+set_range_ip 43s,53s,54s,64s:0.786,65s:0.949,85s,98s,A5o:0.885,A9o,AJo,ATs,ATo,AA:0.877,A2s,A3s,A4s,A5s,A8s,A9s,AJs,AKo,AQo,JJ,J8s,J9s,JTs,K7s,KQs,KQo,KJs,KK,Q7s:0.924,QJs,QQ,T8s,T9s,TT
+set_range_oop 88:0.627,99,AJo,AKs:0.894,AKo:0.901,AQs,AQo:0.887,ATs,ATo,AA,J7s:0.821,JTo:0.992,JTs,JJ:0.509,K7s,K9o:0.991,KJo:0.675,KQs:0.958,KQo:0.967,KTs:0.896,KTo:0.931,KJs,Q7s,QJo:0.998,QTs,QJs,QQ:0.512,T7s:0.921,T9s,TT
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_broadway_wet_cbet33_call_turn_flush_card_river_flush_card.json

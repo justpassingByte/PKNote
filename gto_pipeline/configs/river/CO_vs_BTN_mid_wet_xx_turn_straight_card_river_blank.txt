@@ -1,0 +1,19 @@
+set_pot 13.5
+set_effective_stack 93.25
+set_board Js,9s,7c,Tc,5d
+set_range_ip 54s,64s,65s:0.996,77,86s,87s,88,98s,97s,99,A2s:0.974,A3s,A4s,A5s,A6s,A8s,A9s:0.001,AJs,AJo,AKs,AKo:0.355,AQs:0.866,AQo:0.383,ATs,J9s,JJ,JTs,K8s,K9s:0.973,KJs,KQs,KQo,KTs:0.334,Q9s:0.647,QJs,QTs,T9s,TT
+set_range_oop 66:0.484,76s,77:0.26,97s,99:0.05,A9s,AKo:0.24,ATo:0.265,A7s,AA:0.649,AJo:0.113,AJs:0.024,AKs:0.002,ATs:0.618,J9s,JTs,KJo:0.987,K9s,KJs:0.968,KTs:0.733,Q9s:0.694,QJs,QQ:0.021,QTs:0.993,T9s
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\CO_vs_BTN_mid_wet_xx_turn_straight_card_river_blank.json

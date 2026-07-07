@@ -1,0 +1,590 @@
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Threading;
+using RobinHUD.Models;
+using RobinHUD.Services;
+using RobinHUD.Views;
+
+namespace RobinHUD;
+
+/// <summary>
+/// Main control panel: wires all services together.
+/// Services: WindowService â†’ OverlayManager â†’ SeatEngine â†’ OCR â†’ ApiClient â†’ HudRenderer
+/// Startup: Check API key â†’ Show Settings if needed â†’ Initialize services
+/// </summary>
+public partial class MainWindow : Window
+{
+    // â”€â”€â”€â”€ Core Services â”€â”€â”€â”€
+    private readonly WindowService _windowService;
+    private readonly LayoutManager _layoutManager;
+    private readonly StateStore _stateStore;
+    private readonly ProfileRepository _profileRepository;
+    private readonly OverlayManager _overlayManager;
+    private readonly ConfigController _configController;
+    private readonly ICaptureService _captureService;
+    private readonly IOcrService _ocrService;
+    private readonly SeatEngine _seatEngine;
+    private InputController _inputController;
+    private readonly NoteService _noteService;
+    private readonly SettingsManager _settingsManager;
+
+    // Services that depend on ApiClient (re-created when API key changes)
+    private ApiClient _apiClient;
+    private ActionEngine _actionEngine;
+    private HudRenderer _hudRenderer;
+    private SyncService _syncService;
+
+    private DispatcherTimer? _syncTimer;
+    private DispatcherTimer? _hudRefreshTimer;
+    private ConfigProfile? _activeProfile;
+
+    public MainWindow()
+    {
+        InitializeComponent();
+
+        // â”€â”€â”€â”€ Initialize settings first â”€â”€â”€â”€
+        _settingsManager = new SettingsManager();
+
+        // â”€â”€â”€â”€ Initialize all services â”€â”€â”€â”€
+        _windowService = new WindowService(_settingsManager);
+        _layoutManager = new LayoutManager();
+        _stateStore = new StateStore();
+        _profileRepository = new ProfileRepository();
+        _overlayManager = new OverlayManager(_stateStore, _layoutManager, _windowService);
+        _configController = new ConfigController(_layoutManager, _profileRepository);
+        _captureService = new GdiCaptureService();
+        _ocrService = new TesseractOcrService(); // Real Tesseract OCR for player name recognition
+        _seatEngine = new SeatEngine(_captureService, _ocrService, _layoutManager, _stateStore);
+        _noteService = new NoteService(_stateStore);
+
+        // Create API-dependent services with current settings
+        _apiClient = CreateApiClient();
+        _syncService = new SyncService(_apiClient, _stateStore, _settingsManager, _noteService);
+        _actionEngine = new ActionEngine(_stateStore, _apiClient, _syncService);
+        _inputController = new InputController(_overlayManager, _actionEngine, _stateStore);
+        _hudRenderer = new HudRenderer(_layoutManager, _stateStore, _inputController, _noteService);
+
+        // â”€â”€â”€â”€ Wire events â”€â”€â”€â”€
+        _seatEngine.OnSeatChanged += SeatEngine_OnSeatChanged;
+        _seatEngine.OnNameExtracted += SeatEngine_OnNameExtracted;
+        _seatEngine.OnOcrFailed += SeatEngine_OnOcrFailed;
+        _actionEngine.OnActionApplied += ActionEngine_OnActionApplied;
+        _hudRenderer.OnOcrBadgeClicked += HudRenderer_OnOcrBadgeClicked;
+        _hudRenderer.OnNoteClicked += HudRenderer_OnNoteClicked;
+        _configController.OnProfileSaved += ConfigController_OnProfileSaved;
+        _syncService.OnSyncStatusChanged += SyncService_OnStatusChanged;
+
+        Loaded += MainWindow_Loaded;
+        Closing += MainWindow_Closing;
+        KeyDown += MainWindow_KeyDown;
+    }
+
+    private ApiClient CreateApiClient()
+    {
+        return new ApiClient(
+            _settingsManager.ServerUrl,
+            string.IsNullOrEmpty(_settingsManager.ApiKey) ? null : _settingsManager.ApiKey
+        );
+    }
+
+    private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+    {
+        _overlayManager.Initialize();
+        RefreshProfileList();
+        RefreshActivationUI();
+
+        // Overlay position sync timer (300ms)
+        _syncTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(300) };
+        _syncTimer.Tick += (_, _) =>
+        {
+            _overlayManager.SyncAll();
+            TableCountText.Text = $"BÃ n Ä‘ang theo dÃµi: {_overlayManager.ActiveOverlayCount} / {StateStore.MaxTables}";
+        };
+        _syncTimer.Start();
+
+        // HUD re-render timer (500ms)
+        _hudRefreshTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(500) };
+        _hudRefreshTimer.Tick += (_, _) => RefreshAllHuds();
+        _hudRefreshTimer.Start();
+
+        // Check activation + start sync
+        if (_settingsManager.IsActivated)
+        {
+            StatusText.Text = "Tráº¡ng thÃ¡i: Sáºµn sÃ ng â€” Ctrl+Shift+C: Config | Ctrl+Shift+H: Toggle HUD";
+            _syncService.Start();
+
+            // Auto-load first profile and auto-scan on startup
+            if (ProfileCombo.Items.Count > 0)
+            {
+                ProfileCombo.SelectedIndex = 0;
+                var autoScanTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(500) };
+                autoScanTimer.Tick += (_, _) =>
+                {
+                    autoScanTimer.Stop();
+                    Scan_Click(this, new RoutedEventArgs());
+                };
+                autoScanTimer.Start();
+            }
+        }
+        else
+        {
+            StatusText.Text = "Tráº¡ng thÃ¡i: ChÆ°a kÃ­ch hoáº¡t â€” VÃ o Settings Ä‘á»ƒ nháº­p API Key";
+            // Show settings dialog on first launch
+            ShowSettingsDialog();
+        }
+    }
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Activation UI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private void RefreshActivationUI()
+    {
+        if (_settingsManager.IsActivated)
+        {
+            ActivationBanner.Visibility = Visibility.Collapsed;
+            ScanBtn.IsEnabled = true;
+            ConfigBtn.IsEnabled = true;
+        }
+        else
+        {
+            ActivationBanner.Visibility = Visibility.Visible;
+            ActivationText.Text = "âš  ChÆ°a kÃ­ch hoáº¡t â€” VÃ o Settings Ä‘á»ƒ nháº­p API Key";
+            ScanBtn.IsEnabled = false;
+            ConfigBtn.IsEnabled = false;
+        }
+    }
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Keyboard Shortcuts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private async void MainWindow_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.C && Keyboard.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift))
+        {
+            if (_configController.IsConfigMode)
+            {
+                await _configController.ExitConfigMode();
+                _overlayManager.SetAllClickThrough(true);
+                StatusText.Text = "Tráº¡ng thÃ¡i: Config Ä‘Ã£ lÆ°u âœ”";
+                RefreshProfileList();
+            }
+            else
+            {
+                Config_Click(sender, e);
+            }
+            e.Handled = true;
+        }
+        else if (e.Key == Key.H && Keyboard.Modifiers == (ModifierKeys.Control | ModifierKeys.Shift))
+        {
+            _inputController.ToggleInteractive();
+            StatusText.Text = _inputController.IsInteractive
+                ? "Tráº¡ng thÃ¡i: HUD tÆ°Æ¡ng tÃ¡c ON ðŸŸ¢"
+                : "Tráº¡ng thÃ¡i: HUD tÆ°Æ¡ng tÃ¡c OFF ðŸ”´ (click-through)";
+            e.Handled = true;
+        }
+    }
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Event Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private void SeatEngine_OnSeatChanged(SeatEvent evt)
+    {
+        Dispatcher.InvokeAsync(() =>
+        {
+            string action = evt.IsJoin ? "ngá»“i vÃ o" : evt.IsLeave ? "rá»i bÃ n" : "thay Ä‘á»•i";
+            System.Diagnostics.Debug.WriteLine(
+                $"[Seat] Table {evt.TableHwnd:X} S{evt.SeatIndex}: {evt.PreviousStatus} â†’ {evt.NewStatus}");
+        });
+    }
+
+    private void SeatEngine_OnNameExtracted(IntPtr hwnd, int seatIdx, string name)
+    {
+        Dispatcher.InvokeAsync(async () =>
+        {
+            System.Diagnostics.Debug.WriteLine($"[OCR] Table {hwnd:X} S{seatIdx}: {name}");
+            StatusText.Text = $"OCR: Gháº¿ {seatIdx} â€” {name}";
+
+            // Fetch stats from API
+            var stats = await _apiClient.SearchPlayerAsync(name);
+            if (stats != null)
+            {
+                _stateStore.UpdateSeat(hwnd, seatIdx, s => s.Stats = stats);
+            }
+        });
+    }
+
+    private void SeatEngine_OnOcrFailed(IntPtr hwnd, int seatIdx)
+    {
+        Dispatcher.InvokeAsync(() =>
+        {
+            StatusText.Text = $"âš  OCR tháº¥t báº¡i: Gháº¿ {seatIdx} â€” Click '?' Ä‘á»ƒ nháº­p tay";
+        });
+    }
+
+    private void ActionEngine_OnActionApplied(IntPtr hwnd, int seatIdx, ActionEvent action)
+    {
+        Dispatcher.InvokeAsync(() =>
+        {
+            StatusText.Text = $"âœ” {action.Type} â†’ {action.PlayerId} (Gháº¿ {seatIdx})";
+            // Force HUD re-render for this table
+            if (_activeProfile != null)
+            {
+                var overlay = _overlayManager.GetOverlay(hwnd);
+                if (overlay != null)
+                    _hudRenderer.RenderTable(hwnd, overlay, _activeProfile);
+            }
+        });
+    }
+
+    private void HudRenderer_OnOcrBadgeClicked(IntPtr hwnd, int seatIdx)
+    {
+        var overlay = _overlayManager.GetOverlay(hwnd);
+        if (overlay == null) return;
+
+        _noteService.ShowManualNameInput(overlay, hwnd, seatIdx, 100, 100,
+            onNameEntered: async (tableHwnd, seat, name) =>
+            {
+                StatusText.Text = $"âœ” TÃªn thá»§ cÃ´ng: {name} (Gháº¿ {seat})";
+
+                var stats = await _apiClient.SearchPlayerAsync(name);
+                if (stats != null)
+                    _stateStore.UpdateSeat(tableHwnd, seat, s => s.Stats = stats);
+            });
+    }
+
+    private void ConfigController_OnProfileSaved(ConfigProfile profile)
+    {
+        Dispatcher.InvokeAsync(() =>
+        {
+            _activeProfile = profile;
+            StatusText.Text = $"âœ” Profile '{profile.ProfileName}' Ä‘Ã£ lÆ°u ({profile.Seats.Count} seats)";
+            RefreshProfileList();
+            
+            foreach (var win in _windowService.FindPokerWindows())
+            {
+                _seatEngine.StopTracking(win.Hwnd);
+                _seatEngine.StartTracking(win.Hwnd, profile);
+            }
+        });
+    }
+
+    private void HudRenderer_OnNoteClicked(IntPtr hwnd, int seatIdx)
+    {
+        var seat = _stateStore.GetTable(hwnd)?.Seats.GetValueOrDefault(seatIdx);
+        if (seat == null || string.IsNullOrEmpty(seat.PlayerName)) return;
+
+        var overlay = _overlayManager.GetOverlay(hwnd);
+        if (overlay != null)
+        {
+            _noteService.ShowQuickNoteInput(overlay, seat.PlayerName, 100, 100);
+        }
+    }
+
+    private void SyncService_OnStatusChanged(string status)
+    {
+        Dispatcher.InvokeAsync(() =>
+        {
+            StatusText.Text = status;
+        });
+    }
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Button Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private async void Scan_Click(object sender, RoutedEventArgs e)
+    {
+        if (!_settingsManager.IsActivated)
+        {
+            MessageBox.Show("Vui lÃ²ng kÃ­ch hoáº¡t API Key trong Settings trÆ°á»›c.", "RobinHUD",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+            ShowSettingsDialog();
+            return;
+        }
+
+        // Auto-load profile if not yet loaded
+        if (_activeProfile == null)
+        {
+            string? profileName = ProfileCombo.SelectedItem?.ToString() ?? ProfileCombo.Text;
+            ConfigProfile? profile = null;
+            
+            if (!string.IsNullOrEmpty(profileName))
+                profile = await _profileRepository.LoadAsync(profileName);
+            
+            if (profile == null)
+            {
+                var allProfiles = _profileRepository.ListProfiles();
+                if (allProfiles.Count > 0)
+                    profile = await _profileRepository.LoadAsync(allProfiles[0]);
+            }
+            
+            if (profile != null)
+            {
+                _activeProfile = profile;
+                StatusText.Text = $"âœ” Auto-loaded profile '{profile.ProfileName}'";
+            }
+        }
+
+        var windows = _windowService.FindPokerWindows();
+
+        if (windows.Count == 0)
+        {
+            StatusText.Text = "Tráº¡ng thÃ¡i: KhÃ´ng tÃ¬m tháº¥y bÃ n poker nÃ o ðŸ”";
+            return;
+        }
+
+        TableList.Items.Clear();
+
+        foreach (var win in windows)
+        {
+            string display = $"[{win.Hwnd:X}] {win.Title} ({win.Rect.Width}x{win.Rect.Height})";
+            TableList.Items.Add(display);
+
+            if (_activeProfile != null)
+            {
+                if (_overlayManager.TrySpawnOverlay(win.Hwnd, win.Title, _activeProfile))
+                {
+                    _seatEngine.StartTracking(win.Hwnd, _activeProfile);
+                }
+                
+                // Clear seat states and reset baselines to force a fresh OCR scan
+                foreach (var seatCfg in _activeProfile.Seats)
+                {
+                    _seatEngine.ResetBaseline(win.Hwnd, seatCfg.Id);
+                    _stateStore.UpdateSeat(win.Hwnd, seatCfg.Id, s =>
+                    {
+                        s.Status = Occupancy.Unknown;
+                        s.PlayerName = string.Empty;
+                        s.Stats = null;
+                        s.OcrFailed = false;
+                    });
+                }
+            }
+        }
+
+        StatusText.Text = $"TÃ¬m tháº¥y {windows.Count} bÃ n â€” " +
+            (_activeProfile != null ? "Ä‘ang cháº¡y OCR nháº­n diá»‡n..." : "chá»n profile rá»“i scan láº¡i");
+        TableCountText.Text = $"BÃ n Ä‘ang theo dÃµi: {_overlayManager.ActiveOverlayCount} / {StateStore.MaxTables}";
+        
+        RefreshAllHuds();
+    }
+
+    private void TestMock_Click(object sender, RoutedEventArgs e)
+    {
+        var windows = _windowService.FindPokerWindows();
+        if (windows.Count == 0)
+        {
+            MessageBox.Show("Vui lÃ²ng má»Ÿ má»™t cá»­a sá»• Poker (hoáº·c NotePad/áº¢nh) Ä‘á»ƒ lÃ m báº£ng váº½ test Mock UI.", "RobinHUD", MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        var win = windows[0];
+
+        var mockProfile = new ConfigProfile
+        {
+            ProfileName = "Mock UI Test",
+            SiteName = "Test",
+            Seats = new List<SeatConfig>
+            {
+                new SeatConfig
+                {
+                    Id = 0,
+                    NameBBox = new NormalizedBBox { X = 0.45, Y = 0.8, W = 0.1, H = 0.05 },
+                    HudAnchor = new NormalizedBBox { X = 0.45, Y = 0.7, W = 0, H = 0 }
+                }
+            }
+        };
+
+        if (_overlayManager.TrySpawnOverlay(win.Hwnd, "MockTest", mockProfile))
+        {
+            _activeProfile = mockProfile;
+            
+            _stateStore.UpdateSeat(win.Hwnd, 0, s =>
+            {
+                s.Status = Occupancy.Occupied;
+                s.PlayerName = "NgBoSS99";
+                s.Stats = new PlayerStats
+                {
+                    PlayerId = "NgBoSS99",
+                    TotalHands = 15302,
+                    Vpip = 24,
+                    Pfr = 18,
+                    Af = 2.1,
+                    ThreeBet = 10,
+                    FoldTo3Bet = 80,
+                    CBet = 45,
+                    FoldToCBet = 50,
+                    WTSD = 25,
+                    WSD = 55,
+                    Steal = 35,
+                    FoldToSteal = 65,
+                    AggPct = 30,
+                    CheckRaisePct = 12,
+                    MockStrategy = "ThÃ­ch Steal khi á»Ÿ BTN.\nThÆ°á»ng fold F3B ráº¥t nhanh.\nTest tiáº¿ng Viá»‡t cÃ³ dáº¥u."
+                };
+            });
+            
+            _inputController.SetInteractive(true);
+            RefreshAllHuds();
+            StatusText.Text = "Mock HUD Ä‘Ã£ Ä‘Æ°á»£c váº½ trÃªn bÃ n Ä‘áº§u tiÃªn (Interactive: ON).";
+        }
+    }
+
+    private async void Config_Click(object sender, RoutedEventArgs e)
+    {
+        var windows = _windowService.FindPokerWindows();
+        if (windows.Count == 0)
+        {
+            MessageBox.Show("Má»Ÿ poker client trÆ°á»›c khi config.", "RobinHUD",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        var target = windows[0];
+        string typedName = ProfileCombo.Text ?? "default";
+        
+        ConfigProfile profile;
+        if (_activeProfile != null && !string.Equals(_activeProfile.ProfileName, typedName, StringComparison.OrdinalIgnoreCase))
+        {
+            var json = System.Text.Json.JsonSerializer.Serialize(_activeProfile);
+            profile = System.Text.Json.JsonSerializer.Deserialize<ConfigProfile>(json)!;
+            profile.ProfileName = typedName;
+        }
+        else
+        {
+            profile = await _profileRepository.LoadAsync(typedName)
+                          ?? new ConfigProfile { ProfileName = typedName };
+        }
+
+        _overlayManager.TrySpawnOverlay(target.Hwnd, target.Title, profile);
+        var overlay = _overlayManager.GetOverlay(target.Hwnd);
+        if (overlay == null) return;
+
+        _overlayManager.SetAllClickThrough(false);
+        _configController.SetProfileInfo(typedName, "PokerSite", TableType.SixMax);
+        _configController.EnterConfigMode(target.Hwnd, overlay, profile);
+
+        StatusText.Text = "CONFIG MODE ðŸŸ¡ â€” Váº½ bbox â†’ mouseup = OCR test";
+    }
+
+    private void Settings_Click(object sender, RoutedEventArgs e)
+    {
+        ShowSettingsDialog();
+    }
+
+    private void ShowSettingsDialog()
+    {
+        var settingsWindow = new SettingsWindow(_settingsManager, _apiClient, _syncService);
+        settingsWindow.Owner = this;
+        settingsWindow.ShowDialog();
+
+        // If user activated, re-create ApiClient with new key
+        if (settingsWindow.WasActivated || _settingsManager.IsActivated)
+        {
+            RecreateApiDependentServices();
+        }
+
+        RefreshActivationUI();
+    }
+
+    /// <summary>
+    /// Re-creates ApiClient and all services that depend on it
+    /// when the API key or server URL changes.
+    /// </summary>
+    private void RecreateApiDependentServices()
+    {
+        _apiClient.Dispose();
+        _apiClient = CreateApiClient();
+
+        _syncService.Dispose();
+        _syncService = new SyncService(_apiClient, _stateStore, _settingsManager, _noteService);
+        _syncService.OnSyncStatusChanged += SyncService_OnStatusChanged;
+
+        // Re-wire action engine with new ApiClient
+        _actionEngine = new ActionEngine(_stateStore, _apiClient, _syncService);
+        _actionEngine.OnActionApplied += ActionEngine_OnActionApplied;
+
+        // Re-wire input controller
+        _inputController = new InputController(_overlayManager, _actionEngine, _stateStore);
+
+        // Re-wire HUD renderer
+        _hudRenderer = new HudRenderer(_layoutManager, _stateStore, _inputController, _noteService);
+        _hudRenderer.OnOcrBadgeClicked += HudRenderer_OnOcrBadgeClicked;
+        _hudRenderer.OnNoteClicked += HudRenderer_OnNoteClicked;
+
+        // Start sync if activated
+        if (_settingsManager.IsActivated)
+        {
+            _syncService.Start();
+            StatusText.Text = "âœ” API Key Ä‘Ã£ kÃ­ch hoáº¡t â€” Sáºµn sÃ ng";
+        }
+    }
+
+    private void Stop_Click(object sender, RoutedEventArgs e)
+    {
+        _seatEngine.StopAll();
+        
+        foreach (var (hwnd, _) in _stateStore.Tables.ToList())
+        {
+            _overlayManager.RemoveOverlay(hwnd);
+        }
+        
+        StatusText.Text = "Tráº¡ng thÃ¡i: ÄÃ£ dá»«ng â¹ â€” Báº¥m QuÃ©t bÃ n Ä‘á»ƒ báº¯t Ä‘áº§u láº¡i";
+        TableCountText.Text = "BÃ n Ä‘ang theo dÃµi: 0 / 8";
+        TableList.Items.Clear();
+    }
+
+    private async void LoadProfile_Click(object sender, RoutedEventArgs e)
+    {
+        string? profileName = ProfileCombo.SelectedItem?.ToString();
+        if (string.IsNullOrEmpty(profileName))
+        {
+            MessageBox.Show("Chá»n profile trÆ°á»›c.", "RobinHUD",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+            return;
+        }
+
+        var profile = await _profileRepository.LoadAsync(profileName);
+        if (profile == null)
+        {
+            MessageBox.Show($"KhÃ´ng tÃ¬m tháº¥y profile: {profileName}", "RobinHUD");
+            return;
+        }
+
+        _activeProfile = profile;
+        StatusText.Text = $"âœ” ÄÃ£ táº£i profile '{profileName}' ({profile.Seats.Count} seats, {profile.TableType})";
+    }
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ HUD Rendering â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private void RefreshAllHuds()
+    {
+        if (_activeProfile == null) return;
+
+        foreach (var (hwnd, _) in _stateStore.Tables)
+        {
+            var overlay = _overlayManager.GetOverlay(hwnd);
+            if (overlay != null && !_configController.IsConfigMode)
+            {
+                _hudRenderer.RenderTable(hwnd, overlay, _activeProfile);
+            }
+        }
+    }
+
+    // â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+    private void RefreshProfileList()
+    {
+        ProfileCombo.Items.Clear();
+        foreach (var p in _profileRepository.ListProfiles())
+            ProfileCombo.Items.Add(p);
+
+        if (ProfileCombo.Items.Count > 0)
+            ProfileCombo.SelectedIndex = 0;
+    }
+
+    private void MainWindow_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+    {
+        _syncTimer?.Stop();
+        _hudRefreshTimer?.Stop();
+        _seatEngine.Dispose();
+        _overlayManager.Dispose();
+        _syncService.Dispose();
+        _apiClient.Dispose();
+    }
+}

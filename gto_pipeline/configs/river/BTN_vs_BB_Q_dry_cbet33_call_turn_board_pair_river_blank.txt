@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board Qs,7d,2c,7h,5c
+set_range_ip 22,33,43s,53s,54s,64s,65s,76s,75s,77,86s,87s,85s,96s,97s,98s,99:0.129,A7s,AQs,AQo,A2s,AA,J7s,J8s:0.389,J9s:0.702,JJ:0.729,K7s,KQs,KQo,K2s:0.365,KK,Q6s,Q7s,Q8s,Q9s,QJs,QTs,QQ,T7s,T8s:0.366,T9s:0.613,TT:0.274
+set_range_oop 44:0.026,66:0.226,88:0.996,99:0.998,A2o:0.964,A3s:0.151,A4s:0.171,A6s:0.012,AJs:0.892,AJo:0.854,AKs:0.981,AKo,AQs:0.957,AQo:0.973,ATs:0.393,ATo:0.439,A2s:0.691,AA:0.956,A5s:0.013,JJ:0.765,KJs:0.08,KJo:0.118,KQs:0.66,KQo:0.729,K2s:0.274,KK:0.983,QJo:0.115,QJs:0.452,QTs:0.994,TT:0.972
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\BTN_vs_BB_Q_dry_cbet33_call_turn_board_pair_river_blank.json

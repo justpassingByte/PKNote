@@ -1,0 +1,19 @@
+set_pot 23.5
+set_effective_stack 88.25
+set_board Ts,9d,8c,9h,5c
+set_range_ip 43s:0.773,76s,75s,88,96s,97s,98s,99,A9s,A9o,AJs:0.002,AJo:0.01,AQs:0.862,AQo:0.771,ATs,ATo,J7s,J9s,JTs,JTo,JJ,K2s:0.002,K3s:0.002,K7s,K9s,KJs,KJo,KK,Q6s:0.919,Q7s,Q9s,QJs,QJo,QTs:0.856,QQ,T7s:0.299,T9s,TT
+set_range_oop 76s,77:0.979,87s,86s:0.007,AJs:0.966,AJo:0.986,ATs:0.626,ATo:0.441,A8s:0.328,AA,AQo:0.005,AQs:0.003,JTs,JTo,J8s,JJ:0.682,KTs,KTo,KK,K8s:0.008,QTs:0.497,Q8s:0.971,QQ:0.331,T8s:0.994
+set_bet_sizes oop,river,bet,75
+set_bet_sizes oop,river,raise,60
+set_bet_sizes ip,river,bet,75
+set_bet_sizes ip,river,raise,60
+set_allin_threshold 0.67
+build_tree
+set_thread_num 2
+set_accuracy 0.5
+set_max_iteration 1000
+set_print_interval 100
+set_use_isomorphism 1
+start_solve
+set_dump_rounds 1
+dump_result C:\Users\Admin\Desktop\projects\PoNotes\gto_pipeline\outputs\river\raw\SB_vs_BB_connected_mid_cbet33_call_turn_board_pair_river_blank.json

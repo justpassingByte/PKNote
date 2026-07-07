@@ -1,0 +1,70 @@
+
+> frontend@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+./src/i18n/en.json
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/i18n/en.json (json)
+
+Caused by:
+- Unable to make a module from invalid JSON: expected value at line 1 column 1
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/i18n/en.json (json)
+- Execution of <JsonChunkItem as EcmascriptChunkItem>::content failed
+- Unable to make a module from invalid JSON: expected value at line 1 column 1
+    at .
+         | v
+       1 + ﻿{
+         | ^
+       2 |   "common": {
+       3 |     "save": "Save",
+       4 |     "cancel": "Cancel",
+       5 |     "delete": "Delete",
+
+Import trace:
+  Client Component Browser:
+    ./src/i18n/en.json
+    ./src/i18n/LanguageContext.tsx [Client Component Browser]
+    ./src/components/dashboard/PlayerProfileClient.tsx [Client Component Browser]
+    ./src/components/dashboard/PlayerProfileClient.tsx [Server Component]
+    ./src/app/(main)/players/[id]/page.tsx [Server Component]
+
+
+./src/i18n/vi.json
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/i18n/vi.json (json)
+
+Caused by:
+- Unable to make a module from invalid JSON: expected value at line 1 column 1
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/i18n/vi.json (json)
+- Execution of <JsonChunkItem as EcmascriptChunkItem>::content failed
+- Unable to make a module from invalid JSON: expected value at line 1 column 1
+    at .
+         | v
+       1 + ﻿{
+         | ^
+       2 |   "common": {
+       3 |     "save": "LÆ°u",
+       4 |     "cancel": "Há»§y",
+       5 |     "delete": "XÃ³a",
+
+Import trace:
+  Client Component Browser:
+    ./src/i18n/vi.json
+    ./src/i18n/LanguageContext.tsx [Client Component Browser]
+    ./src/components/dashboard/PlayerProfileClient.tsx [Client Component Browser]
+    ./src/components/dashboard/PlayerProfileClient.tsx [Server Component]
+    ./src/app/(main)/players/[id]/page.tsx [Server Component]
+
+
+    at ignore-listed frames
