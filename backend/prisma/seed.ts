@@ -7,17 +7,18 @@ async function main() {
     console.log('Seeding the database...');
 
     // 0. Create Admin User
-    const adminPassword = await bcrypt.hash('admin', 10);
+    const adminPassword = await bcrypt.hash('admin123', 10);
     const admin = await (prisma.user as any).upsert({
-        where: { email: 'admin' },
+        where: { email: 'admin@robinhud' },
         update: { 
             password: adminPassword,
             premium_tier: 'PRO_PLUS',
+            max_devices: 5,
             is_admin: true,
             email_verified: true
         },
         create: {
-            email: 'admin',
+            email: 'admin@robinhud',
             password: adminPassword,
             premium_tier: 'PRO_PLUS',
             max_devices: 5,
@@ -26,6 +27,27 @@ async function main() {
         }
     });
     console.log('Created/Updated admin user.');
+
+    // 0.2 Create Demo User (email_verified=true — no Resend needed for local dev)
+    const demoPassword = await bcrypt.hash('demo123', 10);
+    await (prisma.user as any).upsert({
+        where: { email: 'demo@ponotes.local' },
+        update: {
+            password: demoPassword,
+            premium_tier: 'PRO',
+            is_admin: false,
+            email_verified: true
+        },
+        create: {
+            email: 'demo@ponotes.local',
+            password: demoPassword,
+            premium_tier: 'PRO',
+            max_devices: 3,
+            is_admin: false,
+            email_verified: true
+        }
+    });
+    console.log('Created/Updated demo user (demo@ponotes.local / demo123).');
     
     // 0.1 Create Pricing Plans
     const plans = [
