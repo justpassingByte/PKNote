@@ -20,10 +20,12 @@ services:
           memory: 300M
     restart: always
 
-  # 2. Redis for OCR Worker
+  # 2. Redis for OCR Worker (disabled by default, enable with --profile ocr)
   redis:
     image: redis:7-alpine
     container_name: ocr_redis
+    profiles:
+      - ocr
     deploy:
       resources:
         limits:
@@ -31,10 +33,12 @@ services:
           memory: 64M
     restart: always
 
-  # 3. OCR API (Python)
+  # 3. OCR API (Python) (disabled by default, enable with --profile ocr)
   ocr-api:
     build: ./backend/ocr-service
     container_name: ocr_api
+    profiles:
+      - ocr
     command: uvicorn main:app --host 0.0.0.0 --port 8000
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
@@ -51,10 +55,12 @@ services:
           memory: 1500M
     restart: always
 
-  # 4. OCR Worker (Heavy Machine Learning Part)
+  # 4. OCR Worker (Heavy ML) (disabled by default, enable with --profile ocr)
   ocr-worker:
     build: ./backend/ocr-service
     container_name: ocr_worker
+    profiles:
+      - ocr
     command: celery -A celery_worker.celery_app worker --loglevel=info --concurrency=1
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
