@@ -123,7 +123,9 @@ Once the containers are up and running, you can access the application through t
 
 ## Database Migrations
 
-The backend container is configured to automatically run Prisma migrations on startup (`npx prisma migrate deploy` via `backend/start.sh`). If you need to manually interact with the database, you can execute commands inside the backend container:
+The backend container is configured to automatically run Prisma migrations on startup (`npx prisma migrate deploy` via `backend/start.sh`), then seed the database with default data (admin user, demo user, pricing plans, platforms, note templates).
+
+If you need to manually interact with the database, you can execute commands inside the backend container:
 
 ```bash
 docker exec -it notes_backend sh

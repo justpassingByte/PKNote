@@ -27,6 +27,10 @@ COPY --from=builder /app/prisma ./prisma
 COPY start.sh ./
 RUN chmod +x start.sh
 
+# Compile seed.ts to JS for prisma db seed in production
+COPY --from=builder /app/prisma/seed.ts ./prisma/seed.ts
+RUN npx tsc prisma/seed.ts --outDir dist --module commonjs --target es2022 --esModuleInterop --skipLibCheck --resolveJsonModule 2>/dev/null; exit 0
+
 ENV PORT=3001
 EXPOSE 3001
 

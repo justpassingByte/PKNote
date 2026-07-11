@@ -296,14 +296,8 @@ export class PlayerController {
         try {
             const userId = (req as any).user.id;
             const payload = req.body;
-            
-            // Note: In a real app we'd inject PlayerService here via constructor,
-            // but keeping current pattern for now.
-            const { PlayerService } = require('../services/playerService');
-            const { PlayerRepository } = require('../repositories/PlayerRepository');
-            const playerService = new PlayerService(new PlayerRepository());
-            
-            const result = await playerService.bulkCreatePlayers(userId, payload);
+
+            const result = await this.playerService.bulkCreatePlayers(userId, payload);
             
             // Invalidate caches after bulk import
             clearPlayerCache(userId);
